@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,9 +15,13 @@ namespace HitApp.Models
         public string ProjectName { get; set; }
 
         [DisplayName("Start Date")]
+        [DisplayFormat(ApplyFormatInEditMode = true,
+               DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime ProjectStartDate { get; set; }
 
         [DisplayName("End Date")]
+        [DisplayFormat(ApplyFormatInEditMode = true,
+               DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime ProjectEndDate { get; set; }
 
         [DisplayName("Project Description")]
@@ -26,6 +31,7 @@ namespace HitApp.Models
         public string ProjectContractorInfo { get; set; }
 
         [DisplayName("Total Budget")]
+        [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = true)]
         public double ProjectTotalBudget { get; set; }
     }
 }
