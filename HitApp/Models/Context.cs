@@ -8,7 +8,7 @@ namespace HitApp.Models
 {
     public class Context : DbContext
     {
-        // public DbSet<Project> Projects {get; set;}
+        public DbSet<Project> Projects {get; set;}
         // public DbSet<Expense> Expenses {get; set;}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -13,6 +13,7 @@ using HitApp.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using HitApp.Models;
+using HitApp.Repository;
 
 namespace HitApp
 {
@@ -42,6 +43,8 @@ namespace HitApp
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddDbContext<Context>();
+
+            services.AddScoped<IProjectRepository, ProjectRepository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
