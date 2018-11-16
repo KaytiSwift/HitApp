@@ -17,7 +17,7 @@ namespace HitApp.Controllers
         }
 
         public IActionResult Create()
-        {
+        {   
             return View();
         }
 
