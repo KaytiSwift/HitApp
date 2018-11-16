@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using HitApp.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using HitApp.Models;
 
 namespace HitApp
 {
@@ -40,6 +41,7 @@ namespace HitApp
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            services.AddDbContext<Context>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
