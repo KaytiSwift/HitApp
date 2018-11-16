@@ -25,6 +25,7 @@ namespace HitApp.Controllers
         public IActionResult Create(Expense expense)
         {
             expenseRepo.Create(expense);
+            ModelState.Clear();
             return View();
         }
     }
