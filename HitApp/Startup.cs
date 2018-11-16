@@ -42,9 +42,8 @@ namespace HitApp
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
+            services.AddScoped<IProjectRepository, ProjectRepository>();
             services.AddScoped<IExpenseRepository, ExpenseRepository>();
             services.AddDbContext<Context>();
         }
