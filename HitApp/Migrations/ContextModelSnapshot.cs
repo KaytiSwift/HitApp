@@ -35,6 +35,7 @@ namespace HitApp.Migrations
                     b.HasKey("ExpenseId");
 
                     b.ToTable("Expenses");
+                });
                     
             modelBuilder.Entity("HitApp.Models.Project", b =>
                 {
