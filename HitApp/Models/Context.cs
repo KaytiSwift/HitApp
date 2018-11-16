@@ -3,13 +3,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HitApp.Models;
 
 namespace HitApp.Models
 {
     public class Context : DbContext
     {
+
+        public DbSet<Expense> Expenses {get; set;}
         public DbSet<Project> Projects {get; set;}
-        // public DbSet<Expense> Expenses {get; set;}
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -28,5 +30,6 @@ namespace HitApp.Models
 
             base.OnConfiguring(optionsBuilder);
         }
+                
     }
 }
