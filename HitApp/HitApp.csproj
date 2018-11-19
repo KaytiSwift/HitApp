@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Migrations\20181119145743_OneContext.cs" />
+    <Compile Remove="Data\Migrations\20181119145743_OneContext.Designer.cs" />
     <Compile Remove="Migrations\20181116162004_InitialCreate.cs" />
     <Compile Remove="Migrations\20181116162004_InitialCreate.Designer.cs" />
 
@@ -20,6 +22,10 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

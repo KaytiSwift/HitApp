@@ -1,4 +1,5 @@
-﻿using HitApp.Models;
+﻿using HitApp.Data;
+using HitApp.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ namespace HitApp.Repository
 {
     public class ExpenseRepository : Repository<Expense>, IExpenseRepository
     {
-        public ExpenseRepository(Context db) : base(db)
+        public ExpenseRepository(ApplicationDbContext db) : base(db)
         {
         }
     }
