@@ -1,0 +1,65 @@
+﻿@model IEnumerable<HitApp.Models.Project>
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h2>Dashboard</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectStartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectContractorInfo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectTotalBudget)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectContractorInfo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectTotalBudget)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ProjectId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ProjectId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ProjectId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

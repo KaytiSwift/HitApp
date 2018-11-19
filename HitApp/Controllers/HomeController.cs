@@ -10,6 +10,13 @@ namespace HitApp.Controllers
 {
     public class HomeController : Controller
     {
+        private IProjectRepository projectRepo;
+
+        public HomeController(IProjectRepository projectRepo)
+        {
+            this.projectRepo = projectRepo;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -20,6 +27,12 @@ namespace HitApp.Controllers
             ViewData["Message"] = "Your application description page.";
 
             return View();
+        }
+
+        public IActionResult Dashboard()
+        {
+            var model = projectRepo.GetAll();
+            return View(model);
         }
 
         public IActionResult Contact()

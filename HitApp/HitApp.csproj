@@ -8,24 +8,12 @@
   <ItemGroup>
     <Compile Remove="Data\Migrations\20181119145743_OneContext.cs" />
     <Compile Remove="Data\Migrations\20181119145743_OneContext.Designer.cs" />
-    <Compile Remove="Migrations\20181116162004_InitialCreate.cs" />
-    <Compile Remove="Migrations\20181116162004_InitialCreate.Designer.cs" />
-
-    <Compile Remove="Migrations\20181116190648_ChangedDisplayNamesForExpenseModel.cs" />
-    <Compile Remove="Migrations\20181116190648_ChangedDisplayNamesForExpenseModel.Designer.cs" />
-
-    <Compile Remove="Migrations\20181116190624_AddProjectDisplayNames.cs" />
-    <Compile Remove="Migrations\20181116190624_AddProjectDisplayNames.Designer.cs" />
 
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" PrivateAssets="All" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>
