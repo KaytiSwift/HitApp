@@ -4,62 +4,84 @@
     ViewData["Title"] = "Dashboard";
 }
 
+@section Styling{
+    <link href="~/css/Dashboard.css" rel="stylesheet" />
+}
 <h2>Dashboard</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ProjectName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProjectStartDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProjectEndDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProjectDescription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProjectContractorInfo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProjectTotalBudget)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProjectName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProjectStartDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProjectEndDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProjectDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProjectContractorInfo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProjectTotalBudget)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ProjectId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProjectId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProjectId">Delete</a>
-            </td>
-        </tr>
+<div id="tabs">
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <p>
+        <a href="/projects/"> View All</a>
+    </p>
+</div>
+@foreach (var project in Model)
+{
+    <div class="cards">
+        <div class="left-card">
+            <h3>@project.ProjectName</h3>
+            <a href="/projects/details/@project.ProjectId"> See Details</a>
+        </div>
+        <div class="right-card">
+            <p>Budget: @project.ProjectTotalBudget</p>
+            <p>Expenses Go HERE</p>
+        </div>
+    </div>
+
 }
-    </tbody>
-</table>
+@*<table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectStartDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectEndDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectContractorInfo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectTotalBudget)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectStartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectEndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectContractorInfo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectTotalBudget)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ProjectId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ProjectId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ProjectId">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>*@
