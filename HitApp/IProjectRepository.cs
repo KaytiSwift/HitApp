@@ -9,6 +9,6 @@ namespace HitApp
     public interface IProjectRepository
     {
        IEnumerable<Project> GetAll();
-       // Review GetById(int id);
+       Project GetById(int projectId);
     }
 }

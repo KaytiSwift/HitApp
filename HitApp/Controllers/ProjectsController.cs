@@ -15,10 +15,17 @@ namespace HitApp.Controllers
             this.projectRepo = projectRepo;
         }
 
-        public ViewResult Index()
+        public IActionResult Index()
         {
             var model = projectRepo.GetAll();
             return View(model);
         }
+
+        public IActionResult Details(int id)
+        {
+            var model = projectRepo.GetById(id);
+            return View(model);
+        }
+
     }
 }
