@@ -9,8 +9,10 @@ namespace HitApp.Models
     public class Expense
     {
         public int ExpenseId { get; set; }
+        [Required]
         [Display(Name = "Name")]
         public string ExpenseName { get; set; }
+        [Required]
         [Display(Name = "Total Cost")]
         [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = true)]
         public double ExpenseTotalCost { get; set; }
