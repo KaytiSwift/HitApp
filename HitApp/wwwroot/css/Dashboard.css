@@ -1,14 +1,34 @@
-﻿.cards{
-    background-color:aquamarine;
+﻿.cards {
+    background-color: #b39577;
     border-radius: 10px;
-    padding:2em;
-    margin:1em 0; 
-    display:flex;
-    justify-content:space-between;
-    align-items:baseline;
+    padding: 2em;
+    margin: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    box-shadow: 5px 5px #73503c;
+    color:white;
+
 }
-.left-card h3{
-    font-size:2.5em;
+.cards a ,#tabs a {
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+    border-style: groove;
+    border-radius: 3px;
+    border-color:white;
+}
+    .cards a:hover,#tabs a:hover {
+        color: #260801;
+    }
+    #tabs a{
+         color:black;
+    }
+
+
+.left-card h3 {
+    font-size: 2.5em;
+    text-shadow: 2px 1px black;
 }
 #tabs{
     display:flex;
