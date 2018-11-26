@@ -64,5 +64,38 @@ namespace HitApp.Tests
 
             Assert.Same("Details", redirectResult.ActionName);
         }
+
+        [Fact]
+        public void Edit_Passes_Correct_Expense_To_View()
+        {
+            var expenseId = 42;
+            var expectedExpense = new Expense();
+
+            expenseRepo.GetById(expenseId).Returns(expectedExpense);
+
+            var result = underTest.Edit(expenseId);
+            var model = ((ViewResult)result).Model;
+
+            Assert.Same(expectedExpense, model);
+        }
+
+        [Fact]
+        public void Edit_Saves_Updated_Expense()
+        {
+            var expense = new Expense();
+            underTest.Edit(expense);
+
+            expenseRepo.Received().Update(expense);
+        }
+
+        [Fact]
+        public void Edit_Redirects_To_Project_Details()
+        {
+            var expense = new Expense();
+            var result = underTest.Edit(expense);
+            var redirectResult = (RedirectToActionResult)result;
+
+            Assert.Same("Details", redirectResult.ActionName);
+        }
     }
 }
