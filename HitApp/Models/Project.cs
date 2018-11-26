@@ -9,20 +9,22 @@ namespace HitApp.Models
 {
     public class Project
     {
-        public int ProjectId { get; set; }
+        public int ProjectId { get; set; }        
 
         [DisplayName("Project Name")]
         public string ProjectName { get; set; }
 
         [DisplayName("Start Date")]
-        [DisplayFormat(ApplyFormatInEditMode = true,
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = false,
                DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime ProjectStartDate { get; set; }
 
         [DisplayName("End Date")]
-        [DisplayFormat(ApplyFormatInEditMode = true,
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = false,
                DataFormatString = "{0:MM/dd/yyyy}")]
-        public DateTime ProjectEndDate { get; set; }
+        public DateTime? ProjectEndDate { get; set; }
 
         [DisplayName("Project Description")]
         public string ProjectDescription { get; set; }
@@ -31,7 +33,8 @@ namespace HitApp.Models
         public string ProjectContractorInfo { get; set; }
 
         [DisplayName("Total Budget")]
-        [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = false)]
         public double ProjectTotalBudget { get; set; }
+
     }
 }

@@ -8,6 +8,8 @@
   <ItemGroup>
     <Compile Remove="Data\Migrations\20181119145743_OneContext.cs" />
     <Compile Remove="Data\Migrations\20181119145743_OneContext.Designer.cs" />
+    <Compile Remove="Data\Migrations\20181126181644_StartAndEndDateFormattingChanges.cs" />
+    <Compile Remove="Data\Migrations\20181126181644_StartAndEndDateFormattingChanges.Designer.cs" />
 
   </ItemGroup>
 

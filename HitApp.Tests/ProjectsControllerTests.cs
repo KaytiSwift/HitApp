@@ -10,12 +10,14 @@ namespace HitApp.Tests
 {
     public class ProjectControllerTests
     {
+        private Project project;
         IProjectRepository projectRepo;
         ProjectsController underTest;
 
 
         public ProjectControllerTests()
         {
+            project = new Project();
             projectRepo = Substitute.For<IProjectRepository>();
             underTest = new ProjectsController(projectRepo);
         }
@@ -61,14 +63,72 @@ namespace HitApp.Tests
         public void Details_Returns_Correct_View()
         {
             var projectId = 42;
-            var expectedModel = new Project();
-            projectRepo.GetById(projectId).Returns(expectedModel);
+            projectRepo.GetById(projectId).Returns(project);
 
             var result = underTest.Details(projectId);
             var model = ((ViewResult)result).Model;
             
-            Assert.Same(expectedModel, model);
+            Assert.Same(project, model);
 
+        }
+
+        [Fact]
+        public void Create_And_Saves()
+        {
+
+            underTest.Create(project);
+
+            projectRepo.Received().Create(project);
+        }
+
+        [Fact]
+        public void Delete_Post_Deletes_The_Project()
+        {
+            var projectId = 42;
+
+            underTest.DeletePost(projectId);
+
+            projectRepo.Received().Delete(projectId);
+        }
+
+        [Fact]
+        public void Delete_Redirects_To_Index_After_Deleting()
+        {
+
+            var result = underTest.DeletePost(42);
+            var redirectResult = (RedirectToActionResult)result;
+
+            Assert.Same("Index", redirectResult.ActionName);
+        }
+
+        [Fact]
+        public void Edit_Passes_Exisiting_Project_To_View()
+        {
+            var projectId = 42;
+            projectRepo.GetById(projectId).Returns(project);
+
+            var result = underTest.Edit(projectId);
+            var model = ((ViewResult)result).Model;
+
+            Assert.Same(project, model);
+        }
+
+        [Fact]
+        public void Edit_Saves_Updated_Project()
+        {
+
+            underTest.Edit(project);
+
+            projectRepo.Received().Update(project);
+        }
+
+        [Fact]
+        public void Edit_Redirects_To_Index()
+        {
+            var result = underTest.Edit(project);
+            var redirectResult = (RedirectToActionResult)result;
+
+            Assert.Same("Index", redirectResult.ActionName);
         }
 
     }

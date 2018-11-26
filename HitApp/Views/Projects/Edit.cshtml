@@ -1,0 +1,59 @@
+﻿@model HitApp.Models.Project
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Project</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ProjectId" />
+            <div class="form-group">
+                <label asp-for="ProjectName" class="control-label"></label>
+                <input asp-for="ProjectName" class="form-control" />
+                <span asp-validation-for="ProjectName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectStartDate" class="control-label"></label>
+                <input asp-for="ProjectStartDate" class="form-control" />
+                <span asp-validation-for="ProjectStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectEndDate" class="control-label"></label>
+                <input asp-for="ProjectEndDate" class="form-control" />
+                <span asp-validation-for="ProjectEndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectDescription" class="control-label"></label>
+                <input asp-for="ProjectDescription" class="form-control" />
+                <span asp-validation-for="ProjectDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectContractorInfo" class="control-label"></label>
+                <input asp-for="ProjectContractorInfo" class="form-control" />
+                <span asp-validation-for="ProjectContractorInfo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectTotalBudget" class="control-label"></label>
+                <input asp-for="ProjectTotalBudget" class="form-control" />
+                <span asp-validation-for="ProjectTotalBudget" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

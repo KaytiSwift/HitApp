@@ -10,5 +10,8 @@ namespace HitApp
     {
        IEnumerable<Project> GetAll();
        Project GetById(int projectId);
+       void Create(Project project);
+       void Delete(int id);
+       void Update(Project project);
     }
 }
