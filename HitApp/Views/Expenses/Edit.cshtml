@@ -1,0 +1,44 @@
+﻿@model HitApp.Models.Expense
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Expense</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ExpenseId" />
+            <div class="form-group">
+                <label asp-for="ExpenseName" class="control-label"></label>
+                <input asp-for="ExpenseName" class="form-control" />
+                <span asp-validation-for="ExpenseName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExpenseTotalCost" class="control-label"></label>
+                <input asp-for="ExpenseTotalCost" class="form-control" />
+                <span asp-validation-for="ExpenseTotalCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExpenseNotes" class="control-label"></label>
+                <input asp-for="ExpenseNotes" class="form-control" />
+                <span asp-validation-for="ExpenseNotes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

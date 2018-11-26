@@ -44,5 +44,18 @@ namespace HitApp.Controllers
             //Dear future us: You will need to pass in project id not expense id to redirect to the right project after delete. Hope you figure it out.//
             //We're going to need to display it on preoject details page using js. Sincerely, past us.//
         }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var model = expenseRepo.GetById(id);
+            return View(model);
+        }
+        [HttpPost]
+        public IActionResult Edit(Expense expense)
+        {
+            expenseRepo.Update(expense);
+            return RedirectToAction("Details", "Projects", new { Id = expense.ExpenseId });
+        }
     }
 }
