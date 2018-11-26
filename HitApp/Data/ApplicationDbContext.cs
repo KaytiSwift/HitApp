@@ -23,8 +23,10 @@ namespace HitApp.Data
                new Project() { ProjectId = 1, ProjectName = "Bathroom", ProjectStartDate = new DateTime(2017, 9, 19), ProjectEndDate = new DateTime(2018, 1, 18), ProjectContractorInfo = "Jimmy the Tile Guy", ProjectDescription = "Paint and re-tile bathroom walls and floors", ProjectTotalBudget = 10000.00 },
                new Project() { ProjectId = 2, ProjectName = "Kitchen", ProjectStartDate = new DateTime(2017, 10, 11), ProjectEndDate = new DateTime(2018, 1, 18), ProjectContractorInfo = "Jimmy the Tile Guy", ProjectDescription = "Paint and re-tile kitchen walls and floors", ProjectTotalBudget = 12000.00 }
 
-               );
-
+                );
+            modelBuilder.Entity<Expense>().HasData(
+                new Expense() { ExpenseId = 1, ExpenseName = "TestExpense1", ExpenseNotes = "This is a test", ExpenseTotalCost = 420.00}
+                );
             base.OnModelCreating(modelBuilder);
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -36,6 +38,6 @@ namespace HitApp.Data
             base.OnConfiguring(optionsBuilder);
         }
 
-
+    
     }
 }

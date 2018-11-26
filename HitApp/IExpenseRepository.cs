@@ -9,5 +9,7 @@ namespace HitApp
     public interface IExpenseRepository
     {
         void Create(Expense expense);
+        Expense GetById(int expenseId);
+        void Delete(int expenseId);
     }
 }
