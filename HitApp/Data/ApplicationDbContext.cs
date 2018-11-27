@@ -25,7 +25,7 @@ namespace HitApp.Data
 
                 );
             modelBuilder.Entity<Expense>().HasData(
-                new Expense() { ExpenseId = 1, ExpenseName = "TestExpense1", ExpenseNotes = "This is a test", ExpenseTotalCost = 420.00}
+                new Expense() { ExpenseId = 1, ExpenseName = "TestExpense1", ExpenseNotes = "This is a test", ExpenseTotalCost = 420.00, ProjectId = 1}
                 );
             base.OnModelCreating(modelBuilder);
         }
@@ -33,7 +33,8 @@ namespace HitApp.Data
         {
             var connectionString = "Server=(localdb)\\mssqllocaldb;Database=HitAppV2;Trusted_Connection=True;";
 
-            optionsBuilder.UseSqlServer(connectionString);
+            optionsBuilder.UseSqlServer(connectionString)
+                .UseLazyLoadingProxies();
 
             base.OnConfiguring(optionsBuilder);
         }

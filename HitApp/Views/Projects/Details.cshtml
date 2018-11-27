@@ -52,3 +52,13 @@
     <a asp-action="Edit" asp-route-id="@Model.ProjectId">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
+
+<div>
+    <h4>Expenses</h4>
+    @foreach (var expense in Model.Expenses)
+    {
+        <ul>
+            <li>@expense.ExpenseName</li>
+        </ul>
+    }
+</div>

@@ -97,5 +97,19 @@ namespace HitApp.Tests
 
             Assert.Same("Details", redirectResult.ActionName);
         }
+
+        [Fact]
+        public void GetAll_Returns_All_Expenses_For_Given_Project()
+        {
+            var projectId = 42;
+            var expectedModel = new List<Expense>();
+            expenseRepo.GetExpenseForProjectId(projectId).Returns(expectedModel);
+
+            var model = underTest.Get(projectId);
+
+            Assert.Same(expectedModel, model);
+
+        }
+
     }
 }
