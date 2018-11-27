@@ -13,5 +13,12 @@ namespace HitApp.Repository
         public ExpenseRepository(ApplicationDbContext db) : base(db)
         {
         }
+
+        public IEnumerable<Expense> GetExpenseForProjectId(int projectId)
+        {
+            return from expense in GetAll()
+                   where expense.ProjectId == projectId
+                   select expense;
+        }
     }
 }
