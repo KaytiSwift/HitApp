@@ -11,7 +11,6 @@ namespace HitApp
         void Create(Expense expense);
         Expense GetById(int expenseId);
         void Delete(int expenseId);
-        void Update(Expense expense);
-        IEnumerable<Expense> GetExpenseForProjectId(int projectId);
+        void Update(Expense expense);        
     }
 }
