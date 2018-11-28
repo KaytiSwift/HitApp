@@ -49,12 +49,15 @@
     </dl>
     
 </div>
+<<<<<<< HEAD
 <div>
     <a asp-action="Edit" asp-route-id="@Model.ProjectId">Edit</a>
     <a asp-action="Delete" asp-route-id="@Model.ProjectId">Delete</a>
     <a asp-action="Index">Back to Projects</a>
 
 </div>
+=======
+>>>>>>> master
 
 <div>
     <h4>Expenses</h4>
@@ -65,3 +68,10 @@
         </ul>
     }
 </div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ProjectId">Edit</a> |
+    <a asp-controller="Projects" asp-action="Index">Back to List</a>
+</div>
+
+
