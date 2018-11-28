@@ -18,7 +18,7 @@ namespace HitApp.Controllers
 
         public IActionResult Create(int id)
         {            
-            var model = expenseRepo.AssignProjectId(id);            
+            var model = expenseRepo.AssignProjectId(id);
             return View(model);
         }
 

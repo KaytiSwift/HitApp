@@ -16,7 +16,7 @@ namespace HitApp.Repository
 
         public Expense AssignProjectId(int projectId) //this method will assign the projectId to the expense
         {
-            var expense = new Expense() { ProjectId = projectId };
+            var expense = new Expense() { ProjectId = projectId, ExpenseDatePurchased = DateTime.Today };
             return expense;
         }
 

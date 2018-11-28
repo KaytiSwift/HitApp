@@ -19,6 +19,12 @@ namespace HitApp.Models
         [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = false)]
         public double ExpenseTotalCost { get; set; }
 
+        [Display(Name = "Date Purchased")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = false,
+               DataFormatString = "{0:MM/dd/yyyy}")]
+        public DateTime ExpenseDatePurchased { get; set; }
+
         [Display(Name = "Notes")]
         public string ExpenseNotes { get; set; }
 
