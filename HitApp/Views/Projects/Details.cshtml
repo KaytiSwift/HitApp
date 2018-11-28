@@ -61,7 +61,8 @@
 
 <div>
     <a asp-action="Edit" asp-route-id="@Model.ProjectId">Edit</a> |
-    <a asp-controller="Projects" asp-action="Index">Back to List</a>
+    <a asp-controller="Projects" asp-action="Index">Back to List</a> |
+    <a asp-controller="Expenses" asp-action="Create" asp-route-id="@Model.ProjectId">Create New Expense</a>
 </div>
 
 
