@@ -14,6 +14,12 @@ namespace HitApp.Repository
         {
         }
 
+        public Expense AssignProjectId(int projectId) //this method will assign the projectId to the expense
+        {
+            var expense = new Expense() { ProjectId = projectId };
+            return expense;
+        }
+
         public IEnumerable<Expense> GetExpenseForProjectId(int projectId)
         {
             return from expense in GetAll()

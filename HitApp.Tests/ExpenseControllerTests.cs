@@ -97,5 +97,16 @@ namespace HitApp.Tests
 
             Assert.Same("Details", redirectResult.ActionName);
         }
+
+        [Fact]
+        public void Create_Sets_ProjectId_To_Correct_Project()
+        {
+            var projectId = 42;            
+            
+            underTest.Create(projectId);
+
+            expenseRepo.Received().AssignProjectId(projectId);
+
+        }
     }
 }
