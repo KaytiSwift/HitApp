@@ -34,6 +34,6 @@
     <form asp-action="Delete">
         <input type="hidden" asp-for="ExpenseId" />
         <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
+        <a asp-controller="Projects" asp-action="Details" asp-route-id="@Model.ProjectId">Back to Project</a>
     </form>
 </div>

@@ -11,10 +11,10 @@
 
 <div id="tabs">
     <p>
-        <a asp-action="Create">Create Project</a>
+        <a asp-controller="Projects" asp-action="Create">Create Project</a>
     </p>
     <p>
-        <a asp-action="Index">View All</a>
+        <a asp-controller="Projects"asp-action="Index">View All</a>
     </p>
 </div>
 @foreach (var project in Model)

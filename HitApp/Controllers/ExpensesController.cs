@@ -39,10 +39,13 @@ namespace HitApp.Controllers
         [HttpPost]
         public IActionResult DeleteExpense(int id)
         {
+            var expense = expenseRepo.GetById(id);
+            var projectId = expense.ProjectId;
+
             expenseRepo.Delete(id);
-            return RedirectToAction("Details", "Projects", new { Id = id });
+            return RedirectToAction("Details", "Projects", new { Id = projectId });
             //Dear future us: You will need to pass in project id not expense id to redirect to the right project after delete. Hope you figure it out.//
-            //We're going to need to display it on preoject details page using js. Sincerely, past us.//
+            //We're going to need to display it on project details page using js. Sincerely, past us.//
         }
 
         [HttpGet]
@@ -51,12 +54,22 @@ namespace HitApp.Controllers
             var model = expenseRepo.GetById(id);
             return View(model);
         }
+
         [HttpPost]
         public IActionResult Edit(Expense expense)
         {
+
             expenseRepo.Update(expense);
-            return RedirectToAction("Details", "Projects", new { Id = expense.ExpenseId });
+            return RedirectToAction("Details", "Projects", new { Id = expense.ProjectId });
         }
 
+        //[HttpGet]
+        //public IActionResult ReturnToProject(int id)
+        //{
+        //    var expense = expenseRepo.GetById(id);
+        //    var projectId = expense.ProjectId;
+        //    return RedirectToAction("Details", "Projects", id = projectId);
+            
+        //}
     }
 }
