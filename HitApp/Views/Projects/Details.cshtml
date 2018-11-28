@@ -47,10 +47,13 @@
             @Html.DisplayFor(model => model.ProjectTotalBudget)
         </dd>
     </dl>
+    
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.ProjectId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.ProjectId">Edit</a>
+    <a asp-action="Delete" asp-route-id="@Model.ProjectId">Delete</a>
+    <a asp-action="Index">Back to Projects</a>
+
 </div>
 
 <div>

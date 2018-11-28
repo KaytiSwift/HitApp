@@ -58,7 +58,7 @@ namespace HitApp.Controllers
             return RedirectToAction("Details", "Projects", new { Id = expense.ExpenseId });
         }
 
-        [HttpGet("{projectId}")]
+        [HttpGet]
         public IEnumerable<Expense> Get(int projectId)
         {
             return expenseRepo.GetExpenseForProjectId(projectId);

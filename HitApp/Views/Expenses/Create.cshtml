@@ -40,7 +40,9 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+   <a asp-action="Details" asp-route-id="@Model.Project.Id">Back to Project</a>
+    <a asp-area="" asp-controller="Home" asp-action="Dashboard">Dashboard</a>
+
 </div>
 
 @section Scripts {
