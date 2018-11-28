@@ -60,6 +60,7 @@
 
 <div>
     <h4>Expenses</h4>
+
     @foreach (var expense in Model.Expenses)
     {
         <ul>
@@ -68,9 +69,15 @@
             <a asp-controller="Expenses" asp-action="Delete" asp-route-id="@expense.ExpenseId">Delete</a>
         </ul>
     }
+
     <a asp-controller="Expenses" asp-action="Create" asp-route-id="@Model.ProjectId">Create</a>
 
 </div>
+ <div>
+
+ <a asp-controller="Expenses" asp-action="Create" asp-route-id="@Model.ProjectId">Create New Expense</a>
+
+ </div>
 
 
 

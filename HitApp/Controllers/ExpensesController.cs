@@ -16,17 +16,18 @@ namespace HitApp.Controllers
             this.expenseRepo = expenseRepo;
         }
 
-        public IActionResult Create()
-        {
-            return View();
+        public IActionResult Create(int id)
+        {            
+            var model = expenseRepo.AssignProjectId(id);            
+            return View(model);
         }
 
         [HttpPost]
         public IActionResult Create(Expense expense)
         {
             expenseRepo.Create(expense);
-            ModelState.Clear();
-            return View();
+            
+            return RedirectToAction("Create");
         }
 
         public IActionResult Delete(int id)
