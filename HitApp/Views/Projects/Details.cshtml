@@ -47,22 +47,39 @@
             @Html.DisplayFor(model => model.ProjectTotalBudget)
         </dd>
     </dl>
+    
 </div>
 
 <div>
+    <a asp-action="Edit" asp-route-id="@Model.ProjectId">Edit</a>
+    <a asp-action="Delete" asp-route-id="@Model.ProjectId">Delete</a>
+    <a asp-action="Index">Back to Projects</a>
+
+</div>
+
+
+<div>
     <h4>Expenses</h4>
+
     @foreach (var expense in Model.Expenses)
     {
         <ul>
             <li>@expense.ExpenseName</li>
+            <a asp-controller="Expenses" asp-action="Edit" asp-route-id="@expense.ExpenseId">Edit</a>
+            <a asp-controller="Expenses" asp-action="Delete" asp-route-id="@expense.ExpenseId">Delete</a>
         </ul>
     }
-</div>
 
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.ProjectId">Edit</a> |
-    <a asp-controller="Projects" asp-action="Index">Back to List</a> |
-    <a asp-controller="Expenses" asp-action="Create" asp-route-id="@Model.ProjectId">Create New Expense</a>
+   
+
 </div>
+ <div>
+
+ <a asp-controller="Expenses" asp-action="Create" asp-route-id="@Model.ProjectId">Create New Expense</a>
+
+ </div>
+
+
+
 
 
