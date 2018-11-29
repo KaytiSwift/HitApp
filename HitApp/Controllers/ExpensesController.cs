@@ -10,15 +10,20 @@ namespace HitApp.Controllers
     public class ExpensesController : Controller
     {
         private IExpenseRepository expenseRepo;
+        private IProjectRepository projectRepo;
 
-        public ExpensesController(IExpenseRepository expenseRepo)
+        public ExpensesController(IExpenseRepository expenseRepo, IProjectRepository projectRepo)
         {
             this.expenseRepo = expenseRepo;
+            this.projectRepo = projectRepo;
+
         }
 
         public IActionResult Create(int id)
-        {            
+        {
+            var project = projectRepo.GetById(id);
             var model = expenseRepo.AssignProjectId(id);
+            model.Project = project;
             return View(model);
         }
 
