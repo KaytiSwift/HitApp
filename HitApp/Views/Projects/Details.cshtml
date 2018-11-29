@@ -91,6 +91,9 @@
                     Date Purchased
                 </th>
                 <th>
+                    Product Link
+                </th>
+                <th>
                     Notes
                 </th>
 
@@ -106,12 +109,15 @@
                         @Html.DisplayFor(modelItem => item.ExpenseName)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.ExpenseTotalCost)
+                        @Html.DisplayFor(modelItem => item.ExpenseCost)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.ExpenseDatePurchased)
                     </td>
                     <td>
+                        <a href="@Html.DisplayFor(modelItem => item.ProductUrl)">@Html.DisplayFor(modelItem => item.ExpenseName)</a>
+                    </td>
+                    <td class="truncate">
                         @Html.DisplayFor(modelItem => item.ExpenseNotes)
                     </td>
 
