@@ -61,13 +61,13 @@
 <div>
     <h4>Expenses</h4>
 
-    @foreach (var expense in Model.Expenses)
+    @*@foreach (var expense in Model.Expenses)
     {
         <ul>
             <li>Expense Name: @expense.ExpenseName 
                 <ul>
-                    <li>Total Cost: @expense.ExpenseTotalCost</li>
-                    <li>Date Purchased: @expense.ExpenseDatePurchased</li>
+                    <li>Total Cost: $@expense.ExpenseTotalCost</li>
+                    <li>Date Purchased: @expense.ExpenseDatePurchased.ToShortDateString()</li>
                     <li>Notes: @expense.ExpenseNotes</li>
                 </ul> 
             </li>
@@ -76,9 +76,54 @@
                 <a asp-controller="Expenses" asp-action="Delete" asp-route-id="@expense.ExpenseId">Delete</a>
             </li>
         </ul>
-    }
+    }*@
 
-   
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Total Cost
+                </th>
+                <th>
+                    Date Purchased
+                </th>
+                <th>
+                    Notes
+                </th>
+
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Expenses)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ExpenseName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ExpenseTotalCost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ExpenseDatePurchased)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ExpenseNotes)
+                    </td>
+
+                    <td>
+
+                        <a asp-controller="Expenses" asp-action="Edit" asp-route-id="@item.ExpenseId">Edit</a>
+                        <a asp-controller="Expenses" asp-action="Delete" asp-route-id="@item.ExpenseId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 
 </div>
  <div>
