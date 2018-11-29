@@ -64,9 +64,17 @@
     @foreach (var expense in Model.Expenses)
     {
         <ul>
-            <li>@expense.ExpenseName</li>
-            <a asp-controller="Expenses" asp-action="Edit" asp-route-id="@expense.ExpenseId">Edit</a>
-            <a asp-controller="Expenses" asp-action="Delete" asp-route-id="@expense.ExpenseId">Delete</a>
+            <li>Expense Name: @expense.ExpenseName 
+                <ul>
+                    <li>Total Cost: @expense.ExpenseTotalCost</li>
+                    <li>Date Purchased: @expense.ExpenseDatePurchased</li>
+                    <li>Notes: @expense.ExpenseNotes</li>
+                </ul> 
+            </li>
+            <li id="expense-links">
+                <a asp-controller="Expenses" asp-action="Edit" asp-route-id="@expense.ExpenseId">Edit</a>
+                <a asp-controller="Expenses" asp-action="Delete" asp-route-id="@expense.ExpenseId">Delete</a>
+            </li>
         </ul>
     }
 
