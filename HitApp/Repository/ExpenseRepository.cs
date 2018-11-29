@@ -28,5 +28,12 @@ namespace HitApp.Repository
                    select expense;
         }
 
+        public double ExpenseTotal(Project project)
+        {
+            //Sums expense costs from list
+            double total = project.Expenses.Sum(item => item.ExpenseCost);
+            return total;
+        }
+
     }
 }

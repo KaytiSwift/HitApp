@@ -31,7 +31,10 @@ namespace HitApp.Controllers
         public IActionResult Create(Expense expense)
         {
             expenseRepo.Create(expense);
-            
+
+            var project = projectRepo.GetById(expense.ProjectId);            
+            project.ProjectTotalExpenses = expenseRepo.ExpenseTotal(project);
+            expenseRepo.Save();
             return RedirectToAction("Create");
         }
 
@@ -47,8 +50,12 @@ namespace HitApp.Controllers
         {
             var expense = expenseRepo.GetById(id);
             var projectId = expense.ProjectId;
-
             expenseRepo.Delete(id);
+
+
+            var project = projectRepo.GetById(projectId);
+            project.ProjectTotalExpenses = expenseRepo.ExpenseTotal(project);
+            expenseRepo.Save();
             return RedirectToAction("Details", "Projects", new { Id = projectId });
         }
 
@@ -64,6 +71,12 @@ namespace HitApp.Controllers
         {
 
             expenseRepo.Update(expense);
+
+
+            var project = projectRepo.GetById(expense.ProjectId);
+            project.ProjectTotalExpenses = expenseRepo.ExpenseTotal(project);
+            expenseRepo.Save();
+
             return RedirectToAction("Details", "Projects", new { Id = expense.ProjectId });
         }
 
