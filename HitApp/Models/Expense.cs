@@ -15,10 +15,10 @@ namespace HitApp.Models
         public string ExpenseName { get; set; }
 
         [Required]
-        [Display(Name = "Total Cost")]
+        [Display(Name = "Expense Cost")]
         [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = false)]
-        public double ExpenseTotalCost { get; set; }
-
+        public double ExpenseCost { get; set; }
+ 
         [Display(Name = "Date Purchased")]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = false,

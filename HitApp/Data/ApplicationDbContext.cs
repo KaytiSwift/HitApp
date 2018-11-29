@@ -25,7 +25,7 @@ namespace HitApp.Data
 
                 );
             modelBuilder.Entity<Expense>().HasData(
-                new Expense() { ExpenseId = 1, ExpenseName = "TestExpense1", ExpenseNotes = "This is a test", ExpenseTotalCost = 420.00, ProjectId = 1}
+                new Expense() { ExpenseId = 1, ExpenseName = "TestExpense1", ExpenseNotes = "This is a test", ExpenseCost = 420.00, ProjectId = 1}
                 );
             base.OnModelCreating(modelBuilder);
         }

@@ -26,5 +26,6 @@ namespace HitApp.Repository
                    where expense.ProjectId == projectId
                    select expense;
         }
+
     }
 }

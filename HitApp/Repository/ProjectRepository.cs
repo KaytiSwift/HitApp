@@ -12,6 +12,17 @@ namespace HitApp.Repository
     {
         public ProjectRepository(ApplicationDbContext db) : base(db)
         {
+
+        }
+
+        public int ExpenseTotal(List<Expense> expenses)
+        {
+            var total = 0;
+                foreach(var cost in expenses)
+            {
+                total = total + cost.ExpenseCost;
+            }
+            return total;
         }
     }
 }

@@ -38,5 +38,7 @@ namespace HitApp.Models
 
         public virtual List<Expense> Expenses { get; set; }
 
+        public int ProjectTotalExpenses { get; set; }
+
     }
 }
