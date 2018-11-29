@@ -4,14 +4,16 @@ using HitApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HitApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181129150213_AddProjectInfoIntoExpenseModel")]
+    partial class AddProjectInfoIntoExpenseModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,14 +27,14 @@ namespace HitApp.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<double>("ExpenseCost");
-
                     b.Property<DateTime>("ExpenseDatePurchased");
 
                     b.Property<string>("ExpenseName")
                         .IsRequired();
 
                     b.Property<string>("ExpenseNotes");
+
+                    b.Property<double>("ExpenseTotalCost");
 
                     b.Property<int>("ProjectId");
 
@@ -43,7 +45,7 @@ namespace HitApp.Data.Migrations
                     b.ToTable("Expenses");
 
                     b.HasData(
-                        new { ExpenseId = 1, ExpenseCost = 420.0, ExpenseDatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), ExpenseName = "TestExpense1", ExpenseNotes = "This is a test", ProjectId = 1 }
+                        new { ExpenseId = 1, ExpenseDatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), ExpenseName = "TestExpense1", ExpenseNotes = "This is a test", ExpenseTotalCost = 420.0, ProjectId = 1 }
                     );
                 });
 
