@@ -2,7 +2,7 @@
 for details on configuring this project to bundle and minify static web assets. */
 body {
     padding-top: 50px;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
     background-color: rgba(193, 193, 193, 0.2784313725490196);
    
 }
@@ -72,9 +72,23 @@ body {
 .carousel-caption p {
     font-size: 25px;
     line-height: 1.4;
-    color:black;
-    
+    color: white;
+    text-shadow: 1px 1px 1px #000;
+    background: rgba(0,0,0, 0.3);
 }
+#myCarousel{
+    bor
+}
+/*.container.body-content {
+    background: url('../images/Drawing.jpg')no-repeat center;
+    padding-left:0px;
+    padding-right:0px;
+    width:auto;
+    height:606px;
+    overflow:hidden;
+    background-size:cover;
+    background-position:inherit;
+}*/
 
 /* Make .svg files in the carousel display properly in older browsers */
 .carousel-inner .item img[src$=".svg"] {
