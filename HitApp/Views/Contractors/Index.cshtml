@@ -1,0 +1,83 @@
+﻿@model IEnumerable<HitApp.Models.Contractor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ContractorCompany)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContractorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContractorEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContractorPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContractorAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContractorCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContractorState)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContractorZip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContractorAdditionalNotes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContractorCompany)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContractorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContractorEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContractorPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContractorAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContractorCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContractorState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContractorZip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContractorAdditionalNotes)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ContractorId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ContractorId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ContractorId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

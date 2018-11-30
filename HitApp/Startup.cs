@@ -45,7 +45,8 @@ namespace HitApp
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddScoped<IProjectRepository, ProjectRepository>();
             services.AddScoped<IExpenseRepository, ExpenseRepository>();
-          
+            services.AddScoped<IContractorRepository, ContractorRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

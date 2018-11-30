@@ -12,9 +12,9 @@ namespace HitApp.Tests
     public class ExpenseControllerTests
     {
         private Expense expense;
-        private IExpenseRepository expenseRepo;
-        private ExpensesController underTest;
-        private IProjectRepository projectRepo;
+        IExpenseRepository expenseRepo;
+        ExpensesController underTest;
+        IProjectRepository projectRepo;
 
         public ExpenseControllerTests()
         {
