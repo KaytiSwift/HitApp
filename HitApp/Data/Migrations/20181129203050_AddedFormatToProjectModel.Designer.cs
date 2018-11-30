@@ -4,14 +4,16 @@ using HitApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HitApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181129203050_AddedFormatToProjectModel")]
+    partial class AddedFormatToProjectModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,8 +36,6 @@ namespace HitApp.Data.Migrations
 
                     b.Property<string>("ExpenseNotes");
 
-                    b.Property<string>("ProductUrl");
-
                     b.Property<int>("ProjectId");
 
                     b.HasKey("ExpenseId");
@@ -45,7 +45,7 @@ namespace HitApp.Data.Migrations
                     b.ToTable("Expenses");
 
                     b.HasData(
-                        new { ExpenseId = 1, ExpenseCost = 420.0, ExpenseDatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), ExpenseName = "TestExpense1", ExpenseNotes = "This is a test", ProductUrl = "https://www.homedepot.com/p/Warehouse-of-Tiffany-Stella-12-in-Bronze-Accent-Desk-Lamp-with-Red-Dragonfly-Shade-305RBTL/206800480", ProjectId = 1 }
+                        new { ExpenseId = 1, ExpenseCost = 420.0, ExpenseDatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), ExpenseName = "TestExpense1", ExpenseNotes = "This is a test", ProjectId = 1 }
                     );
                 });
 

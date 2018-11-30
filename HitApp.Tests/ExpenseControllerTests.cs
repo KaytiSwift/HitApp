@@ -14,12 +14,13 @@ namespace HitApp.Tests
         private Expense expense;
         private IExpenseRepository expenseRepo;
         private ExpensesController underTest;
+        private IProjectRepository projectRepo;
 
         public ExpenseControllerTests()
         {
             expense = new Expense();
             expenseRepo = Substitute.For<IExpenseRepository>();
-            underTest = new ExpensesController(expenseRepo);
+            underTest = new ExpensesController(expenseRepo , projectRepo);
         }
 
         [Fact]

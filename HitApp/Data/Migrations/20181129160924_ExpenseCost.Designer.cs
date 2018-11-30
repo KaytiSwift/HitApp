@@ -4,14 +4,16 @@ using HitApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HitApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181129160924_ExpenseCost")]
+    partial class ExpenseCost
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,8 +36,6 @@ namespace HitApp.Data.Migrations
 
                     b.Property<string>("ExpenseNotes");
 
-                    b.Property<string>("ProductUrl");
-
                     b.Property<int>("ProjectId");
 
                     b.HasKey("ExpenseId");
@@ -45,7 +45,7 @@ namespace HitApp.Data.Migrations
                     b.ToTable("Expenses");
 
                     b.HasData(
-                        new { ExpenseId = 1, ExpenseCost = 420.0, ExpenseDatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), ExpenseName = "TestExpense1", ExpenseNotes = "This is a test", ProductUrl = "https://www.homedepot.com/p/Warehouse-of-Tiffany-Stella-12-in-Bronze-Accent-Desk-Lamp-with-Red-Dragonfly-Shade-305RBTL/206800480", ProjectId = 1 }
+                        new { ExpenseId = 1, ExpenseCost = 420.0, ExpenseDatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), ExpenseName = "TestExpense1", ExpenseNotes = "This is a test", ProjectId = 1 }
                     );
                 });
 
@@ -67,15 +67,13 @@ namespace HitApp.Data.Migrations
 
                     b.Property<double>("ProjectTotalBudget");
 
-                    b.Property<double>("ProjectTotalExpenses");
-
                     b.HasKey("ProjectId");
 
                     b.ToTable("Projects");
 
                     b.HasData(
-                        new { ProjectId = 1, ProjectContractorInfo = "Jimmy the Tile Guy", ProjectDescription = "Paint and re-tile bathroom walls and floors", ProjectEndDate = new DateTime(2018, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectName = "Bathroom", ProjectStartDate = new DateTime(2017, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 10000.0, ProjectTotalExpenses = 0.0 },
-                        new { ProjectId = 2, ProjectContractorInfo = "Jimmy the Tile Guy", ProjectDescription = "Paint and re-tile kitchen walls and floors", ProjectEndDate = new DateTime(2018, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectName = "Kitchen", ProjectStartDate = new DateTime(2017, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 12000.0, ProjectTotalExpenses = 0.0 }
+                        new { ProjectId = 1, ProjectContractorInfo = "Jimmy the Tile Guy", ProjectDescription = "Paint and re-tile bathroom walls and floors", ProjectEndDate = new DateTime(2018, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectName = "Bathroom", ProjectStartDate = new DateTime(2017, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 10000.0 },
+                        new { ProjectId = 2, ProjectContractorInfo = "Jimmy the Tile Guy", ProjectDescription = "Paint and re-tile kitchen walls and floors", ProjectEndDate = new DateTime(2018, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectName = "Kitchen", ProjectStartDate = new DateTime(2017, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 12000.0 }
                     );
                 });
 
@@ -246,7 +244,7 @@ namespace HitApp.Data.Migrations
 
             modelBuilder.Entity("HitApp.Models.Expense", b =>
                 {
-                    b.HasOne("HitApp.Models.Project", "Project")
+                    b.HasOne("HitApp.Models.Project")
                         .WithMany("Expenses")
                         .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade);

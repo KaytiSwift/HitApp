@@ -38,5 +38,9 @@ namespace HitApp.Models
 
         public virtual List<Expense> Expenses { get; set; }
 
+        [Display(Name = "Total Expenses")]
+        [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = false)]
+        public double ProjectTotalExpenses { get; set; }
+
     }
 }

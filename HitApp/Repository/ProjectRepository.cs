@@ -12,6 +12,7 @@ namespace HitApp.Repository
     {
         public ProjectRepository(ApplicationDbContext db) : base(db)
         {
+
         }
     }
 }
