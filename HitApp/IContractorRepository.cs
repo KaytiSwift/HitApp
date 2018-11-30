@@ -11,5 +11,6 @@ namespace HitApp
         IEnumerable<Contractor> GetAll();
         void Create(Contractor contractor);
         Contractor AssignProjectIdToContractor(Project project);
+        Contractor GetById(int contractorId);
     }
 }

@@ -51,17 +51,27 @@ namespace HitApp.Tests
         }
 
         //[Fact]
-        //public void Delete_Passes_Correct_Expense_To_View()
-        //{
-        //    var contractorId = 42;
-        //    var expectedContractor = new Contractor();
+        public void Delete_Passes_Correct_Contractor_To_View()
+        {
+            var contractorId = 42;
+            var expectedContractor = new Contractor();
 
-        //    contractorRepo.GetById(contractorId).Returns(expectedContractor);
+            contractorRepo.GetById(contractorId).Returns(expectedContractor);
 
-        //    var result = underTest.Delete(contractorId);
-        //    var model = ((ViewResult)result).Model;
+            var result = underTest.Delete(contractorId);
+            var model = ((ViewResult)result).Model;
 
-        //    Assert.Same(expectedContractor, model);
-        //}
+            Assert.Same(expectedContractor, model);
+        }
+
+        [Fact]
+        public void Delete_Redirects_To_Project_Details_After_Delete()
+        {
+            var contractorId = 42;
+            var result = underTest.DeletePost(contractorId);
+            var redirectResult = (RedirectToActionResult)result;
+
+            Assert.Same("Details", redirectResult.ActionName);
+        }
     }    
 }

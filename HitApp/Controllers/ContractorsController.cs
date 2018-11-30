@@ -40,6 +40,24 @@ namespace HitApp.Controllers
             return View();
         }
 
-       
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var model = contractorRepo.GetById(id);
+            return View(model);
+        }
+
+        [ActionName("Delete")]
+        [HttpPost]
+        public IActionResult DeleteContractor(int id)
+        {
+            var contractor = contractorRepo.GetById(id);
+            var thing = contractor.ProjectContractors;
+            
+            
+            contractorRepo.Delete(id);
+            
+            return RedirectToAction("Details", "Projects", new { Id = projectId });
+        }
     }
 }
