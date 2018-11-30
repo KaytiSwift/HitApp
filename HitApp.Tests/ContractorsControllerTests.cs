@@ -49,5 +49,19 @@ namespace HitApp.Tests
 
             contractorRepo.Received().Create(contractor);
         }
+
+        //[Fact]
+        //public void Delete_Passes_Correct_Expense_To_View()
+        //{
+        //    var contractorId = 42;
+        //    var expectedContractor = new Contractor();
+
+        //    contractorRepo.GetById(contractorId).Returns(expectedContractor);
+
+        //    var result = underTest.Delete(contractorId);
+        //    var model = ((ViewResult)result).Model;
+
+        //    Assert.Same(expectedContractor, model);
+        //}
     }    
 }

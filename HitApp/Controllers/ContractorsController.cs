@@ -18,12 +18,14 @@ namespace HitApp.Controllers
             this.projectRepo = projectRepo;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             var model = contractorRepo.GetAll();
             return View(model);
         }
 
+        [HttpGet]
         public IActionResult Create(int id)
         {
             var project = projectRepo.GetById(id);
