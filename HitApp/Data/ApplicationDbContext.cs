@@ -25,7 +25,7 @@ namespace HitApp.Data
 
                 );
             modelBuilder.Entity<Expense>().HasData(
-                new Expense() { ExpenseId = 1, ExpenseName = "TestExpense1", ExpenseNotes = "This is a test", ExpenseCost = 420.00, ProjectId = 1}
+                new Expense() { ExpenseId = 1, ExpenseName = "TestExpense1", ExpenseNotes = "This is a test", ExpenseCost = 420.00, ProjectId = 1, ProductUrl = "https://www.homedepot.com/p/Warehouse-of-Tiffany-Stella-12-in-Bronze-Accent-Desk-Lamp-with-Red-Dragonfly-Shade-305RBTL/206800480" }
                 );
             base.OnModelCreating(modelBuilder);
         }

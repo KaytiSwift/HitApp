@@ -16,7 +16,21 @@ body {
 
 #project-id {
     display: none;
-}    
+} 
+
+#expense-links {
+    list-style: none;
+}
+
+table {
+    white-space: nowrap;
+}
+
+.truncate {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
