@@ -36,6 +36,7 @@ namespace HitApp.Controllers
         [HttpPost]
         public IActionResult Create(Project project)
         {
+
             projectRepo.Create(project);
             return RedirectToAction("Index");
         }

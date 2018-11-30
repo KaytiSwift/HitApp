@@ -6,11 +6,6 @@ namespace HitApp.Data.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "ExpenseTotalCost",
-                table: "Expenses",
-                newName: "ExpenseCost");
-
             migrationBuilder.AddColumn<string>(
                 name: "ProductUrl",
                 table: "Expenses",
@@ -29,11 +24,6 @@ namespace HitApp.Data.Migrations
             migrationBuilder.DropColumn(
                 name: "ProductUrl",
                 table: "Expenses");
-
-            migrationBuilder.RenameColumn(
-                name: "ExpenseCost",
-                table: "Expenses",
-                newName: "ExpenseTotalCost");
         }
     }
 }
