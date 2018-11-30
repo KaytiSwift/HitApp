@@ -4,6 +4,18 @@ body {
     padding-top: 50px;
     padding-bottom: 20px;
     background-color: rgba(193, 193, 193, 0.2784313725490196);
+   
+}
+.Index {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: rgba(193, 193, 193, 0.2784313725490196);
+    background: url('../images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    /*filter:blur (3px);*/  
+}
+.row{
+    padding-left:400px;
 }
 
 .navbar-inverse {
@@ -14,6 +26,12 @@ body {
         color: white;
     }
 
+.col-md-3 img {
+    
+    width: 100%;
+    height:25%;
+    
+}
 #project-id {
     display: none;
 }    
@@ -24,11 +42,38 @@ body {
     padding-left: 15px;
     padding-right: 15px;
 }
-
+.Article p {
+    display: flex;
+    justify-content: center;
+    padding: 4rem;
+    width: 100%;
+    background-color: black;
+    margin: 0 0 50px;
+}
+.Welcome p {
+   
+    text-align: right;
+    background: url('../images/timallen.jpg')no-repeat;
+}
+.Plan p{
+    background: url('../images/People4.jpg')no-repeat center center;
+}
+.Supplys p {
+    background: url('../images/Work.jpg')no-repeat center center;
+}
+.Contractors p {
+    background: url('../images/Contractor.jpg')no-repeat center center;
+}
+.Help p {
+    background: url('../images/People3.jpg')no-repeat center center;
+    
+}
 /* Carousel */
 .carousel-caption p {
-    font-size: 20px;
+    font-size: 25px;
     line-height: 1.4;
+    color:black;
+    
 }
 
 /* Make .svg files in the carousel display properly in older browsers */
