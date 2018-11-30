@@ -79,16 +79,16 @@ body {
 #myCarousel{
     bor
 }
-/*.container.body-content {
+.container.body-content {
     background: url('../images/Drawing.jpg')no-repeat center;
     padding-left:0px;
     padding-right:0px;
     width:auto;
-    height:606px;
+    height:605px;
     overflow:hidden;
     background-size:cover;
-    background-position:inherit;
-}*/
+    background-position:top;
+}
 
 /* Make .svg files in the carousel display properly in older browsers */
 .carousel-inner .item img[src$=".svg"] {
