@@ -10,12 +10,12 @@ namespace HitApp.Data.Migrations
             migrationBuilder.AddColumn<int>(
                 name: "ProjectContractorId",
                 table: "Projects",
-                nullable: true);
+                nullable: false);
 
             migrationBuilder.AddColumn<int>(
                 name: "ProjectContractorId",
                 table: "Contractors",
-                nullable: true);
+                nullable: false);
 
             migrationBuilder.CreateTable(
                 name: "ProjectContractors",

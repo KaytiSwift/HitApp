@@ -35,7 +35,6 @@ namespace HitApp.Data
             modelBuilder.Entity<ProjectContractor>().HasData(
                 new ProjectContractor() {ProjectContractorId = 1, ContractorId = 1, ProjectId = 1},
                 new ProjectContractor() { ProjectContractorId = 2, ContractorId = 1, ProjectId = 2 }
-
                 );
             base.OnModelCreating(modelBuilder);
         }
