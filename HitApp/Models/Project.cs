@@ -10,6 +10,8 @@ namespace HitApp.Models
     {
         public int ProjectId { get; set; }        
 
+        public string ProjectOwnerId { get; set; }
+
         [Display(Name="Project Name")]
         public string ProjectName { get; set; }
 
@@ -41,6 +43,8 @@ namespace HitApp.Models
         [Display(Name = "Total Expenses")]
         [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = false)]
         public double ProjectTotalExpenses { get; set; }
-
+        
+        
+        public virtual List<ProjectContractor> ProjectContractors { get; set; }
     }
 }
