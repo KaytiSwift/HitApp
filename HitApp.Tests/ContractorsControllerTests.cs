@@ -12,9 +12,9 @@ namespace HitApp.Tests
     public class ContractorsControllerTests
     {
         private Contractor contractor;
-        IContractorRepository contractorRepo;
-        ContractorsController underTest;
-        IProjectRepository projectRepo;
+        private IContractorRepository contractorRepo;
+        private ContractorsController underTest;
+        private IProjectRepository projectRepo;
 
 
         public ContractorsControllerTests()
@@ -49,17 +49,5 @@ namespace HitApp.Tests
 
             contractorRepo.Received().Create(contractor);
         }
-
-        [Fact]
-        public void Create_Sets_ProjectId_In_Create_Contractor_To_Correct_Project()
-        {
-            var projectId = 42;
-            underTest.Create(projectId);
-
-            contractorRepo.Received().AssignProjectId(projectId);
-
-        }
-    }
-
-    
+    }    
 }

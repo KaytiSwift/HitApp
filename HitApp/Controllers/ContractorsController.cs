@@ -24,15 +24,20 @@ namespace HitApp.Controllers
             return View(model);
         }
 
+        public IActionResult Create(int id)
+        {
+            var project = projectRepo.GetById(id);
+            var model = contractorRepo.AssignProjectIdToContractor(project);
+            return View(model);
+        }
+
+        [HttpPost]
         public IActionResult Create(Contractor contractor)
         {
             contractorRepo.Create(contractor);
             return View();
         }
 
-        public IActionResult Create(int projectId)
-        {
-            return View();
-        }
+       
     }
 }

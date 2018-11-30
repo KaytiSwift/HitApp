@@ -1,0 +1,73 @@
+﻿@model HitApp.Models.Contractor
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Contractor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ContractorCompany" class="control-label"></label>
+                <input asp-for="ContractorCompany" class="form-control" />
+                <span asp-validation-for="ContractorCompany" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContractorName" class="control-label"></label>
+                <input asp-for="ContractorName" class="form-control" />
+                <span asp-validation-for="ContractorName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContractorEmail" class="control-label"></label>
+                <input asp-for="ContractorEmail" class="form-control" />
+                <span asp-validation-for="ContractorEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContractorPhone" class="control-label"></label>
+                <input asp-for="ContractorPhone" class="form-control" />
+                <span asp-validation-for="ContractorPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContractorAddress" class="control-label"></label>
+                <input asp-for="ContractorAddress" class="form-control" />
+                <span asp-validation-for="ContractorAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContractorCity" class="control-label"></label>
+                <input asp-for="ContractorCity" class="form-control" />
+                <span asp-validation-for="ContractorCity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContractorState" class="control-label"></label>
+                <input asp-for="ContractorState" class="form-control" />
+                <span asp-validation-for="ContractorState" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContractorZip" class="control-label"></label>
+                <input asp-for="ContractorZip" class="form-control" />
+                <span asp-validation-for="ContractorZip" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContractorAdditionalNotes" class="control-label"></label>
+                <input asp-for="ContractorAdditionalNotes" class="form-control" />
+                <span asp-validation-for="ContractorAdditionalNotes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
