@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace HitApp.Controllers
@@ -19,6 +20,10 @@ namespace HitApp.Controllers
         public IActionResult Index()
         {
             var model = projectRepo.GetAll();
+            model = from project in model
+                   where project.ProjectOwnerId == User.FindFirstValue(ClaimTypes.NameIdentifier) //must be true
+                   orderby project.ProjectId // sorts by the date
+                   select project;
             return View(model);
         }
 
@@ -36,7 +41,7 @@ namespace HitApp.Controllers
         [HttpPost]
         public IActionResult Create(Project project)
         {
-
+            project.ProjectOwnerId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             projectRepo.Create(project);
             return RedirectToAction("Index");
         }
