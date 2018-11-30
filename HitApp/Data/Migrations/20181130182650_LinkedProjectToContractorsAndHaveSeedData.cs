@@ -6,29 +6,6 @@ namespace HitApp.Data.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Contractors_ProjectContractors_ProjectContractorId",
-                table: "Contractors");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_Projects_ProjectContractors_ProjectContractorId",
-                table: "Projects");
-
-            migrationBuilder.DropIndex(
-                name: "IX_Projects_ProjectContractorId",
-                table: "Projects");
-
-            migrationBuilder.DropIndex(
-                name: "IX_Contractors_ProjectContractorId",
-                table: "Contractors");
-
-            migrationBuilder.DropColumn(
-                name: "ProjectContractorId",
-                table: "Projects");
-
-            migrationBuilder.DropColumn(
-                name: "ProjectContractorId",
-                table: "Contractors");
 
             migrationBuilder.AddColumn<string>(
                 name: "ProjectOwnerId",
@@ -83,42 +60,6 @@ namespace HitApp.Data.Migrations
             migrationBuilder.DropColumn(
                 name: "ProjectOwnerId",
                 table: "Projects");
-
-            migrationBuilder.AddColumn<int>(
-                name: "ProjectContractorId",
-                table: "Projects",
-                nullable: true);
-
-            migrationBuilder.AddColumn<int>(
-                name: "ProjectContractorId",
-                table: "Contractors",
-                nullable: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Projects_ProjectContractorId",
-                table: "Projects",
-                column: "ProjectContractorId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Contractors_ProjectContractorId",
-                table: "Contractors",
-                column: "ProjectContractorId");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Contractors_ProjectContractors_ProjectContractorId",
-                table: "Contractors",
-                column: "ProjectContractorId",
-                principalTable: "ProjectContractors",
-                principalColumn: "ProjectContractorId",
-                onDelete: ReferentialAction.Restrict);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Projects_ProjectContractors_ProjectContractorId",
-                table: "Projects",
-                column: "ProjectContractorId",
-                principalTable: "ProjectContractors",
-                principalColumn: "ProjectContractorId",
-                onDelete: ReferentialAction.Restrict);
         }
     }
 }
