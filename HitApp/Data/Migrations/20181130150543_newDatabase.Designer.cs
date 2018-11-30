@@ -4,58 +4,22 @@ using HitApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HitApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181130150543_newDatabase")]
+    partial class newDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("HitApp.Models.Contractor", b =>
-                {
-                    b.Property<int>("ContractorId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ContractorAdditionalNotes");
-
-                    b.Property<string>("ContractorAddress");
-
-                    b.Property<string>("ContractorCity");
-
-                    b.Property<string>("ContractorCompany");
-
-                    b.Property<string>("ContractorEmail");
-
-                    b.Property<string>("ContractorName")
-                        .IsRequired();
-
-                    b.Property<string>("ContractorPhone");
-
-                    b.Property<string>("ContractorState");
-
-                    b.Property<int>("ContractorZip");
-
-                    b.Property<int?>("ProjectContractorId");
-
-                    b.HasKey("ContractorId");
-
-                    b.HasIndex("ProjectContractorId");
-
-                    b.ToTable("Contractors");
-
-                    b.HasData(
-                        new { ContractorId = 1, ContractorAdditionalNotes = "Jimmy the tile guy", ContractorCity = "Madison", ContractorCompany = "Self", ContractorEmail = "tectile@live.com", ContractorName = "Jimmy McDermitt", ContractorState = "Ohio", ContractorZip = 0 }
-                    );
-                });
 
             modelBuilder.Entity("HitApp.Models.Expense", b =>
                 {
@@ -93,8 +57,6 @@ namespace HitApp.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("ProjectContractorId");
-
                     b.Property<string>("ProjectContractorInfo");
 
                     b.Property<string>("ProjectDescription");
@@ -111,33 +73,11 @@ namespace HitApp.Data.Migrations
 
                     b.HasKey("ProjectId");
 
-                    b.HasIndex("ProjectContractorId");
-
                     b.ToTable("Projects");
 
                     b.HasData(
                         new { ProjectId = 1, ProjectContractorInfo = "Jimmy the Tile Guy", ProjectDescription = "Paint and re-tile bathroom walls and floors", ProjectEndDate = new DateTime(2018, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectName = "Bathroom", ProjectStartDate = new DateTime(2017, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 10000.0, ProjectTotalExpenses = 0.0 },
                         new { ProjectId = 2, ProjectContractorInfo = "Jimmy the Tile Guy", ProjectDescription = "Paint and re-tile kitchen walls and floors", ProjectEndDate = new DateTime(2018, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectName = "Kitchen", ProjectStartDate = new DateTime(2017, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 12000.0, ProjectTotalExpenses = 0.0 }
-                    );
-                });
-
-            modelBuilder.Entity("HitApp.Models.ProjectContractor", b =>
-                {
-                    b.Property<int>("ProjectContractorId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("ContractorId");
-
-                    b.Property<int>("ProjectId");
-
-                    b.HasKey("ProjectContractorId");
-
-                    b.ToTable("ProjectContractors");
-
-                    b.HasData(
-                        new { ProjectContractorId = 1, ContractorId = 1, ProjectId = 1 },
-                        new { ProjectContractorId = 2, ContractorId = 1, ProjectId = 2 }
                     );
                 });
 
@@ -306,26 +246,12 @@ namespace HitApp.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("HitApp.Models.Contractor", b =>
-                {
-                    b.HasOne("HitApp.Models.ProjectContractor")
-                        .WithMany("Contractors")
-                        .HasForeignKey("ProjectContractorId");
-                });
-
             modelBuilder.Entity("HitApp.Models.Expense", b =>
                 {
                     b.HasOne("HitApp.Models.Project", "Project")
                         .WithMany("Expenses")
                         .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("HitApp.Models.Project", b =>
-                {
-                    b.HasOne("HitApp.Models.ProjectContractor")
-                        .WithMany("Projects")
-                        .HasForeignKey("ProjectContractorId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
