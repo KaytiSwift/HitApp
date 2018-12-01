@@ -42,5 +42,6 @@ namespace HitApp.Models
         [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = false)]
         public double ProjectTotalExpenses { get; set; }
 
+
     }
 }
