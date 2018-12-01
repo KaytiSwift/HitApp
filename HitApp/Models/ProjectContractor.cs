@@ -10,9 +10,9 @@ namespace HitApp.Models
         public int ProjectContractorId { get; set; }
 
         public int ProjectId { get; set; }
-        public virtual List<Project> Projects { get; set; }
+        public virtual Project Projects { get; set; }
 
         public int ContractorId { get; set; }
-        public virtual List<Contractor> Contractors { get; set; }
+        public virtual Contractor Contractors { get; set; }
     }
 }

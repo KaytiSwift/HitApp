@@ -33,5 +33,7 @@ namespace HitApp.Models
 
         [Display(Name = "Additional Notes")]
         public string ContractorAdditionalNotes { get; set; }
+        
+        public virtual List<ProjectContractor> ProjectContractors { get; set; }
     }
 }
