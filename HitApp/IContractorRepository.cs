@@ -13,5 +13,6 @@ namespace HitApp
         Contractor AssignProjectIdToContractor(Project project);
         Contractor GetById(int contractorId);
         void Delete(int id);
+        void Update(Contractor contractor);
     }
 }

@@ -45,7 +45,7 @@ namespace HitApp.Tests
         [Fact]
         public void Create_And_Saves_Contractor()
         {
-            underTest.Create(contractor);
+            underTest.Create(contractor , 1);
 
             contractorRepo.Received().Create(contractor);
         }
@@ -71,7 +71,42 @@ namespace HitApp.Tests
             var result = underTest.DeletePost(contractorId);
             var redirectResult = (RedirectToActionResult)result;
 
-            Assert.Same("Details", redirectResult.ActionName);
+            Assert.Same("Index", redirectResult.ActionName);
         }
+
+        [Fact]
+        public void Edit_Passes_Correct_Contractor_To_View()
+        {
+            var contractorId = 42;
+            var expectedContractor = new Contractor();
+
+            contractorRepo.GetById(contractorId).Returns(expectedContractor);
+
+            var result = underTest.Edit(contractorId);
+            var model = ((ViewResult)result).Model;
+
+            Assert.Same(expectedContractor, model);
+        }
+
+        [Fact]
+        public void Edit_Saves_Updated_Contractor()
+        {
+            var contractor = new Contractor();
+            underTest.Edit(contractor);
+
+            contractorRepo.Received().Update(contractor);
+        }
+
+        [Fact]
+        public void Edit_Redirects_To_Contractor_Index()
+        {
+            var contractor = new Contractor();
+            var result = underTest.Edit(contractor);
+            var redirectResult = (RedirectToActionResult)result;
+
+            Assert.Same("Index", redirectResult.ActionName);
+        }
+
+
     }    
 }

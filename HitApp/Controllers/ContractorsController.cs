@@ -34,10 +34,11 @@ namespace HitApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Contractor contractor)
-        {
+        public IActionResult Create(Contractor contractor, int id)
+        {          
             contractorRepo.Create(contractor);
-            return View();
+            
+            return RedirectToAction("Details", "Projects", new { Id = id });
         }
 
         [HttpGet]
@@ -49,15 +50,27 @@ namespace HitApp.Controllers
 
         [ActionName("Delete")]
         [HttpPost]
-        public IActionResult DeleteContractor(int id)
-        {
-            var contractor = contractorRepo.GetById(id);
-            var thing = contractor.ProjectContractors;
-            
-            
+        public IActionResult DeletePost(int id)
+        {        
             contractorRepo.Delete(id);
             
-            return RedirectToAction("Details", "Projects", new { Id = projectId });
+            return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public IActionResult Edit(int contractorId)
+        {
+            var model = contractorRepo.GetById(contractorId);
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Contractor contractor)
+        {
+            contractorRepo.Update(contractor);
+            return RedirectToAction("Index");
+
+        }
+
     }
 }
