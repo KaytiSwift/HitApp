@@ -4,10 +4,10 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>@Model.ProjectName Details</h2>
 
 <div>
-    <h4>Project</h4>
+    <h4>Project Info</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -57,7 +57,60 @@
 
 </div>
 
-<div><a asp-controller="Contractors" asp-action="Create" asp-route-id="@Model.ProjectId">Add Contractor</a></div>
+<div>
+    <h4>Contractors</h4>
+    <table class="table" id="contractor-table">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Company
+                </th>
+                <th>
+                    Phone
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Notes
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ProjectContractors)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contractors.ContractorName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contractors.ContractorCompany)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contractors.ContractorPhone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contractors.ContractorEmail)
+                    </td>
+                    <td title="@Html.DisplayFor(modelItem => item.Contractors.ContractorAdditionalNotes)" class="truncate">
+                        @Html.DisplayFor(modelItem => item.Contractors.ContractorAdditionalNotes)
+                    </td>
+
+                    <td>
+
+                        <a asp-controller="Contractors" asp-action="Edit" asp-route-id="@item.Contractors.ContractorId">Edit</a>
+                        <a asp-controller="Contractos" asp-action="Delete" asp-route-id="@item.Contractors.ContractorId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <a asp-controller="Contractors" asp-action="Create" asp-route-id="@Model.ProjectId">Add Contractor</a>
+    </table>
+</div>
 
 <div>
     <h4>Expenses   Total = @Html.DisplayFor(model => model.ProjectTotalExpenses)</h4>

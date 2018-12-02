@@ -107,6 +107,19 @@ namespace HitApp.Tests
             Assert.Same("Index", redirectResult.ActionName);
         }
 
+        [Fact]
+        public void Details_Returns_Correct_View()
+        {
+            var contractorId = 42;
+            contractorRepo.GetById(contractorId).Returns(contractor);
+
+            var result = underTest.Details(contractorId);
+            var model = ((ViewResult)result).Model;
+
+            Assert.Same(contractor, model);
+
+        }
+
 
     }    
 }

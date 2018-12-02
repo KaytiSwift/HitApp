@@ -58,9 +58,9 @@ namespace HitApp.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit(int contractorId)
+        public IActionResult Edit(int id)
         {
-            var model = contractorRepo.GetById(contractorId);
+            var model = contractorRepo.GetById(id);
             return View(model);
         }
 
@@ -68,9 +68,14 @@ namespace HitApp.Controllers
         public IActionResult Edit(Contractor contractor)
         {
             contractorRepo.Update(contractor);
-            return RedirectToAction("Index");
-
+            return RedirectToAction("Details" , new { Id = contractor.ContractorId });
         }
 
+        [HttpGet]
+        public IActionResult Details(int id)
+        {
+            var model = contractorRepo.GetById(id);
+            return View(model);
+        }
     }
 }
