@@ -59,59 +59,63 @@
 
 <div>
     <h4>Contractors</h4>
-    <table class="table" id="contractor-table">
-        <thead>
-            <tr>
-                <th>
-                    Name
-                </th>
-                <th>
-                    Company
-                </th>
-                <th>
-                    Phone
-                </th>
-                <th>
-                    Email
-                </th>
-                <th>
-                    Notes
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.ProjectContractors)
-            {
+    <a asp-controller="Contractors" asp-action="Create" asp-route-id="@Model.ProjectId"><i class="far fa-plus-square"></i> Add Contractor</a>
+    <button onclick="showContractors()">Show Contractors</button>
+
+    <div id="contractor">
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Contractors.ContractorName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Contractors.ContractorCompany)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Contractors.ContractorPhone)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Contractors.ContractorEmail)
-                    </td>
-                    <td title="@Html.DisplayFor(modelItem => item.Contractors.ContractorAdditionalNotes)" class="truncate">
-                        @Html.DisplayFor(modelItem => item.Contractors.ContractorAdditionalNotes)
-                    </td>
-
-                    <td>
-
-                        <a asp-controller="Contractors" asp-action="Edit" asp-route-id="@item.Contractors.ContractorId"><i class="far fa-edit"></i></a>
-                        <a asp-controller="Contractos" asp-action="Delete" asp-route-id="@item.Contractors.ContractorId"><i class="fas fa-times"></i></a>
-                        <a asp-controller="Contractors" asp-action="Details" asp-route-id="@item.Contractors.ContractorId"><i class="far fa-list-alt"></i></a>
-
-                    </td>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Company
+                    </th>
+                    <th>
+                        Phone
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Notes
+                    </th>
+                    <th></th>
                 </tr>
-            }
-        </tbody>
-        <a asp-controller="Contractors" asp-action="Create" asp-route-id="@Model.ProjectId"><i class="far fa-plus-square"></i> Add Contractor</a>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.ProjectContractors)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Contractors.ContractorName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Contractors.ContractorCompany)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Contractors.ContractorPhone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Contractors.ContractorEmail)
+                        </td>
+                        <td title="@Html.DisplayFor(modelItem => item.Contractors.ContractorAdditionalNotes)" class="truncate">
+                            @Html.DisplayFor(modelItem => item.Contractors.ContractorAdditionalNotes)
+                        </td>
+
+                        <td>
+
+                            <a asp-controller="Contractors" asp-action="Edit" asp-route-id="@item.Contractors.ContractorId"><i class="far fa-edit"></i></a>
+                            <a asp-controller="Contractos" asp-action="Delete" asp-route-id="@item.Contractors.ContractorId"><i class="fas fa-times"></i></a>
+                            <a asp-controller="Contractors" asp-action="Details" asp-route-id="@item.Contractors.ContractorId"><i class="far fa-list-alt"></i></a>
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <div>

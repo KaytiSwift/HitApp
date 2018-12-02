@@ -62,3 +62,7 @@ table {
         display: none;
     }
 }
+
+#contractor{
+    display:none;
+}
