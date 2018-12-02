@@ -51,8 +51,8 @@
 </div>
 
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.ProjectId">Edit</a>
-    <a asp-action="Delete" asp-route-id="@Model.ProjectId">Delete</a>
+    <a asp-action="Edit" asp-route-id="@Model.ProjectId"><i class="far fa-edit"></i></a>
+    <a asp-action="Delete" asp-route-id="@Model.ProjectId"><i class="fas fa-times"></i></a>
     <a asp-action="Index">Back to Projects</a>
 
 </div>
@@ -102,13 +102,15 @@
 
                     <td>
 
-                        <a asp-controller="Contractors" asp-action="Edit" asp-route-id="@item.Contractors.ContractorId">Edit</a>
-                        <a asp-controller="Contractos" asp-action="Delete" asp-route-id="@item.Contractors.ContractorId">Delete</a>
+                        <a asp-controller="Contractors" asp-action="Edit" asp-route-id="@item.Contractors.ContractorId"><i class="far fa-edit"></i></a>
+                        <a asp-controller="Contractos" asp-action="Delete" asp-route-id="@item.Contractors.ContractorId"><i class="fas fa-times"></i></a>
+                        <a asp-controller="Contractors" asp-action="Details" asp-route-id="@item.Contractors.ContractorId"><i class="far fa-list-alt"></i></a>
+
                     </td>
                 </tr>
             }
         </tbody>
-        <a asp-controller="Contractors" asp-action="Create" asp-route-id="@Model.ProjectId">Add Contractor</a>
+        <a asp-controller="Contractors" asp-action="Create" asp-route-id="@Model.ProjectId"><i class="far fa-plus-square"></i> Add Contractor</a>
     </table>
 </div>
 
@@ -177,8 +179,8 @@
 
                     <td>
 
-                        <a asp-controller="Expenses" asp-action="Edit" asp-route-id="@item.ExpenseId">Edit</a>
-                        <a asp-controller="Expenses" asp-action="Delete" asp-route-id="@item.ExpenseId">Delete</a>
+                        <a asp-controller="Expenses" asp-action="Edit" asp-route-id="@item.ExpenseId"><i class="far fa-edit"></i></a>
+                        <a asp-controller="Expenses" asp-action="Delete" asp-route-id="@item.ExpenseId"><i class="fas fa-times"></i></a>
                     </td>
                 </tr>
             }
@@ -188,7 +190,7 @@
 </div>
  <div>
 
- <a asp-controller="Expenses" asp-action="Create" asp-route-id="@Model.ProjectId">Create New Expense</a>
+ <a asp-controller="Expenses" asp-action="Create" asp-route-id="@Model.ProjectId"><i class="far fa-plus-square"></i> Add Expense</a>
 
  </div>
 
