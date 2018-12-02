@@ -33,6 +33,7 @@ namespace HitApp.Controllers
             return View();
         }
 
+
         public IActionResult Dashboard()
         {
             var model = projectRepo.GetAll();
@@ -57,6 +58,7 @@ namespace HitApp.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
