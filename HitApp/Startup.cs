@@ -58,6 +58,7 @@ namespace HitApp
             services.AddScoped<IProjectRepository, ProjectRepository>();
             services.AddScoped<IExpenseRepository, ExpenseRepository>();
             services.AddScoped<IContractorRepository, ContractorRepository>();
+            services.AddScoped<IProjectContractorRepository, ProjectContractorRepository>();
 
         }
 

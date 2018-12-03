@@ -6,15 +6,15 @@
 
 
 
-function showContractors() {
-    //document.getElementById("contractor").style.display = "none";
+//function showContractors() {
+//    //document.getElementById("contractor").style.display = "none";
 
-    const table = document.getElementById('contractor');
-    console.log(table);
-    console.log(table.style.display);
-    if (table.style.display = 'none') {
-        table.style.display = 'block';
-    } else {
-        table.style.display = 'none';
-    }
-}
+//    const table = document.getElementById('contractor');
+//    console.log(table);
+//    console.log(table.style.display);
+//    if (table.style.display = 'none') {
+//        table.style.display = 'block';
+//    } else {
+//        table.style.display = 'none';
+//    }
+//}

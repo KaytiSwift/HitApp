@@ -12,10 +12,13 @@ namespace HitApp.Controllers.Api
     public class ContractorsController : ControllerBase
     {
         private IContractorRepository contractorRepo;
+        private IProjectContractorRepository projectContractorRepo;
 
-        public ContractorsController(IContractorRepository contractorRepo)
+        public ContractorsController(IContractorRepository contractorRepo, IProjectContractorRepository projectContractorRepo)
         {
             this.contractorRepo = contractorRepo;
+            this.projectContractorRepo = projectContractorRepo;
+
         }
 
         // GET list of comments for each Todo
@@ -26,11 +29,12 @@ namespace HitApp.Controllers.Api
             return contractors;
         }
 
-        //[HttpPost]  
-        //public bool Remove([FromBody]ProjectContractor projectontractor, int id /*project Id*/)
-        //{
-        //    contractorRepo.Delete(projectContractors);
-        //    return true;
-        //}
-    }
+        [HttpPost("{id}")]
+        public bool Delete(int id)
+        {
+            projectContractorRepo.Delete(id);
+            return true;
+        }
+
+    } 
 }

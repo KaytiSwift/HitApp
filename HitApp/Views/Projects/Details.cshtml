@@ -3,6 +3,9 @@
 @{
     ViewData["Title"] = "Details";
 }
+@section Contractors{
+    <script src="~/js/Contractors.js"></script>
+}
 
 <h2>@Model.ProjectName Details</h2>
 
@@ -65,7 +68,7 @@
     <div id="contractor">
         <table class="table">
             <thead>
-                <tr>
+                <tr id="contractor-header">
                     <th>
                         Name
                     </th>
@@ -87,10 +90,13 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="contractor-list">
                 @foreach (var item in Model.ProjectContractors)
                 {
-                    <tr>
+                    <script>
+                        var projectContractorId = @item.ProjectContractorId;
+                    </script>
+                    <tr id="contractor-data">
                         <td>
                             @Html.DisplayFor(modelItem => item.Contractors.ContractorName)
                         </td>
@@ -111,9 +117,9 @@
                         </td>
 
                         <td>
-                            
+
                             <a asp-controller="Contractors" asp-action="Edit" asp-route-id="@item.Contractors.ContractorId"><i class="far fa-edit"></i></a>
-                            <a asp-controller="Contractors" asp-action="Remove" asp-route-id="@item.ProjectContractorId ."><i class="fas fa-times"></i></a>
+                            <button id="remove-contractor"><i class="fas fa-times"></i></button>
                             <a asp-controller="Contractors" asp-action="Details" asp-route-id="@item.Contractors.ContractorId"><i class="far fa-list-alt"></i></a>
 
                         </td>

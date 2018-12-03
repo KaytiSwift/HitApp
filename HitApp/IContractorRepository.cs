@@ -16,5 +16,6 @@ namespace HitApp
         void Update(Contractor contractor);
         Contractor LinkProjectIdToProjectContractor(Contractor contractor, int projectId);
         IEnumerable<Contractor> GetContractorsForProjectId(int projectId);
+
     }
 }
