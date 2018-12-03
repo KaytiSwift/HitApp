@@ -104,7 +104,7 @@ namespace HitApp.Tests
             var result = underTest.Edit(contractor);
             var redirectResult = (RedirectToActionResult)result;
 
-            Assert.Same("Index", redirectResult.ActionName);
+            Assert.Same("Details", redirectResult.ActionName);
         }
 
         [Fact]

@@ -26,18 +26,17 @@ namespace HitApp.Controllers
         }
 
         [HttpGet]
-        public IActionResult Create(int id)
-        {
-            var project = projectRepo.GetById(id);
-            var model = contractorRepo.AssignProjectIdToContractor(project);
-            return View(model);
+        public IActionResult Create()
+        {           
+            return View();
         }
 
         [HttpPost]
         public IActionResult Create(Contractor contractor, int id)
-        {          
+        {
             contractorRepo.Create(contractor);
-            
+            contractorRepo.LinkProjectIdToProjectContractor(contractor, id);
+
             return RedirectToAction("Details", "Projects", new { Id = id });
         }
 

@@ -14,18 +14,31 @@ namespace HitApp.Repository
         {
         }
 
-        public Contractor AssignProjectIdToContractor(Project project)
+        public IEnumerable<Contractor> GetContractorsForProjectId(int projectId)
         {
-            project.ProjectContractors = new List<ProjectContractor>()
-            {
-                new ProjectContractor() {ProjectId = project.ProjectId}
-            };
-
-            var contractor = new Contractor() { ProjectContractors = project.ProjectContractors };
-
-            return contractor;
-           
+            return from contractors in GetAll()
+                   from projectContractor in contractors.ProjectContractors
+                   where projectContractor.ProjectId == projectId
+                   select projectContractor.Contractors;
         }
+
+
        
+        public Contractor LinkProjectIdToProjectContractor(Contractor contractor, int projectId) 
+            {
+                var projCont = new ProjectContractor()
+                {
+                    ProjectId = projectId,
+                    ContractorId = contractor.ContractorId
+                };
+
+                contractor.ProjectContractors = new List<ProjectContractor>(){projCont};
+                Save();  
+                return contractor;
+
+        }
+
+
+
     }
 }

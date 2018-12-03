@@ -10,9 +10,11 @@ namespace HitApp
     {
         IEnumerable<Contractor> GetAll();
         void Create(Contractor contractor);
-        Contractor AssignProjectIdToContractor(Project project);
+       
         Contractor GetById(int contractorId);
         void Delete(int id);
         void Update(Contractor contractor);
+        Contractor LinkProjectIdToProjectContractor(Contractor contractor, int projectId);
+        IEnumerable<Contractor> GetContractorsForProjectId(int projectId);
     }
 }
