@@ -16,14 +16,10 @@ namespace HitApp.Controllers
         private IProjectRepository projectRepo;
         private readonly IHostingEnvironment he;
 
-        public ProjectsController(IHostingEnvironment e)
-        {
-            he = e;
-        }
-
-        public ProjectsController(IProjectRepository projectRepo)
+        public ProjectsController(IProjectRepository projectRepo, IHostingEnvironment e)
         {
             this.projectRepo = projectRepo;
+            he = e;
         }
 
         public IActionResult Index()
@@ -90,7 +86,7 @@ namespace HitApp.Controllers
             {
                 var fileName = Path.Combine(he.WebRootPath, Path.GetFileName(image.FileName));
                 image.CopyTo(new FileStream(fileName, FileMode.Create));
-                ViewData["fileLocation"] = fileName;
+                ViewData["fileLocation"] = "/" + Path.GetFileName(image.FileName);
             }
 
             return View();
