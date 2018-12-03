@@ -12,15 +12,22 @@ body {
     background-color: rgba(193, 193, 193, 0.2784313725490196);
     background: url('../images/background.jpg') no-repeat center center fixed;
     background-size: cover;
-    /*filter:blur (3px);*/  
+    /*filter: saturate(50%);
+     Browser Specific
+    -webkit-filter: saturate(50%);
+    -moz-filter: saturate(50%);
+    -ms-filter: saturate(50%);*/
+    /*-webkit-filter: blur(5px);*/
 }
+
+   
 .row{
     padding-left:400px;
 }
 
 .navbar-inverse {
     background-color: rgba(38,8,1, .9);
-    
+    background: rgba(255,0,0, 0.5);
 }
     .navbar-inverse .navbar-nav > li > a , .navbar-inverse .navbar-brand {
         color: white;
@@ -32,41 +39,95 @@ body {
     height:25%;
     
 }
+/*editing link text and background color*/
+.col-md-3 {
+    color: white;
+    background: rgba(0,0,0, 0.1);
+}
 #project-id {
     display: none;
 }    
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+/* Wrapping element
+ Set some basic padding to keep content from hitting the edges */
+    .body-content {
+    padding-left: 5px;
+    padding-right: 5px;
 }
-.Article p {
+
+/*.Article p {
     display: flex;
     justify-content: center;
     padding: 4rem;
     width: 100%;
     background-color: black;
     margin: 0 0 50px;
+    height:300px;
+}*/
+.Welcome{
+    display:inline-flex;
 }
-.Welcome p {
-   
-    text-align: right;
-    background: url('../images/timallen.jpg')no-repeat;
+    .Welcome p {
+        font-size: 18px;
+        text-shadow: 1px 1px 1px #000;
+        color: white;
+        display: inline-block;
+        background: rgba(0,0,0, 0.1);
+        color: white;
+    }
+
+.Plan {
+    display: inline-flex;
 }
-.Plan p{
-    background: url('../images/People4.jpg')no-repeat center center;
+    .Plan p {
+        order: 1;
+        font-size: 18px;
+        text-shadow: 1px 1px 1px #000;
+        display: inline-block;
+        background: rgba(0,0,0, 0.1);
+        color: white;
+    }
+.Plan img {
+        order:2;
+        height: 300px;
+        padding: 0px;
+        vertical-align: middle;
+    }
+.Supplys{
+    display:inline-flex;
+
+    }
+    .Supplys p {
+        display: inline-block;
+        font-size: 18px;
+        text-shadow: 1px 1px 1px #000;
+        background: rgba(0,0,0, 0.1);
+        color: white;
+        height: 300px;
+    }
+.Contractors{
+    display:inline-flex;
 }
-.Supplys p {
-    background: url('../images/Work.jpg')no-repeat center center;
+    .Contractors p {
+        display: inline-block;
+        font-size: 18px;
+        text-shadow: 1px 1px 1px #000;
+        background: rgba(0,0,0, 0.1);
+        color: white;
+    }
+.Help{
+    display:inline-flex;
 }
-.Contractors p {
-    background: url('../images/Contractor.jpg')no-repeat center center;
-}
-.Help p {
-    background: url('../images/People3.jpg')no-repeat center center;
-    
+    .Help p {
+        order: 1;
+        font-size: 18px;
+        text-shadow: 1px 1px 1px #000;
+        display: inline-block;
+        background: rgba(0,0,0, 0.1);
+        color: white;
+    }
+.Help img{
+    order:2;
 }
 /* Carousel */
 .carousel-caption p {
@@ -74,12 +135,12 @@ body {
     line-height: 1.4;
     color: white;
     text-shadow: 1px 1px 1px #000;
-    background: rgba(0,0,0, 0.3);
+    background: rgba(0,0,0, 0.1);
 }
 #myCarousel{
-    bor
+    border-color:darkred;
 }
-.container.body-content {
+/*.container.body-content {
     background: url('../images/Drawing.jpg')no-repeat center;
     padding-left:0px;
     padding-right:0px;
@@ -88,7 +149,7 @@ body {
     overflow:hidden;
     background-size:cover;
     background-position:top;
-}
+}*/
 
 /* Make .svg files in the carousel display properly in older browsers */
 .carousel-inner .item img[src$=".svg"] {
