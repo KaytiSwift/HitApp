@@ -81,12 +81,19 @@
 
 <div>
     <h3>Assigned Projects</h3>
-    <ol>
-        @foreach (var project in Model.ProjectContractors)
-        {            
-            <li><a asp-controller="Projects" asp-action="Details" asp-route-id="@project.Projects.ProjectId">@project.Projects.ProjectName</a></li>
+    <ul>
+        @if (Model.ProjectContractors.Count == 0)
+        {
+            <li>Not assigned to any projects</li>
         }
-        </ol>
+        else
+        {
+            foreach (var project in Model.ProjectContractors)
+            {
+                <li><a asp-controller="Projects" asp-action="Details" asp-route-id="@project.Projects.ProjectId">@project.Projects.ProjectName</a></li>
+            }
+        }
+    </ul>
 
 </div>
 <div>

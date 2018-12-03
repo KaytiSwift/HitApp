@@ -78,7 +78,21 @@
             @Html.DisplayFor(model => model.ContractorAdditionalNotes)
         </dd>
     </dl>
-    
+    <div>
+        <h3>Assigned Projects</h3>
+        <ul>
+            @if(Model.ProjectContractors.Count == 0)
+            {
+                <li>Not assigned to any projects</li>
+            }
+            else {foreach (var project in Model.ProjectContractors)
+                {
+                    <li><a asp-controller="Projects" asp-action="Details" asp-route-id="@project.Projects.ProjectId">@project.Projects.ProjectName</a></li>
+                }
+            }
+        </ul>
+
+    </div>
     <form asp-action="Delete">
         <input type="hidden" asp-for="ContractorId" />
         <input type="submit" value="Delete" class="btn btn-default" /> |

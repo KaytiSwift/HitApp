@@ -59,7 +59,7 @@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ContractorId"><i class="far fa-edit"></i></a> |
                 <a asp-action="Details" asp-route-id="@item.ContractorId"><i class="far fa-list-alt"></i></a> |
-                <a asp-action="Delete" asp-route-id="@item.ContractorId"><i class="fas fa-times"></i></a>
+                <a href="/Contractors/Delete/@item.ContractorId"><i class="fas fa-times"></i></a>
             </td>
         </tr>
 }

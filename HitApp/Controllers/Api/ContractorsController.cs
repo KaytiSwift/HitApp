@@ -21,14 +21,6 @@ namespace HitApp.Controllers.Api
 
         }
 
-        // GET list of comments for each Todo
-        [HttpGet("{id}")]
-        public IEnumerable<Contractor> Get(int id)
-        {
-            var contractors = contractorRepo.GetContractorsForProjectId(id);
-            return contractors;
-        }
-
         [HttpPost]
         public bool Delete(int id)
         {
