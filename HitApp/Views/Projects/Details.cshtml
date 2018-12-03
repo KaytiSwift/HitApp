@@ -51,6 +51,14 @@
 
 </div>
 
+
+<div>
+    <form method="post" action="/Projects/ImageUpload" enctype="multipart/form-data">
+        <input type="file" name="image" /><br/>
+        <input type="submit" value="Upload" />
+    </form>
+</div>
+
 <div>
     <a asp-action="Edit" asp-route-id="@Model.ProjectId"><i class="far fa-edit"></i></a>
     <a asp-action="Delete" asp-route-id="@Model.ProjectId"><i class="fas fa-times"></i></a>

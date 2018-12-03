@@ -1,20 +1,25 @@
 ﻿using HitApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace HitApp.Controllers
 {
     public class ProjectsController : Controller
     {
         private IProjectRepository projectRepo;
+        private readonly IHostingEnvironment he;
 
-        public ProjectsController(IProjectRepository projectRepo)
+        public ProjectsController(IProjectRepository projectRepo, IHostingEnvironment e)
         {
             this.projectRepo = projectRepo;
+            he = e;
         }
 
         public IActionResult Index()
@@ -73,6 +78,18 @@ namespace HitApp.Controllers
         {
             projectRepo.Update(project);
             return RedirectToAction("Index");
+        }
+
+        public IActionResult ImageUpload(IFormFile image)
+        {
+            if(image != null && image.Length > 0)
+            {
+                var fileName = Path.Combine(he.WebRootPath, Path.GetFileName(image.FileName));
+                image.CopyTo(new FileStream(fileName, FileMode.Create));
+                ViewData["fileLocation"] = "/" + Path.GetFileName(image.FileName);
+            }
+
+            return View();
         }
     }
 }
