@@ -9,15 +9,17 @@
 
 <div>
     <h4>Project Info</h4>
-    @*@(if (Model.ProjectIsOnDashboard == true)
+    @if (Model.ProjectIsOnDashboard == true)
     {
-         < h5 > Displayed on Dashboard: Yes </ h5 >
+        <h5> Displayed on Dashboard: <i class="far fa-check-circle"></i> </h5>
     }
-        else { 
+    else
+    {
+        <h5> Displayed on Dashboard: <i class="far fa-check-circle"></i> </h5>
     }
 
-    }
-    )*@
+ 
+
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -44,12 +46,6 @@
         <dd>
             @Html.DisplayFor(model => model.ProjectDescription)
         </dd>
-        @*<dt>
-            @Html.DisplayNameFor(model => model.ProjectContractorInfo)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ProjectContractorInfo)
-        </dd>*@
         <dt>
             @Html.DisplayNameFor(model => model.ProjectTotalBudget)
         </dt>

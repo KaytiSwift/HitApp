@@ -35,9 +35,6 @@ namespace HitApp.Models
         [Display(Name="Project Description")]
         public string ProjectDescription { get; set; }
 
-        [Display(Name="Contractor Info")]
-        public string ProjectContractorInfo { get; set; }
-
         [Display(Name="Total Budget")]
         [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = false)]
         public double ProjectTotalBudget { get; set; }

@@ -14,6 +14,11 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ProjectId" />
             <div class="form-group">
+                <label asp-for="ProjectIsOnDashboard" class="control-label"></label>
+                <input type="checkbox" asp-for="ProjectIsOnDashboard" />
+                <span asp-validation-for="ProjectIsOnDashboard" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="ProjectName" class="control-label"></label>
                 <input asp-for="ProjectName" class="form-control" />
                 <span asp-validation-for="ProjectName" class="text-danger"></span>
@@ -32,11 +37,6 @@
                 <label asp-for="ProjectDescription" class="control-label"></label>
                 <input asp-for="ProjectDescription" class="form-control" />
                 <span asp-validation-for="ProjectDescription" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProjectContractorInfo" class="control-label"></label>
-                <input asp-for="ProjectContractorInfo" class="form-control" />
-                <span asp-validation-for="ProjectContractorInfo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ProjectTotalBudget" class="control-label"></label>
