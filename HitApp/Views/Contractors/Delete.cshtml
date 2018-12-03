@@ -91,9 +91,9 @@
                 }
             }
         </ul>
-
+        
     </div>
-    <form asp-action="Delete">
+    <form method="post" action="/Contractors/Delete/@Model.ContractorId">
         <input type="hidden" asp-for="ContractorId" />
         <input type="submit" value="Delete" class="btn btn-default" /> |
         <a asp-action="Index">Back to List</a>

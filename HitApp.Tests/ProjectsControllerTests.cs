@@ -1,5 +1,6 @@
 using HitApp.Controllers;
 using HitApp.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
 using System;
@@ -13,13 +14,13 @@ namespace HitApp.Tests
         private Project project;
         IProjectRepository projectRepo;
         ProjectsController underTest;
-
+        private IHostingEnvironment e;
 
         public ProjectControllerTests()
         {
             project = new Project();
             projectRepo = Substitute.For<IProjectRepository>();
-            underTest = new ProjectsController(projectRepo);
+            underTest = new ProjectsController(projectRepo, e);
         }
 
         [Fact]

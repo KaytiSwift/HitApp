@@ -44,12 +44,12 @@
         <dd>
             @Html.DisplayFor(model => model.ProjectDescription)
         </dd>
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.ProjectContractorInfo)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.ProjectContractorInfo)
-        </dd>
+        </dd>*@
         <dt>
             @Html.DisplayNameFor(model => model.ProjectTotalBudget)
         </dt>
@@ -60,8 +60,16 @@
 
 </div>
 
+
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.ProjectId"><i class="far fa-edit"></i></a>
+    <form method="post" action="/Projects/ImageUpload" enctype="multipart/form-data">
+        <input type="file" name="image" /><br/>
+        <input type="submit" value="Upload" />
+    </form>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ProjectId" title="Edit"><i class="far fa-edit"></i></a>
     <a asp-action="Delete" asp-route-id="@Model.ProjectId"><i class="fas fa-times"></i></a>
     <a asp-action="Index">Back to Projects</a>
 
