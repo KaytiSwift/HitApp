@@ -69,6 +69,7 @@ namespace HitApp.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
+
             var project = projectRepo.GetById(id);
             return View(project);
         }
@@ -76,8 +77,10 @@ namespace HitApp.Controllers
         [HttpPost]
         public IActionResult Edit(Project project)
         {
+            project.ProjectOwnerId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
             projectRepo.Update(project);
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", new { id = project.ProjectId});
         }
 
         public IActionResult ImageUpload(IFormFile image)
