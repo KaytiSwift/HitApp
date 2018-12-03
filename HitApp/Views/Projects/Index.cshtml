@@ -60,9 +60,8 @@
 
             <td>
 
-                <a asp-action="Details" asp-route-id="@item.ProjectId"><i class="far fa-list-alt"></i></a>
-                |
-                <a asp-action="Delete" asp-route-id="@item.ProjectId"><i class="fas fa-times"></i></a>
+                <a asp-action="Details" asp-route-id="@item.ProjectId" title="Details"><i class="far fa-list-alt"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.ProjectId" title="Delete"><i class="fas fa-times"></i></a>
             </td>
         </tr>
         }
