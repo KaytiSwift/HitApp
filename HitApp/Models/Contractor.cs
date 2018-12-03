@@ -34,7 +34,7 @@ namespace HitApp.Models
         [Display(Name = "Contractor State")]
         public string ContractorState { get; set; }
         [Display(Name = "Contractor Zip Code")]
-        public int ContractorZip { get; set; }
+        public int? ContractorZip { get; set; }
 
         [Display(Name = "Additional Notes")]
         public string ContractorAdditionalNotes { get; set; }

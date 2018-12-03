@@ -12,6 +12,9 @@ namespace HitApp.Models
 
         public string ProjectOwnerId { get; set; }
 
+        []
+        public bool ProjectIsOnDashboard { get; set; }
+
         [Display(Name="Project Name")]
         public string ProjectName { get; set; }
 
