@@ -1,51 +1,31 @@
 ﻿document.addEventListener("DOMContentLoaded", (event) => {
     //refreshContractors();
-    const remove = document.querySelector('#remove-contractor');
     console.log('hey girl');
-    remove.addEventListener('click', removeContractor);
+
+    const removeButtons = document.querySelectorAll('.remove-contractor');    
+
+    removeButtons.forEach(c => {
+        const projectContractorId = c.dataset.projectContractorId;
+        c.addEventListener('click', removeContractor.bind(null, projectContractorId));
+     });
 });
 
-function refreshContractors() {
-    const ul = document.querySelector('#contractor-list');
-    ul.innerHTML = '';
-    fetch(`/Api/Contractors/${projectContractorId}`)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            data.forEach(c => addContractorToDom(c));
-        });
-}
-function removeContractor() {
-    console.log('clicked')
-    //const contractorInput = document.querySelector('#new-contractor');
-    //const newContractorText = document.querySelector('#new-contractor').value;
-    
-    const projectContractor = {
-        id: `${projectContractorId}`
 
-    };
+
+function removeContractor(projectContractorId) {
+    console.log(projectContractorId)
+    console.log('clicked')   
 
     fetch(`/Api/Contractors?id=${projectContractorId}`, {
-        method: 'POST',
-        //body: JSON.stringify(projectContractor),
-        //headers: {
-        //    'Content-Type': 'application/json'
-        //}
-
-    }).then(() => {      
-        //refreshContractors();
+        method: 'POST' 
+    }).then(() => {
+        console.log("about to remove" + projectContractorId);
+       
+        removeRow(projectContractorId);
     });
 }
 
-function addContractorToDom(contractor) {
-    
-    const header = document.querySelector('#contractor-data');
-    const td = document.createElement('td');
-    console.log(contractor);
-
-    td.innerHTML = contractor.
-
-
-
-    ul.appendChild(li); 
+function removeRow(projectContractorId) {
+    const tr = document.querySelector(`[data-project-contractor-id="${projectContractorId}"]`);
+    tr.parentNode.removeChild(tr);
 }

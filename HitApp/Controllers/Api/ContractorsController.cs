@@ -29,7 +29,7 @@ namespace HitApp.Controllers.Api
             return contractors;
         }
 
-        [HttpPost("{id}")]
+        [HttpPost]
         public bool Delete(int id)
         {
             projectContractorRepo.Delete(id);

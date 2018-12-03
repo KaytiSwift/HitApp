@@ -3,9 +3,7 @@
 @{
     ViewData["Title"] = "Details";
 }
-@section Contractors{
-    <script src="~/js/Contractors.js"></script>
-}
+
 
 <h2>@Model.ProjectName Details</h2>
 
@@ -93,10 +91,8 @@
             <tbody id="contractor-list">
                 @foreach (var item in Model.ProjectContractors)
                 {
-                    <script>
-                        var projectContractorId = @item.ProjectContractorId;
-                    </script>
-                    <tr id="contractor-data">
+
+                    <tr data-project-contractor-id="@item.ProjectContractorId">
                         <td>
                             @Html.DisplayFor(modelItem => item.Contractors.ContractorName)
                         </td>
@@ -119,7 +115,7 @@
                         <td>
 
                             <a asp-controller="Contractors" asp-action="Edit" asp-route-id="@item.Contractors.ContractorId"><i class="far fa-edit"></i></a>
-                            <button id="remove-contractor"><i class="fas fa-times"></i></button>
+                            <a class="remove-contractor" data-project-contractor-id="@item.ProjectContractorId"><i class="fas fa-times"></i></a>
                             <a asp-controller="Contractors" asp-action="Details" asp-route-id="@item.Contractors.ContractorId"><i class="far fa-list-alt"></i></a>
 
                         </td>
@@ -213,12 +209,6 @@
 
 
 
-<section id="contract">
-    <h3>Contractors:</h3>
-    <ul id="contract-list"></ul>
-</section>
-<section id="add-contractor">
-    <h4>Add New Contractor:</h4>
-    <textarea id="new-cont"></textarea>
-    <button id="save-cont">Add</button>
-</section>
+@section Scripts{
+    <script src="~/js/Contractors.js"></script>
+}
