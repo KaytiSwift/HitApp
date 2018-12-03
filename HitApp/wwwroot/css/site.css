@@ -42,7 +42,10 @@ body {
 /*editing link text and background color*/
 .col-md-3 {
     color: white;
-    background: rgba(0,0,0, 0.1);
+    background: rgba(0,0,0, 0.5);
+    padding:10px;
+    margin:30px;
+    height:427.38px;
 }
 #project-id {
     display: none;
@@ -55,87 +58,46 @@ body {
     padding-right: 5px;
 }
 
-/*.Article p {
-    display: flex;
-    justify-content: center;
-    padding: 4rem;
-    width: 100%;
-    background-color: black;
-    margin: 0 0 50px;
-    height:300px;
-}*/
-.Welcome{
+
+.Welcome , .Plan , .Help , .Supplys , .Contractors{
     display:inline-flex;
+    margin:20px;
+    height:300px;
 }
-    .Welcome p {
-        font-size: 18px;
+    .Welcome p , .Supplys p , .Contractors p{
+        font-size: 1em;
         text-shadow: 1px 1px 1px #000;
         color: white;
         display: inline-block;
-        background: rgba(0,0,0, 0.1);
+        background: rgba(0,0,0, 0.5);
         color: white;
+        height:300px;
     }
 
-.Plan {
-    display: inline-flex;
-}
-    .Plan p {
+
+    .Plan p , .Help p{
         order: 1;
-        font-size: 18px;
+        font-size: 1em;
         text-shadow: 1px 1px 1px #000;
         display: inline-block;
-        background: rgba(0,0,0, 0.1);
+        background: rgba(0,0,0, 0.5);
         color: white;
+        height:300px;
     }
-.Plan img {
+.Plan img , .Help img {
         order:2;
         height: 300px;
         padding: 0px;
         vertical-align: middle;
     }
-.Supplys{
-    display:inline-flex;
-
-    }
-    .Supplys p {
-        display: inline-block;
-        font-size: 18px;
-        text-shadow: 1px 1px 1px #000;
-        background: rgba(0,0,0, 0.1);
-        color: white;
-        height: 300px;
-    }
-.Contractors{
-    display:inline-flex;
-}
-    .Contractors p {
-        display: inline-block;
-        font-size: 18px;
-        text-shadow: 1px 1px 1px #000;
-        background: rgba(0,0,0, 0.1);
-        color: white;
-    }
-.Help{
-    display:inline-flex;
-}
-    .Help p {
-        order: 1;
-        font-size: 18px;
-        text-shadow: 1px 1px 1px #000;
-        display: inline-block;
-        background: rgba(0,0,0, 0.1);
-        color: white;
-    }
-.Help img{
-    order:2;
-}
+   
 /* Carousel */
 .carousel-caption p {
     font-size: 25px;
     line-height: 1.4;
     color: white;
     text-shadow: 1px 1px 1px #000;
-    background: rgba(0,0,0, 0.1);
+    /*background: rgba(0,0,0, 0.1);*/
 }
 #myCarousel{
     border-color:darkred;
