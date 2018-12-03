@@ -4,10 +4,12 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>All Projects</h2>
+<a asp-controller="Contractors" asp-action="Index">View All Contractors</a>
+
 
 <p>
-    <a asp-action="Create">New Project</a>
+    <a asp-action="Create"><i class="far fa-plus-square"></i> New Project</a>
 </p>
 <table class="table">
     <thead>
@@ -30,27 +32,28 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProjectName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProjectDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProjectStartDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProjectEndDate)
-            </td>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectStartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectEndDate)
+                </td>
 
-            <td>
-               
-                <a asp-action="Details" asp-route-id="@item.ProjectId">Details</a> 
-                <a asp-action="Delete" asp-route-id="@item.ProjectId">Delete</a>
-            </td>
-        </tr>
-}
+                <td>
+
+                    <a asp-action="Details" asp-route-id="@item.ProjectId"><i class="far fa-list-alt"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.ProjectId"><i class="fas fa-times"></i></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -20,6 +21,10 @@ namespace HitApp.Models
         public string ContractorEmail { get; set; }
         [Display(Name = "Contractor Phone Number")]
         public string ContractorPhone { get; set; }
+        [Display(Name = "Service")]
+        public string ContractorService { get; set; }
+        [Display(Name = "Website")]
+        public string ContractorWebsiteUrl { get; set; }
 
 
         [Display(Name = "Contractor Address")]
@@ -33,7 +38,8 @@ namespace HitApp.Models
 
         [Display(Name = "Additional Notes")]
         public string ContractorAdditionalNotes { get; set; }
-        
+
+        [JsonIgnore]
         public virtual List<ProjectContractor> ProjectContractors { get; set; }
     }
 }

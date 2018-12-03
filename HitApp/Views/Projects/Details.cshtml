@@ -4,10 +4,11 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+
+<h2>@Model.ProjectName Details</h2>
 
 <div>
-    <h4>Project</h4>
+    <h4>Project Info</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -41,42 +42,112 @@
             @Html.DisplayFor(model => model.ProjectContractorInfo)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.ProjectTotalBudget) 
+            @Html.DisplayNameFor(model => model.ProjectTotalBudget)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.ProjectTotalBudget)
         </dd>
     </dl>
-    
+
 </div>
 
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.ProjectId">Edit</a>
-    <a asp-action="Delete" asp-route-id="@Model.ProjectId">Delete</a>
+    <a asp-action="Edit" asp-route-id="@Model.ProjectId"><i class="far fa-edit"></i></a>
+    <a asp-action="Delete" asp-route-id="@Model.ProjectId"><i class="fas fa-times"></i></a>
     <a asp-action="Index">Back to Projects</a>
 
 </div>
 
+<div>
+    <h4>Contractors</h4>
+    <a asp-controller="Contractors" asp-action="Create" asp-route-id="@Model.ProjectId"><i class="far fa-plus-square"></i> Add Contractor</a>
+    <p></p>
+    <a asp-controller="Contractors" asp-action="Index">View All Contractors</a>
+
+    @*<button onclick="showContractors()">Show Contractors</button>*@
+
+    <div id="contractor">
+        <table class="table">
+            <thead>
+                <tr id="contractor-header">
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Company
+                    </th>
+                    <th>
+                        Service
+                    </th>
+                    <th>
+                        Phone
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Notes
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="contractor-list">
+                @foreach (var item in Model.ProjectContractors)
+                {
+
+                    <tr data-project-contractor-id="@item.ProjectContractorId">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Contractors.ContractorName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Contractors.ContractorCompany)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Contractors.ContractorService)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Contractors.ContractorPhone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Contractors.ContractorEmail)
+                        </td>
+                        <td title="@Html.DisplayFor(modelItem => item.Contractors.ContractorAdditionalNotes)" class="truncate">
+                            @Html.DisplayFor(modelItem => item.Contractors.ContractorAdditionalNotes)
+                        </td>
+
+                        <td>
+
+                            <a asp-controller="Contractors" asp-action="Edit" asp-route-id="@item.Contractors.ContractorId"><i class="far fa-edit"></i></a>
+                            <a class="remove-contractor" data-project-contractor-id="@item.ProjectContractorId"><i class="fas fa-times"></i></a>
+                            <a asp-controller="Contractors" asp-action="Details" asp-route-id="@item.Contractors.ContractorId"><i class="far fa-list-alt"></i></a>
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
 
 <div>
     <h4>Expenses   Total = @Html.DisplayFor(model => model.ProjectTotalExpenses)</h4>
 
     @*@foreach (var expense in Model.Expenses)
-    {
-        <ul>
-            <li>Expense Name: @expense.ExpenseName 
-                <ul>
-                    <li>Cost: $@expense.ExpenseCost</li>
-                    <li>Date Purchased: @expense.ExpenseDatePurchased.ToShortDateString()</li>
-                    <li>Notes: @expense.ExpenseNotes</li>
-                </ul> 
-            </li>
-            <li id="expense-links">
-                <a asp-controller="Expenses" asp-action="Edit" asp-route-id="@expense.ExpenseId">Edit</a>
-                <a asp-controller="Expenses" asp-action="Delete" asp-route-id="@expense.ExpenseId">Delete</a>
-            </li>
-        </ul>
-    }*@
+        {
+            <ul>
+                <li>Expense Name: @expense.ExpenseName
+                    <ul>
+                        <li>Cost: $@expense.ExpenseCost</li>
+                        <li>Date Purchased: @expense.ExpenseDatePurchased.ToShortDateString()</li>
+                        <li>Notes: @expense.ExpenseNotes</li>
+                    </ul>
+                </li>
+                <li id="expense-links">
+                    <a asp-controller="Expenses" asp-action="Edit" asp-route-id="@expense.ExpenseId">Edit</a>
+                    <a asp-controller="Expenses" asp-action="Delete" asp-route-id="@expense.ExpenseId">Delete</a>
+                </li>
+            </ul>
+        }*@
 
     <table class="table">
         <thead>
@@ -123,8 +194,8 @@
 
                     <td>
 
-                        <a asp-controller="Expenses" asp-action="Edit" asp-route-id="@item.ExpenseId">Edit</a>
-                        <a asp-controller="Expenses" asp-action="Delete" asp-route-id="@item.ExpenseId">Delete</a>
+                        <a asp-controller="Expenses" asp-action="Edit" asp-route-id="@item.ExpenseId"><i class="far fa-edit"></i></a>
+                        <a asp-controller="Expenses" asp-action="Delete" asp-route-id="@item.ExpenseId"><i class="fas fa-times"></i></a>
                     </td>
                 </tr>
             }
@@ -132,13 +203,15 @@
     </table>
 
 </div>
- <div>
+<div>
 
- <a asp-controller="Expenses" asp-action="Create" asp-route-id="@Model.ProjectId">Create New Expense</a>
+    <a asp-controller="Expenses" asp-action="Create" asp-route-id="@Model.ProjectId"><i class="far fa-plus-square"></i> Add Expense</a>
 
- </div>
-
-
+</div>
 
 
 
+
+@section Scripts{
+    <script src="~/js/Contractors.js"></script>
+}

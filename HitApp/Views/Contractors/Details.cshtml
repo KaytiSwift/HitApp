@@ -1,0 +1,102 @@
+﻿@model HitApp.Models.Contractor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Contractor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ContractorCompany)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ContractorCompany)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ContractorName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ContractorName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ContractorService)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ContractorService)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ContractorEmail)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ContractorEmail)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ContractorPhone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ContractorPhone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ContractorWebsiteUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ContractorWebsiteUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ContractorAddress)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ContractorAddress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ContractorCity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ContractorCity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ContractorState)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ContractorState)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ContractorZip)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ContractorZip)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ContractorAdditionalNotes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ContractorAdditionalNotes)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <h3>Assigned Projects</h3>
+    <ul>
+        @if (Model.ProjectContractors.Count == 0)
+        {
+            <li>Not assigned to any projects</li>
+        }
+        else
+        {
+            foreach (var project in Model.ProjectContractors)
+            {
+                <li><a asp-controller="Projects" asp-action="Details" asp-route-id="@project.Projects.ProjectId">@project.Projects.ProjectName</a></li>
+            }
+        }
+    </ul>
+
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ContractorId"><i class="far fa-edit"></i></a> |
+    <a asp-action="Index">Back to List</a>
+</div>
