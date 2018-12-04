@@ -19,11 +19,51 @@ namespace HitApp.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("HitApp.Models.Contractor", b =>
+                {
+                    b.Property<int>("ContractorId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ContractorAdditionalNotes");
+
+                    b.Property<string>("ContractorAddress");
+
+                    b.Property<string>("ContractorCity");
+
+                    b.Property<string>("ContractorCompany");
+
+                    b.Property<string>("ContractorEmail");
+
+                    b.Property<string>("ContractorName")
+                        .IsRequired();
+
+                    b.Property<string>("ContractorPhone");
+
+                    b.Property<string>("ContractorService");
+
+                    b.Property<string>("ContractorState");
+
+                    b.Property<string>("ContractorWebsiteUrl");
+
+                    b.Property<int?>("ContractorZip");
+
+                    b.HasKey("ContractorId");
+
+                    b.ToTable("Contractors");
+
+                    b.HasData(
+                        new { ContractorId = 1, ContractorAdditionalNotes = "Jimmy the tile guy", ContractorCity = "Madison", ContractorCompany = "Self", ContractorEmail = "tectile@live.com", ContractorName = "Jimmy McDermitt", ContractorState = "Ohio" }
+                    );
+                });
+
             modelBuilder.Entity("HitApp.Models.Expense", b =>
                 {
                     b.Property<int>("ExpenseId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<double>("ExpenseCost");
 
                     b.Property<DateTime>("ExpenseDatePurchased");
 
@@ -32,7 +72,7 @@ namespace HitApp.Data.Migrations
 
                     b.Property<string>("ExpenseNotes");
 
-                    b.Property<double>("ExpenseTotalCost");
+                    b.Property<string>("ProductUrl");
 
                     b.Property<int>("ProjectId");
 
@@ -43,8 +83,28 @@ namespace HitApp.Data.Migrations
                     b.ToTable("Expenses");
 
                     b.HasData(
-                        new { ExpenseId = 1, ExpenseDatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), ExpenseName = "TestExpense1", ExpenseNotes = "This is a test", ExpenseTotalCost = 420.0, ProjectId = 1 }
+                        new { ExpenseId = 1, ExpenseCost = 420.0, ExpenseDatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), ExpenseName = "TestExpense1", ExpenseNotes = "This is a test", ProductUrl = "https://www.homedepot.com/p/Warehouse-of-Tiffany-Stella-12-in-Bronze-Accent-Desk-Lamp-with-Red-Dragonfly-Shade-305RBTL/206800480", ProjectId = 1 }
                     );
+                });
+
+            modelBuilder.Entity("HitApp.Models.FilePath", b =>
+                {
+                    b.Property<int>("FilePathId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("FileName")
+                        .HasMaxLength(255);
+
+                    b.Property<int>("FileType");
+
+                    b.Property<int>("ProjectId");
+
+                    b.HasKey("FilePathId");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("FilePaths");
                 });
 
             modelBuilder.Entity("HitApp.Models.Project", b =>
@@ -53,25 +113,53 @@ namespace HitApp.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ProjectContractorInfo");
-
                     b.Property<string>("ProjectDescription");
 
                     b.Property<DateTime?>("ProjectEndDate");
 
+                    b.Property<bool>("ProjectIsOnDashboard");
+
                     b.Property<string>("ProjectName");
+
+                    b.Property<string>("ProjectOwnerId");
 
                     b.Property<DateTime>("ProjectStartDate");
 
                     b.Property<double>("ProjectTotalBudget");
+
+                    b.Property<double>("ProjectTotalExpenses");
 
                     b.HasKey("ProjectId");
 
                     b.ToTable("Projects");
 
                     b.HasData(
-                        new { ProjectId = 1, ProjectContractorInfo = "Jimmy the Tile Guy", ProjectDescription = "Paint and re-tile bathroom walls and floors", ProjectEndDate = new DateTime(2018, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectName = "Bathroom", ProjectStartDate = new DateTime(2017, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 10000.0 },
-                        new { ProjectId = 2, ProjectContractorInfo = "Jimmy the Tile Guy", ProjectDescription = "Paint and re-tile kitchen walls and floors", ProjectEndDate = new DateTime(2018, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectName = "Kitchen", ProjectStartDate = new DateTime(2017, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 12000.0 }
+                        new { ProjectId = 1, ProjectDescription = "Paint and re-tile bathroom walls and floors", ProjectEndDate = new DateTime(2018, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectIsOnDashboard = false, ProjectName = "Bathroom", ProjectOwnerId = "7fdacf8b-3c46-4b86-b088-cc7a70a97c80", ProjectStartDate = new DateTime(2017, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 10000.0, ProjectTotalExpenses = 0.0 },
+                        new { ProjectId = 2, ProjectDescription = "Paint and re-tile kitchen walls and floors", ProjectEndDate = new DateTime(2018, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectIsOnDashboard = false, ProjectName = "Kitchen", ProjectOwnerId = "7fdacf8b-3c46-4b86-b088-cc7a70a97c80", ProjectStartDate = new DateTime(2017, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 12000.0, ProjectTotalExpenses = 0.0 }
+                    );
+                });
+
+            modelBuilder.Entity("HitApp.Models.ProjectContractor", b =>
+                {
+                    b.Property<int>("ProjectContractorId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ContractorId");
+
+                    b.Property<int>("ProjectId");
+
+                    b.HasKey("ProjectContractorId");
+
+                    b.HasIndex("ContractorId");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("ProjectContractors");
+
+                    b.HasData(
+                        new { ProjectContractorId = 1, ContractorId = 1, ProjectId = 1 },
+                        new { ProjectContractorId = 2, ContractorId = 1, ProjectId = 2 }
                     );
                 });
 
@@ -242,8 +330,29 @@ namespace HitApp.Data.Migrations
 
             modelBuilder.Entity("HitApp.Models.Expense", b =>
                 {
-                    b.HasOne("HitApp.Models.Project")
+                    b.HasOne("HitApp.Models.Project", "Project")
                         .WithMany("Expenses")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("HitApp.Models.FilePath", b =>
+                {
+                    b.HasOne("HitApp.Models.Project", "Project")
+                        .WithMany("FilePaths")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("HitApp.Models.ProjectContractor", b =>
+                {
+                    b.HasOne("HitApp.Models.Contractor", "Contractors")
+                        .WithMany("ProjectContractors")
+                        .HasForeignKey("ContractorId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("HitApp.Models.Project", "Projects")
+                        .WithMany("ProjectContractors")
                         .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,9 +16,9 @@ namespace HitApp.Models
         public string ExpenseName { get; set; }
 
         [Required]
-        [Display(Name = "Total Cost")]
+        [Display(Name = "Cost")]
         [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = false)]
-        public double ExpenseTotalCost { get; set; }
+        public double ExpenseCost { get; set; }
 
         [Display(Name = "Date Purchased")]
         [DataType(DataType.Date)]
@@ -31,5 +32,11 @@ namespace HitApp.Models
         [Required]
         [Display(Name = "Project Id")]
         public int ProjectId { get; set; }
+
+        [Display(Name = "Product Link")]
+        public string ProductUrl { get; set; }
+
+        public virtual Project Project { get; set; }
+
     }
 }

@@ -16,7 +16,8 @@ namespace HitApp.Repository
 
         public Expense AssignProjectId(int projectId) //this method will assign the projectId to the expense
         {
-            var expense = new Expense() { ProjectId = projectId, ExpenseDatePurchased = DateTime.Today };
+            
+            var expense = new Expense() {ProjectId = projectId, ExpenseDatePurchased = DateTime.Today };
             return expense;
         }
 
@@ -26,5 +27,13 @@ namespace HitApp.Repository
                    where expense.ProjectId == projectId
                    select expense;
         }
+
+        public double ExpenseTotal(Project project)
+        {
+            //Sums expense costs from list
+            double total = project.Expenses.Sum(item => item.ExpenseCost);
+            return total;
+        }
+
     }
 }

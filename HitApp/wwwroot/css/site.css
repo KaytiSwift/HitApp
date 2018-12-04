@@ -89,12 +89,38 @@ body {
    
     background-size: cover;
 }
+
 .Welcome, .Plan, .Help, .Supplys, .Contractors {
     display: inline-flex;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     margin: 50px;
     height: 300px;
     font-size: 18px;
+
+#project-id {
+    display: none;
+} 
+
+#expense-links {
+    list-style: none;
+}
+
+table {
+    white-space: nowrap;
+}
+
+.truncate {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Wrapping element
+ Set some basic padding to keep content from hitting the edges */
+    .body-content {
+    padding-left: 5px;
+    padding-right: 5px;
+
 }
 
     .Welcome p, .Supplys p, .Contractors p {
@@ -187,3 +213,5 @@ body {
         display: none;
     }
 }
+
+

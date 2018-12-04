@@ -12,6 +12,13 @@ namespace HitApp.Repository
     {
         public ProjectRepository(ApplicationDbContext db) : base(db)
         {
+
+        }
+
+        public Project SetTodaysDate()
+        {
+            var project = new Project() { ProjectStartDate = DateTime.Today };
+            return project;
         }
     }
 }

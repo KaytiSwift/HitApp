@@ -1,0 +1,32 @@
+﻿
+.col-md-4{
+    width:100%;
+    
+}
+.form-group {
+    width: 300px;
+    margin: auto;
+}
+
+.row {
+    padding: 0px;
+}
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+@media screen and (min-width: 600px){
+    .row {
+        display: flex;
+        padding: 1em;
+    }
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap:35px;
+        margin:0px;
+    }
+    .sub-btn{
+        align-self:center;
+    }    
+}

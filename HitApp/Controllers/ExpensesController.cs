@@ -10,15 +10,20 @@ namespace HitApp.Controllers
     public class ExpensesController : Controller
     {
         private IExpenseRepository expenseRepo;
+        private IProjectRepository projectRepo;
 
-        public ExpensesController(IExpenseRepository expenseRepo)
+        public ExpensesController(IExpenseRepository expenseRepo, IProjectRepository projectRepo)
         {
             this.expenseRepo = expenseRepo;
+            this.projectRepo = projectRepo;
+
         }
 
         public IActionResult Create(int id)
-        {            
+        {
+            var project = projectRepo.GetById(id);
             var model = expenseRepo.AssignProjectId(id);
+            model.Project = project;
             return View(model);
         }
 
@@ -26,7 +31,10 @@ namespace HitApp.Controllers
         public IActionResult Create(Expense expense)
         {
             expenseRepo.Create(expense);
-            
+
+            var project = projectRepo.GetById(expense.ProjectId);            
+            project.ProjectTotalExpenses = expenseRepo.ExpenseTotal(project);
+            expenseRepo.Save();
             return RedirectToAction("Create");
         }
 
@@ -42,11 +50,13 @@ namespace HitApp.Controllers
         {
             var expense = expenseRepo.GetById(id);
             var projectId = expense.ProjectId;
-
             expenseRepo.Delete(id);
+
+
+            var project = projectRepo.GetById(projectId);
+            project.ProjectTotalExpenses = expenseRepo.ExpenseTotal(project);
+            expenseRepo.Save();
             return RedirectToAction("Details", "Projects", new { Id = projectId });
-            //Dear future us: You will need to pass in project id not expense id to redirect to the right project after delete. Hope you figure it out.//
-            //We're going to need to display it on project details page using js. Sincerely, past us.//
         }
 
         [HttpGet]
@@ -61,6 +71,12 @@ namespace HitApp.Controllers
         {
 
             expenseRepo.Update(expense);
+
+
+            var project = projectRepo.GetById(expense.ProjectId);
+            project.ProjectTotalExpenses = expenseRepo.ExpenseTotal(project);
+            expenseRepo.Save();
+
             return RedirectToAction("Details", "Projects", new { Id = expense.ProjectId });
         }
 
