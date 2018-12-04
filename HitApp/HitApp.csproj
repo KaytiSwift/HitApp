@@ -12,6 +12,8 @@
     <Compile Remove="Data\Migrations\20181126181644_StartAndEndDateFormattingChanges.Designer.cs" />
     <Compile Remove="Data\Migrations\20181130200721_test.cs" />
     <Compile Remove="Data\Migrations\20181130200721_test.Designer.cs" />
+    <Compile Remove="Data\Migrations\20181203214301_addedUserSeedData.cs" />
+    <Compile Remove="Data\Migrations\20181203214301_addedUserSeedData.Designer.cs" />
 
   </ItemGroup>
 
