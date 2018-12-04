@@ -4,11 +4,13 @@
     ViewData["Title"] = "Create";
 }
 
+
 @section Styling{
     <link href="~/css/Creates.css" rel="stylesheet" />
 }
 
-<h2>Create New Contractor</h2>
+<h2>Create New Contractor for @ViewBag.ProjectName</h2>
+
 
 <hr />
 <div class="row">
@@ -78,7 +80,7 @@
 </div>
 
 <div>
-    <a asp-controller="Projects" asp-action="Index">Back to Projects</a>
+    <a asp-controller="Projects" asp-action="Details" asp-route-id="@ViewBag.ProjectId">Back to @ViewBag.ProjectName</a>
 </div>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
