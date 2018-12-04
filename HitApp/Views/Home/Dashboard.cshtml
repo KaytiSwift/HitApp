@@ -6,6 +6,7 @@
 
 @section Styling{
     <link href="~/css/Dashboard.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 }
 <h2>Dashboard</h2>
 
@@ -19,27 +20,81 @@
 </div>
 @foreach (var project in Model)
 {
-    @if (project.ProjectIsOnDashboard == true) { 
+    @if (project.ProjectIsOnDashboard == true)
+    {
 
         <div class="cards">
             <div class="left-card">
                 <h3>@project.ProjectName</h3>
                 <a href="/projects/details/@project.ProjectId"> See Details</a>
             </div>
+
+
+            <div class="w3-light-grey w3-round-xlarge" style="width: 500px">
+                <div class="progressBar" style="width: 0%"><span class="progress"></span>%</div>
+            </div>
+
             <div class="right-card">
-                <p>$@project.ProjectTotalBudget : Budget</p>
-                <p>$@project.ProjectTotalExpenses : Total Expenses:</p>
+                <p>$<span class="projectTotalBudget">@project.ProjectTotalBudget</span> : Budget</p>
+                <p>$<span class="projectTotalExpenses">@project.ProjectTotalExpenses</span> : Total Expenses:</p>
                 ---------------------------------
                 <p>
-                    $@(project.ProjectTotalBudget - project.ProjectTotalExpenses) : Balance
+                    <span class="balance">$@(project.ProjectTotalBudget - project.ProjectTotalExpenses) : Balance</span>
                 </p>
 
             </div>
         </div>
     }
-
 }
-@*<table class="table">
+        <script>
+            (function () {
+                var cards = document.querySelectorAll(".cards");
+
+                cards.forEach(c => {
+                    var totalBudget = c.querySelector(".projectTotalBudget").innerHTML;
+                    console.log(totalBudget);
+
+                    var totalExpenses = c.querySelector(".projectTotalExpenses").innerHTML;
+                    console.log(totalExpenses);
+                    var progress = Math.round(totalExpenses / totalBudget * 100);
+
+                    if (progress > 70 && progress < 100) {
+                        c.querySelector(".progressBar").setAttribute("style", `width: ${progress}%; background-color: yellow;`);
+                    }
+                    else if (progress >= 100) {
+                        progress = 100;
+                        c.querySelector(".balance").setAttribute("style", 'color: red');
+                        c.querySelector(".progressBar").setAttribute("style", `width: ${progress}%; background-color: red;`);
+
+                    }
+                    else {
+                        c.querySelector(".progressBar").setAttribute("style", `width: ${progress}%`);
+                    }
+
+                    
+                    c.querySelector(".progress").innerHTML = progress;
+                    console.log(progress);
+
+                    console.log(progress + "px");
+                  
+
+                });
+            })();
+        </script>
+<style>
+    .progressBar {
+        border-radius: 25px;
+        background-color: lightgreen;
+        text-align: center;
+    }
+    .progressBar span{
+        background-color:rgba(0, 0, 0, 0.00);
+    }
+</style>
+
+@*
+    @((project.ProjectTotalExpenses)/(project.ProjectTotalBudget/100))%
+    <table class="table">
         <thead>
             <tr>
                 <th>
