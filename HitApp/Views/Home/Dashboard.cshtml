@@ -46,51 +46,12 @@
         </div>
     }
 }
-        <script>
-            (function () {
-                var cards = document.querySelectorAll(".cards");
 
-                cards.forEach(c => {
-                    var totalBudget = c.querySelector(".projectTotalBudget").innerHTML;
-                    console.log(totalBudget);
+@section Scripts{
 
-                    var totalExpenses = c.querySelector(".projectTotalExpenses").innerHTML;
-                    console.log(totalExpenses);
-                    var progress = Math.round(totalExpenses / totalBudget * 100);
+    <script src="~/js/ProgressBar.js"></script>
+}
 
-                    if (progress > 70 && progress < 100) {
-                        c.querySelector(".progressBar").setAttribute("style", `width: ${progress}%; background-color: yellow;`);
-                    }
-                    else if (progress >= 100) {
-                        progress = 100;
-                        c.querySelector(".balance").setAttribute("style", 'color: red');
-                        c.querySelector(".progressBar").setAttribute("style", `width: ${progress}%; background-color: red;`);
-
-                    }
-                    else {
-                        c.querySelector(".progressBar").setAttribute("style", `width: ${progress}%`);
-                    }
-
-                    
-                    c.querySelector(".progress").innerHTML = progress;
-                    console.log(progress);
-
-                    console.log(progress + "px");
-                  
-
-                });
-            })();
-        </script>
-<style>
-    .progressBar {
-        border-radius: 25px;
-        background-color: lightgreen;
-        text-align: center;
-    }
-    .progressBar span{
-        background-color:rgba(0, 0, 0, 0.00);
-    }
-</style>
 
 @*
     @((project.ProjectTotalExpenses)/(project.ProjectTotalBudget/100))%

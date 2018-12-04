@@ -35,3 +35,17 @@
     justify-content:space-between;
 }
 
+
+.progressBar {
+    background-color: lightgreen;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.progressBar span {
+    background-color: rgba(1, 0, 0, 0.00);
+}
+
+
+
+
