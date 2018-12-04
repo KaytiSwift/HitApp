@@ -9,6 +9,15 @@
 <h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>Project</h4>
+
+    @if (Model.ProjectIsOnDashboard == true)
+    {
+        <h5> Displayed on Dashboard: <i class="far fa-check-circle"></i> </h5>
+    }
+    else
+    {
+        <h5> Displayed on Dashboard: <i class="far fa-check-circle"></i> </h5>
+    }
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -36,19 +45,13 @@
             @Html.DisplayFor(model => model.ProjectDescription)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.ProjectContractorInfo)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ProjectContractorInfo)
-        </dd>
-        <dt>
             @Html.DisplayNameFor(model => model.ProjectTotalBudget)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.ProjectTotalBudget)
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="ProjectId" />
         <input type="submit" value="Delete" class="btn btn-default" /> |
