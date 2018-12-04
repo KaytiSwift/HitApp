@@ -40,6 +40,11 @@ namespace HitApp.Controllers
             ViewData["Message"] = "Your contact page.";
 
             return View();
+        } 
+        public IActionResult Resource()
+        {
+            return View();
+
         }
 
         public IActionResult Privacy()

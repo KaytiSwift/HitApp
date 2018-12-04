@@ -2,206 +2,92 @@
     ViewData["Title"] = "Home Page";
 }
 
-<body class="Index">
+<body id="Index">
+
+    <section class="Block">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="8000">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+            </ol>
+
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+
+                    <img src="~/images/Hands.jpg" alt="UHOH" class="img-responsive" />
+                    <div class="carousel-caption" role="option">
+                        <p>
+                            Welcome to Proj List.We provide users a platform to save all their projects in a one stop shop format.
+                            <a class="btn btn-default">
+                                Learn More <a href="#Overview">
+</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+
+                    <img src="~/images/People.jpeg" alt="Visual Studio" class="img-responsive" />
+                    <div class="carousel-caption" role="option">
+                        <p>
+                            Dedicated to making sure your experience is pleasurable with a simple UI tailored to entering information on the go.
+                            <a class="btn btn-default">
+                                Learn More
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+
+                    <img src="~/images/People2.jpg" alt="Microsoft Azure" class="img-responsive" />
+                    <div class="carousel-caption" role="option">
+                        <p>
+                            We aid our users in their endevours by providing links to websites for DIY instructions and contractors in local area.
+                            <a class="btn btn-default">
+                                Learn More
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+
+                    <img src="~/images/beforeAfter.jpg" alt="Microsoft Azure" class="img-responsive" />
+                    <div class="carousel-caption" role="option">
+                        <p>
+                            Not sure where to begin?Browse users projects pics to gain some insight on the direction of your renovation.
+                            <a class="btn btn-default">
+                                Learn More
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
 
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="8000">
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-            <li data-target="#myCarousel" data-slide-to="4"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
 
-                <img src="~/images/Hands.jpg" alt="UHOH" class="img-responsive" />
-                <div class="carousel-caption" role="option">
-                    <p>
-                        Welcome to Proj List.We provide users a platform to save all their projects in a one stop shop format.
-                        <a class="btn btn-default">
-                            Learn More
-                        </a>
-                    </p>
+                    <img src="~/images/Simple.jpg" alt="Microsoft Azure" class="img-responsive" />
+                    <div class="carousel-caption" role="option">
+                        <p>
+                            Stop taking precious time away from your work by doing it the old fashioned way. Dont wait any longer sign up now!
+                            <a class="btn btn-default">
+                                Learn More
+                            </a>
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="item">
-
-                <img src="~/images/People.jpeg" alt="Visual Studio" class="img-responsive" />
-                <div class="carousel-caption" role="option">
-                    <p>
-                        Dedicated to making sure your experience is pleasurable with a simple UI tailored to entering information on the go.
-                        <a class="btn btn-default">
-                            Learn More
-                        </a>
-                    </p>
-                </div>
-            </div>
-            <div class="item">
-
-                <img src="~/images/People2.jpg" alt="Microsoft Azure" class="img-responsive" />
-                <div class="carousel-caption" role="option">
-                    <p>
-                        We aid our users in their endevours by providing links to websites for DIY instructions and contractors in local area.
-                        <a class="btn btn-default">
-                            Learn More
-                        </a>
-                    </p>
-                </div>
-            </div>
-            <div class="item">
-
-                <img src="~/images/beforeAfter.jpg" alt="Microsoft Azure" class="img-responsive" />
-                <div class="carousel-caption" role="option">
-                    <p>
-                        Not sure where to begin?Browse users projects pics to gain some insight on the direction of your renovation.
-                        <a class="btn btn-default">
-                            Learn More
-                        </a>
-                    </p>
-                </div>
-            </div>
-            <div class="item">
-
-
-
-                <img src="~/images/Simple.jpg" alt="Microsoft Azure" class="img-responsive" />
-                <div class="carousel-caption" role="option">
-                    <p>
-                        Stop taking precious time away from your work by doing it the old fashioned way. Dont wait any longer sign up now!
-                        <a class="btn btn-default">
-                            Learn More
-                        </a>
-                    </p>
-                </div>
-            </div>
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-    <div class="Article">
+    </section>
 
-   
-        <div class="Welcome">
-            <img src="~/images/TimAllen.jpg" />
-            <p class="PositionRight">
-                Welcome to the "blah" . We provide users with a digital storing and
-                filing system that enables tracking of all your project requirements. These can vary greatly
-                from each project ranging from specific tools and materials ,the specific area being renovated ,
-                forms of measurement,and even contractors that are capable of doing the work. Keeping track of all
-                this information can seem daunting at times due to the sheer scope of certain projects
-                but now with this app your time will be spent more wisely no longer rumidging through reciepts.Here
-                you can save all that information with a few clicks and a few pics from your phone.
-                After creating a login and password which is accessed on the top of your screen, you have free access
-                to the site. We hope you enjoy our product.
-      
-
-            </p>
-        </div>
-        <div class="Plan">
-            <img src="~/images/People4.jpg" />
-            <p class="PositionLeft">
-                The path to accomplishing goals is not always simple but all share a common trait,establishing a plan. We have
-                created a way for our users to do exactly that called the Dashboard.Once there, they are able
-                to create projects and store information that can be accessed at any time. After creating a project users can set a budget
-                that will evaluate projected costs. This is shown by a graph on each project comparing your spending to your specific budget 
-                being a healhy reminder for our users. Not only is it possible to create new projects but also viewing current and past projects once 
-                added to a profile is only one extra click away making navigation easier and much simpler.
-            </p>
-        </div>
-        <div class="Supplys">
-            <img src="~/images/Work.jpg" />
-            <p class="PositionRight">
-                We understand here on the "Blah" that no job is too great when equipped with the right tools. Due 
-                to this fact we have acknowledged the importance of tracking tools required and tools previously ascertained by 
-                createing a way for users to add tools and expenses to their project dashboard. This way users can know exactly what is
-                in their toolbox before heading to their local department store saving time and money repurchasing tools previously aquired.
-                This feauture is integrated in a way that when purchasing a new tool or material will immediately be stored
-                in the Project expense account to show exactly where our users hard earned money is being spent.Meticulous attention to detail 
-                is a virtue we strive to uphold and continue to nurture for our users with every adddition. 
-            </p>
-        </div>
-        <div class="Help">
-            <img src="~/images/People3.jpg" />
-            <p class="PositionLeft">
-                Not everyone has the knowledge and creativity to build things with their own hands but here we strive to cater to all users .
-                Even users like myself that struggle to hang a portrait with the hardware provided without instructions.
-                For those that need a little guidance or inspiration we provide links to other websites for that specific purpose.
-                Inspiration requires just one click to view users before and after pictures aiding in visualization to ensure that our users get exactly what they want. Providing 
-                links to trusted Do It Yourself websites encourages positive outcomes in our users endeavors. Also when searching for specific
-                products we provide a way to link directly to local department stores to mark off item checklists for things needed and wether available at a specific locations.
-            </p>
-        </div>
-        <div class="Contractors">
-            <img src="~/images/Contractor.jpg" />
-            <p class="PositionRight">
-                Here at "blah" we are dedicated to creating the best experience imaginable for our users by continuing to expand our ammenities. One of the most recent additions is the 
-                Pro page where contractors can create profiles to showcase their work to attract more customers. There Pro users can upload details and pictures of projects previously 
-                completed to ensure the quality of their work. Through this new feature regular users can contact contractors in house for direct inquiries. Just another way we try to 
-                assist our users in making their renovation dreams a reality. If there are any questions or ideas to expand our inventory of services please feel free to contact our team 
-                directly on the about page. 
-            </p>
-        </div>
-</div>
-
-    <div class="row">
-        <div class="col-md-3">
-            <h2>Resources</h2>
-            <h5>Home Improvement Sites</h5>
-
-            <ul>
-
-                <li>
-                    <a href="https://www.homedepot.com/"> <img src="~/images/HomeDepot.png" /></a>
-                </li>
-
-                <li>
-                    <a href="https://www.lowes.com/"> <img src="~/images/lowes.png" /></a>
-                </li>
-
-                <li>
-                    <a href="https://www.menards.com/"><img src="~/images/menards.png" /></a>
-                </li>
-
-            </ul>
-        </div>
-        <div class="col-md-3">
-            <h2>Inspiration</h2>
-            <h5>DIY Pictures and Info</h5>
-            <ul>
-                <li>
-                    <a href="https://www.hgtv.com/"> <img src="~/images/HGTV.png" /></a>
-                </li>
-
-                <li>
-                    <a href="https://www.houzz.com/"> <img src="~/images/houzz.png" /></a>
-                </li>
-
-                <li>
-                    <a href="https://www.diynetwork.com/"><img src="~/images/DIYNetwork.png" /></a>
-                </li>
-
-
-
-            </ul>
-        </div>
-        <div class="col-md-3">
-            <h2>Contractors</h2>
-            <h5>Search Local Proffesionals</h5>
-            <ul>
-                <li><a href="https://pro.homeadvisor.com/home-improvement-contractor-leads/"><img src="~/images/home advisor 2.png" /></a></li>
-                <li><a href="https://www.angieslist.com/companylist/contractor.htm"><img src="~/images/angies-list-logo.png" /></a></li>
-                <li><a href="https://www.yelp.com/nearme/contractors"><img src="~/images/yelp.png" /></a></li>
-            </ul>
-        </div>
-
-    </div>
 
 </body>
