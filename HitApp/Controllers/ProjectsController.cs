@@ -40,7 +40,9 @@ namespace HitApp.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            var project = projectRepo.SetTodaysDate();
+
+            return View(project);
         }
 
         [HttpPost]

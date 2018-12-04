@@ -13,5 +13,6 @@ namespace HitApp
        void Create(Project project);
        void Delete(int id);
        void Update(Project project);
+       Project SetTodaysDate();
     }
 }

@@ -14,26 +14,29 @@
         <a asp-controller="Projects" asp-action="Create">Create Project</a>
     </p>
     <p>
-        <a asp-controller="Projects"asp-action="Index">View All</a>
+        <a asp-controller="Projects" asp-action="Index">View All</a>
     </p>
 </div>
 @foreach (var project in Model)
 {
-    <div class="cards">
-        <div class="left-card">
-            <h3>@project.ProjectName</h3>
-            <a href="/projects/details/@project.ProjectId"> See Details</a>
+    @if (project.ProjectIsOnDashboard == true) { 
+
+        <div class="cards">
+            <div class="left-card">
+                <h3>@project.ProjectName</h3>
+                <a href="/projects/details/@project.ProjectId"> See Details</a>
+            </div>
+            <div class="right-card">
+                <p>$@project.ProjectTotalBudget : Budget</p>
+                <p>$@project.ProjectTotalExpenses : Total Expenses:</p>
+                ---------------------------------
+                <p>
+                    $@(project.ProjectTotalBudget - project.ProjectTotalExpenses) : Balance
+                </p>
+
+            </div>
         </div>
-        <div class="right-card">
-            <p>$@project.ProjectTotalBudget : Budget</p>
-            <p>$@project.ProjectTotalExpenses : Total Expenses:</p>
-            ---------------------------------
-            <p>
-                $@(project.ProjectTotalBudget - project.ProjectTotalExpenses) : Balance
-                    </p>
-            
-        </div>
-    </div>
+    }
 
 }
 @*<table class="table">

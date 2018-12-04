@@ -26,7 +26,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.ProjectEndDate)
             </th>
-
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectIsOnDashboard)
+            </th>            
 
             <th></th>
         </tr>
@@ -34,26 +36,34 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProjectName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProjectDescription)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProjectStartDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProjectEndDate)
-                </td>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectEndDate)
+            </td>
+            @if (item.ProjectIsOnDashboard == true)
+            {
+                <td><i class="far fa-check-circle"></i></td>
+            }
+            else
+            {
+                <td><i class="fas fa-ban"></i></td>
+            }
 
-                <td>
+            <td>
 
-                    <a asp-action="Details" asp-route-id="@item.ProjectId"><i class="far fa-list-alt"></i></a>
-                    <a asp-action="Delete" asp-route-id="@item.ProjectId"><i class="fas fa-times"></i></a>
-                </td>
-            </tr>
+                <a asp-action="Details" asp-route-id="@item.ProjectId" title="Details"><i class="far fa-list-alt"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.ProjectId" title="Delete"><i class="fas fa-times"></i></a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
