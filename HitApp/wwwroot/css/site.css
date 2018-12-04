@@ -6,39 +6,12 @@ body {
     background-color: rgba(193, 193, 193, 0.2784313725490196);
    
 }
-.body-content {
-    padding-left: 5px;
-    padding-right: 5px;
-}
-.foot {
-    color: white;
-}
-.navbar-inverse {
-    background: linear-gradient( rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.5) ), url(../images/wood.jpg);
-}
-
-    .navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-brand {
-        color: white;
-    }
-/*.container.body-content {
-    background: url('../images/Drawing.jpg')no-repeat center;
-    padding-left:0px;
-    padding-right:0px;
-    width:auto;
-    height:605px;
-    overflow:hidden;
-    background-size:cover;
-    background-position:top;
-}*/
-/*Home Page*/
-#Index .container{
-    
-    padding-bottom: 10px;
-    margin-left:0px;
-    margin-right:0px;
-    width:100%;
-    height:100%;
-
+.Index {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: rgba(193, 193, 193, 0.2784313725490196);
+    background: url('../images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
     /*filter: saturate(50%);
      Browser Specific
     -webkit-filter: saturate(50%);
@@ -46,57 +19,34 @@ body {
     -ms-filter: saturate(50%);*/
     /*-webkit-filter: blur(5px);*/
 }
-#Index{
-    background:url(../images/wood.jpg);
-}
 
-#Index .body-content{
-    padding-left:0px;
-    padding-right:0px;
-}
-/* Carousel */
-.carousel-caption p {
-    font-size: 25px;
-    line-height: 1.4;
-    color: white;
-    text-shadow: 1px 1px 1px #000;
-    /*background: rgba(0,0,0, 0.1);*/
-}
-
-.carousel .item {
-    width: 100%; /*slider width*/
-    max-height: 600px; /*slider height*/
-}
-
-    .carousel .item img {
-        width: 100%; /*img width*/
-    }
-/*full width container*/
-@media (max-width: 767px) {
-    .block {
-        margin-left: -20px;
-        margin-right: -20px;
-    }
-}
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
-    height: 100%;
-}
-/*About Page*/
-#About {
-    background: url(../images/brown1.jpg) no-repeat fixed center;
    
-    background-size: cover;
+.row{
+    padding-left:400px;
 }
 
-.Welcome, .Plan, .Help, .Supplys, .Contractors {
-    display: inline-flex;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    margin: 50px;
-    height: 300px;
-    font-size: 18px;
+.navbar-inverse {
+    background-color: rgba(38,8,1, .9);
+    background: rgba(255,0,0, 0.5);
+}
+    .navbar-inverse .navbar-nav > li > a , .navbar-inverse .navbar-brand {
+        color: white;
+    }
 
+.col-md-3 img {
+    
+    width: 100%;
+    height:25%;
+    
+}
+/*editing link text and background color*/
+.col-md-3 {
+    color: white;
+    background: rgba(0,0,0, 0.5);
+    padding:10px;
+    margin:30px;
+    height:427.38px;
+}
 #project-id {
     display: none;
 } 
@@ -120,86 +70,67 @@ table {
     .body-content {
     padding-left: 5px;
     padding-right: 5px;
-
 }
 
-    .Welcome p, .Supplys p, .Contractors p {
+
+.Welcome , .Plan , .Help , .Supplys , .Contractors{
+    display:inline-flex;
+    margin:20px;
+    height:300px;
+}
+    .Welcome p , .Supplys p , .Contractors p{
+        font-size: 1em;
+        text-shadow: 1px 1px 1px #000;
         color: white;
         display: inline-block;
         background: rgba(0,0,0, 0.5);
         color: white;
-        height: 300px;
+        height:300px;
     }
 
 
-    .Plan p, .Help p {
+    .Plan p , .Help p{
         order: 1;
+        font-size: 1em;
+        text-shadow: 1px 1px 1px #000;
         display: inline-block;
         background: rgba(0,0,0, 0.5);
         color: white;
-        height: 300px;
+        height:300px;
     }
-
-    .Plan img, .Help img {
-        order: 2;
+.Plan img , .Help img {
+        order:2;
         height: 300px;
         padding: 0px;
         vertical-align: middle;
     }
-/*Resource Page*/
-.Resource {
-    background: url('../images/background.jpg') no-repeat fixed bottom;
-}
-
    
-.row{
-    padding-left:400px;
-}
-
-
-.col-md-3 img {
-    
-    width: 100%;
-    height:25%;
-    
-}
-/*editing link text and background color*/
-.col-md-3 {
+/* Carousel */
+.carousel-caption p {
+    font-size: 25px;
+    line-height: 1.4;
     color: white;
-    background: rgba(0,0,0, 0.5);
-    padding: 10px;
-    margin: 30px;
-    height: 427.38px;
+    text-shadow: 1px 1px 1px #000;
+    /*background: rgba(0,0,0, 0.1);*/
 }
-
-/*ProjectList Page*/
-#ProjectIndex {
-    background: url(../images/wood.jpg) no-repeat fixed center;
-    background-size: cover;
-
+#myCarousel{
+    border-color:darkred;
 }
-    #ProjectIndex h2, p {
-        color:white;
-        border-color: white;
-        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    }
-    #ProjectIndex .table {
-        background: rgba(255, 0, 0, 0.5);
-        border-style: ridge;
-        border-color: white;
-        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-        color: white;
-    }
-    
-#project-id {
-    display: none;
-}    
+/*.container.body-content {
+    background: url('../images/Drawing.jpg')no-repeat center;
+    padding-left:0px;
+    padding-right:0px;
+    width:auto;
+    height:605px;
+    overflow:hidden;
+    background-size:cover;
+    background-position:top;
+}*/
 
-
-
-
-
-
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
 
 /* QR code generator */
 #qrCode {
