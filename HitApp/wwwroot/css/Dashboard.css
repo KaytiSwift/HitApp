@@ -4,12 +4,16 @@
     padding: 2em;
     margin: 1em 0;
     display: flex;
-    justify-content: space-between;
+    justify-content:space-around;
     align-items: baseline;
     box-shadow: 5px 5px #73503c;
-    color:white;
-
+    color: white;
+    flex-basis: 15em;
 }
+.left-card{
+    width:15%;
+}
+
 .cards a ,#tabs a {
     color: white;
     padding: 5px;
@@ -42,9 +46,9 @@
     text-align: center;
 }
 
-.progressBar span {
-    background-color: rgba(1, 0, 0, 0.00);
-}
+    .progressBar span {
+        background-color: rgba(1, 0, 0, 0.00);
+    }
 
 
 
