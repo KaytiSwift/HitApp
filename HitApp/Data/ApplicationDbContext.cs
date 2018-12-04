@@ -17,6 +17,7 @@ namespace HitApp.Data
         public DbSet<Project> Projects { get; set; }
         public DbSet<Contractor> Contractors { get; set; }
         public DbSet<ProjectContractor> ProjectContractors { get; set; }
+        public DbSet<FilePath> FilePaths { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -8,11 +8,13 @@ namespace HitApp
 {
     public interface IProjectRepository
     {
-       IEnumerable<Project> GetAll();
-       Project GetById(int projectId);
-       void Create(Project project);
-       void Delete(int id);
-       void Update(Project project);
-       Project SetTodaysDate();
+        IEnumerable<Project> GetAll();
+        Project GetById(int projectId);
+        void Create(Project project);
+        void Delete(int id);
+        void Update(Project project);
+        Project SetTodaysDate();
+        void Save();
+
     }
 }

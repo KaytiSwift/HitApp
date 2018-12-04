@@ -20,7 +20,7 @@ namespace HitApp.Tests
         {
             project = new Project();
             projectRepo = Substitute.For<IProjectRepository>();
-            underTest = new ProjectsController(projectRepo, e);
+            underTest = new ProjectsController(projectRepo);
         }
 
         [Fact]

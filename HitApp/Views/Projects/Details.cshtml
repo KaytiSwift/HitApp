@@ -56,10 +56,9 @@
 
 </div>
 
-
 <div>
-    <form method="post" action="/Projects/ImageUpload" enctype="multipart/form-data">
-        <input type="file" name="image" /><br/>
+    <form method="post" action="/FilePaths/ImageUpload/@Model.ProjectId" enctype="multipart/form-data">
+        <input type="file" name="upload" /><br/>
         <input type="submit" value="Upload" />
     </form>
 </div>
