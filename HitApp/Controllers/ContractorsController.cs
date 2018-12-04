@@ -26,8 +26,11 @@ namespace HitApp.Controllers
         }
 
         [HttpGet]
-        public IActionResult Create()
+        public IActionResult Create(int id)
         {
+            var project = projectRepo.GetById(id);
+            ViewBag.ProjectId = project.ProjectId;
+            ViewBag.ProjectName = project.ProjectName;
             return View();
         }
 
