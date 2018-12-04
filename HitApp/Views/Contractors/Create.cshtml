@@ -4,6 +4,10 @@
     ViewData["Title"] = "Create";
 }
 
+@section Styling{
+    <link href="~/css/Creates.css" rel="stylesheet" />
+}
+
 <h2>Create New Contractor</h2>
 
 <hr />
@@ -17,14 +21,14 @@
                 <span asp-validation-for="ContractorCompany" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ContractorService" class="control-label"></label>
-                <input asp-for="ContractorService" class="form-control" />
-                <span asp-validation-for="ContractorService" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="ContractorName" class="control-label"></label>
                 <input asp-for="ContractorName" class="form-control" />
                 <span asp-validation-for="ContractorName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContractorService" class="control-label"></label>
+                <input asp-for="ContractorService" class="form-control" />
+                <span asp-validation-for="ContractorService" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ContractorEmail" class="control-label"></label>
@@ -67,7 +71,7 @@
                 <span asp-validation-for="ContractorAdditionalNotes" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" id="sub-btn" class="btn btn-default" />                
             </div>
         </form>
     </div>
