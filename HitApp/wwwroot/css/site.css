@@ -145,4 +145,24 @@ table {
     }
 }
 
+/*Project Details*/
+#ProjectDetails {
+    background: url(../images/goodwood.jpg) no-repeat, fixed, center;
+    background-size: cover;
+    /*background: url(../images/varywood.jpg) no-repeat, fixed, center;*/
+    color: white;
+}
+
+.imageUpload {
+    padding-left: 5.5em;
+    color: black;
+}
+
+#projCrud {
+    padding-top: 2em;
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    justify-content: space-between;
+}
 
