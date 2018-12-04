@@ -48,5 +48,7 @@ namespace HitApp.Models
  
         public virtual List<ProjectContractor> ProjectContractors { get; set; }
 
+        public virtual ICollection<FilePath> FilePaths { get; set; }
+
     }
 }
