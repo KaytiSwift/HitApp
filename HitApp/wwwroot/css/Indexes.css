@@ -1,0 +1,29 @@
+﻿@media screen and (min-width: 600px) {
+
+    .table {
+        border-radius: 5px;
+        margin: 0px;
+        background-color: rgba(57, 120, 141, 0.56);
+        color: lightgray;
+        
+        font-size: medium
+    }
+    tr {
+        height: 40px;
+    }
+    th {
+        color:white;
+        padding: 20px;
+        text-shadow: 2px 2px 5px black;
+    }
+    td, td a{
+        color:#221f1f;
+        font-weight:500;
+    }
+    i{
+        font-size:large;
+    }
+    .back {
+        margin:20px 0px;
+    }
+}
