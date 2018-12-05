@@ -4,18 +4,19 @@
     ViewData["Title"] = "Dashboard";
 }
 
-@section Styling{
+@section Styling
+    {
     <link href="~/css/Dashboard.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 }
 <h2>Dashboard</h2>
 
 <div id="tabs">
-    <p>
-        <a asp-controller="Projects" asp-action="Create">Create Project</a>
+    < p >
+    < a asp-controller="Projects" asp-action="Create">Create Project</a>
     </p>
     <p>
-        <a asp-controller="Projects" asp-action="Index">View All</a>
+        <a asp-controller="Projects" asp-action="Index"> View All</a>
     </p>
 </div>
 @foreach (var project in Model)
@@ -24,29 +25,31 @@
     {
 
         <div class="cards">
-            <div class="left-card">
-                <h3>@project.ProjectName</h3>
-                <a href="/projects/details/@project.ProjectId"> See Details</a>
-            </div>
+        <div class="left-card">
+            <h3>@project.ProjectName</h3>
+            <a href="/projects/details/@project.ProjectId"> See Details</a>
+        </div>
 
-
-            <div class="center-card w3-light-grey w3-round-xlarge" style="width: 500px">
+        <div>
+            <h3 class="center-card">Budget spent</h3>
+            <div class=" w3-light-grey w3-round-xlarge" style="width: 500px">
                 <div class="progressBar" style="width: 0%"><span class="progress"></span>%</div>
             </div>
+        </div>
+        <div class="right-card">
+            <p>$<span class="projectTotalBudget">@project.ProjectTotalBudget</span> : Budget</p>
+            <p>$<span class="projectTotalExpenses">@project.ProjectTotalExpenses</span> : Total Expenses:</p>
+            -------------------------
+            <p>
+                <span class="balance">$@(project.ProjectTotalBudget - project.ProjectTotalExpenses) : Balance</span>
+            </p>
 
-            <div class="right-card">
-                <p>$<span class="projectTotalBudget">@project.ProjectTotalBudget</span> : Budget</p>
-                <p>$<span class="projectTotalExpenses">@project.ProjectTotalExpenses</span> : Total Expenses:</p>
-                ---------------------------------
-                <p>
-                    <span class="balance">$@(project.ProjectTotalBudget - project.ProjectTotalExpenses) : Balance</span>
-                </p>
-
-            </div>
+        </div>
         </div>
     }
 }
 
-@section Scripts{
+@section Scripts
+    {
     <script src="~/js/ProgressBar.js"></script>
 }
