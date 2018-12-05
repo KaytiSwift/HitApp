@@ -69,6 +69,8 @@ namespace HitApp.Controllers
                     orderby filePath.ProjectId // sorts by the date
                     select filePath;
             ViewBag.ProjectId = id;
+            var project = projectRepo.GetById(id);
+            ViewBag.ProjectName = project.ProjectName;
             
             return View(model);
         }
