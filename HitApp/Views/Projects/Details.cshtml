@@ -53,14 +53,14 @@
     </div>
 
 
-    <div class="imageUpload">
+    <div id="ImageUpload">
         <form method="post" action="/Projects/ImageUpload" enctype="multipart/form-data">
             <input type="file" name="image" /><br />
             <input type="submit" value="Upload" />
         </form>
     </div>
 
-    <div id="projCrud">
+    <div id="ProjectCrud">
         <a asp-action="Edit" asp-route-id="@Model.ProjectId"><i class="far fa-edit"></i></a>
         <a asp-action="Delete" asp-route-id="@Model.ProjectId"><i class="fas fa-times"></i></a>
         <a asp-action="Index">Back to Projects</a>
@@ -138,29 +138,19 @@
         </div>
     </div>
 
-    <div>
+    <div id="ExpenseTable">
         <h4>Expenses   Total = @Html.DisplayFor(model => model.ProjectTotalExpenses)</h4>
 
-        @*@foreach (var expense in Model.Expenses)
-            {
-                <ul>
-                    <li>Expense Name: @expense.ExpenseName
-                        <ul>
-                            <li>Cost: $@expense.ExpenseCost</li>
-                            <li>Date Purchased: @expense.ExpenseDatePurchased.ToShortDateString()</li>
-                            <li>Notes: @expense.ExpenseNotes</li>
-                        </ul>
-                    </li>
-                    <li id="expense-links">
-                        <a asp-controller="Expenses" asp-action="Edit" asp-route-id="@expense.ExpenseId">Edit</a>
-                        <a asp-controller="Expenses" asp-action="Delete" asp-route-id="@expense.ExpenseId">Delete</a>
-                    </li>
-                </ul>
-            }*@
+        <div class="add-expense">
 
-        <table class="expense-table">
+            <a asp-controller="Expenses" asp-action="Create" asp-route-id="@Model.ProjectId"><i class="far fa-plus-square"></i> Add Expense</a>
+
+        </div>
+
+
+        <table class="table">
             <thead>
-                <tr>
+                <tr class="table-header">
                     <th>
                         Name
                     </th>
@@ -210,11 +200,6 @@
                 }
             </tbody>
         </table>
-
-    </div>
-    <div>
-
-        <a asp-controller="Expenses" asp-action="Create" asp-route-id="@Model.ProjectId"><i class="far fa-plus-square"></i> Add Expense</a>
 
     </div>
 

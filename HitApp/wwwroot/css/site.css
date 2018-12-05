@@ -153,12 +153,12 @@ table {
     font-size: large;
 }
 
-.imageUpload {
+#ImageUpload {
     padding-left: 5.5em;
     color: black;
 }
 
-#projCrud {
+#ProjectCrud {
     padding-top: 2em;
     padding-bottom: 4em;
     display: flex;
@@ -175,6 +175,21 @@ table {
     padding: 0.3em;
     padding-left: 0.7em;
     padding-right: 0.7em;
-    background-color: rgba(57, 120, 141, 0.56);
+    background-color: rgb(57, 120, 141);
     font-size: large;
+}
+
+#ExpenseTable { /*Expenses table. Don't change id name, it messes up formatting.*/
+    border-radius: 5px;
+    margin-top: 2em;
+    padding: 0.3em;
+    padding-left: 0.7em;
+    padding-right: 0.7em;
+    background-color: rgb(255, 0, 0);
+    font-size: large;
+}
+
+.table-header {
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
