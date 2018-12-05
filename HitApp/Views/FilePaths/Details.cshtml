@@ -4,11 +4,9 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>Image @Model.FilePathId for @Model.Project.ProjectName Project</h2>
 
-<div>
-    <h4>Image</h4>
-    <hr />
+<div>   
     <img src="/UserImages/@Model.FileName" />
 </div>
 <div>

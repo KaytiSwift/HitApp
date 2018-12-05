@@ -3,39 +3,22 @@
 @{
     ViewData["Title"] = "Index";
 }
+@section Styling{
 
-<h2>Index</h2>
+    <link href="~/css/Images.css" rel="stylesheet" />
+}
+<h2>Images for @ViewBag.ProjectName Project</h2>
 
 @*<p>
-    <a asp-action="Create">Create New</a>
-</p>*@
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FileName)</a>
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Project)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                <a href="/FilePaths/Details/@item.FilePathId"><img style="max-height: 50px" src="/UserImages/@Html.DisplayFor(modelItem => item.FileName)" /></a>
-</td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Project.ProjectId) 
-            </td>
-            <td>
-                @*<a asp-action="Edit" asp-route-id="@item.FilePathId">Edit</a> |*@
-                <a asp-action="Details" asp-route-id="@item.FilePathId">Details</a> |
-                @*<a asp-action="Delete" asp-route-id="@item.FilePathId">Delete</a>*@
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+        <a asp-action="Create">Create New</a>
+    </p>*@
+
+<div class="images">
+    @foreach (var item in Model)
+    {
+        <div>
+            <a href="/FilePaths/Details/@item.FilePathId"><img src="/UserImages/@Html.DisplayFor(modelItem => item.FileName)" /></a>
+        </div>
+    }
+</div>
+
