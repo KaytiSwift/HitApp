@@ -4,11 +4,16 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>@Model.ContractorName</h2>
+
+<div class="back">
+    <a asp-controller="Contractors" asp-action="Index">
+        <input type="button" value="Back to All Contractors" class="btn btn-default" />
+    </a>
+</div>
 
 <div>
-    <h4>Contractor</h4>
-    <hr />
+    <h3>Contractor Info</h3>
     <dl class="dl-horizontal">
         <dt>
             Company
@@ -98,6 +103,5 @@
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.ContractorId" title="Edit"><i class="far fa-edit"></i></a> |
-    <a asp-action="Delete" asp-route-id="@Model.ContractorId" title="Delete"><i class="fas fa-times"></i></a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Delete" asp-route-id="@Model.ContractorId" title="Delete"><i class="fas fa-times"></i></a>
 </div>
