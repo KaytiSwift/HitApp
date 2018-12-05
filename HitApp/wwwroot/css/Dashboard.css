@@ -1,55 +1,82 @@
-﻿.cards {
-    background-color: #b39577;
+﻿body {
+    background-image: url(https://c1.staticflickr.com/9/8228/8538058050_6ce976ee74_b.jpg) !important;
+}
+
+.cards {
+    background-image: url();
     border-radius: 10px;
     padding: 2em;
     margin: 1em 0;
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
     align-items: baseline;
-    box-shadow: 5px 5px #73503c;
+    box-shadow: 5px 5px #3c3a3a;
     color: white;
     flex-basis: 15em;
-}
-.left-card{
-    width:15%;
+    text-shadow: -1px -1px 0 #000;
+    font-size: 1.1em;
+    background-color: rgb(128, 159, 255);
 }
 
-.cards a ,#tabs a {
+.left-card {
+    width: 15%;
+}
+
+.cards a, #tabs a {
     color: white;
     padding: 5px;
     text-decoration: none;
     border-style: groove;
     border-radius: 3px;
-    border-color:white;
+    border-color: white;
 }
-    .cards a:hover,#tabs a:hover {
-        color: #260801;
+
+    .cards a:hover, #tabs a:hover {
+        color: yellow;
     }
-    #tabs a{
-         color:black;
-    }
+
 
 
 .left-card h3 {
     font-size: 2.5em;
     text-shadow: 2px 1px black;
 }
-#tabs{
-    display:flex;
-    justify-content:space-between;
+
+# tabs {
+    display: flex;
+    justify-content: space-between;
 }
 
 
 .progressBar {
+    height: 40px;
     background-color: lightgreen;
-    border-radius: 25px;
+    border-radius: 30px;
     text-align: center;
+    padding-top: 9px;
 }
 
-    .progressBar span {
-        background-color: rgba(1, 0, 0, 0.00);
-    }
 
+.w3-round-xlarge {
+    border-radius: 30px !important;
+}
 
+.progressBar span {
+    background-color: rgba(1, 0, 0, 0.00);
+}
 
+.center-card {
+    text-align: center;
+    height: 40px;
+}
 
+.right-card {
+    background-color: #35a8bd;
+    border: 1px solid black;
+    padding: 1em;
+    font-weight: bold;
+}
+
+.w3-light-grey {
+    box-shadow: 5px 5px 7px black;
+}
