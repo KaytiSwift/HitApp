@@ -3,14 +3,16 @@
 @{
     ViewData["Title"] = "Create";
 }
-
+@section Styling{
+    <link href="~/css/Creates.css" rel="stylesheet" />
+}
 
 <h2>Add New Expense For @Model.Project.ProjectName</h2>
 
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form class="page-form" asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group" id="project-id">
                 <label asp-for="ProjectId" class="control-label"></label>
@@ -24,33 +26,35 @@
             </div>
             <div class="form-group">
                 <label asp-for="ExpenseCost" class="control-label"></label>
+                
                 <input asp-for="ExpenseCost" class="form-control" />
                 <span asp-validation-for="ExpenseCost" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ExpenseDatePurchased" class="control-label"></label>
+                <label asp-for="ExpenseDatePurchased" class="control-label"></label>               
                 <input asp-for="ExpenseDatePurchased" class="form-control" />
                 <span asp-validation-for="ExpenseDatePurchased" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ProductUrl" class="control-label"></label>
-                <input asp-for="ProductUrl" class="form-control" />
+                <input  asp-for="ProductUrl" value="https://" class="form-control" />
                 <span asp-validation-for="ProductUrl" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ExpenseNotes" class="control-label"></label>
-                <input asp-for="ExpenseNotes" class="form-control" />
+                <input id="add-info" asp-for="ExpenseNotes" class="form-control" />
                 <span asp-validation-for="ExpenseNotes" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input id="create-exp" type="submit" value="Create" class="btn btn-default" />
+                <a asp-controller="Projects" asp-action="Details" asp-route-id="@Model.ProjectId">
+                    <input id="back-button"type="button" value="Back to @Model.Project.ProjectName" class="btn btn-default" />
+                </a>
             </div>
         </form>
     </div>
 </div>
-<div>
-    <a asp-controller="Projects" asp-action="Details" asp-route-id="@Model.ProjectId">Back to Project</a>
-</div>
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
