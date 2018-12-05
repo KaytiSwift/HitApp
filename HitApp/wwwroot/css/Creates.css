@@ -16,17 +16,36 @@ form {
     grid-template-columns: 1fr;
 }
 @media screen and (min-width: 600px){
+    .body-content{
+    }
     .row {
         display: flex;
-        padding: 1em;
     }
-    form {
+    .page-form {
+        padding:20px;
+        border-radius:5px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap:35px;
         margin:0px;
+        background-color:rgba(57, 120, 141, 0.56);
     }
-    .sub-btn{
-        align-self:center;
-    }    
+ 
+    #add-info{
+        height:100px;
+    }
+    #create-proj, #create-cont {
+        width: auto;
+    }
+
+    #back-button, #create-exp  {
+        margin-left: 30px;
+    }
+    .back{
+        margin-top:20px;
+    }
+    .form-group {
+        width: 300px;
+        margin: auto;
+    }
 }
