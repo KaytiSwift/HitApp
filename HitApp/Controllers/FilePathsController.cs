@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace HitApp.Controllers
@@ -55,17 +56,20 @@ namespace HitApp.Controllers
         public IActionResult Details(int id)
         {
             var model = filePathRepo.GetById(id);
+            model.Project.ProjectOwnerId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             return View(model);
         }
 
         public IActionResult Index(int id)
-        {
+        {            
             var model = filePathRepo.GetAll();
             model = from filePath in model
-                    where filePath.ProjectId == id //must be true
+                    where filePath.ProjectId == id //must be true  
+                    where filePath.Project.ProjectOwnerId == User.FindFirstValue(ClaimTypes.NameIdentifier)
                     orderby filePath.ProjectId // sorts by the date
                     select filePath;
             ViewBag.ProjectId = id;
+            
             return View(model);
         }
     }
