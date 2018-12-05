@@ -23,15 +23,42 @@ body {
    
 .row{
     padding-left:400px;
+    background-color: rgba(193, 193, 193, 0.2784313725490196);
+   
+}
+.body-content {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.foot {
+    color: white;
+}
+.navbar-inverse {
+    background: linear-gradient( rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.5) ), url(../images/wood.jpg);
 }
 
-.navbar-inverse {
-    background-color: rgba(38,8,1, .9);
-    background: rgba(255,0,0, 0.5);
-}
-    .navbar-inverse .navbar-nav > li > a , .navbar-inverse .navbar-brand {
+    .navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-brand {
         color: white;
     }
+/*.container.body-content {
+    background: url('../images/Drawing.jpg')no-repeat center;
+    padding-left:0px;
+    padding-right:0px;
+    width:auto;
+    height:605px;
+    overflow:hidden;
+    background-size:cover;
+    background-position:top;
+}*/
+/*Home Page*/
+#Index .container{
+    
+    padding-bottom: 10px;
+    margin-left:0px;
+    margin-right:0px;
+    width:100%;
+    height:100%;
+}
 
 .col-md-3 img {
     
@@ -104,7 +131,14 @@ table {
         padding: 0px;
         vertical-align: middle;
     }
-   
+#Index{
+    background:url(../images/wood.jpg);
+}
+
+#Index .body-content{
+    padding-left:0px;
+    padding-right:0px;
+}
 /* Carousel */
 .carousel-caption p {
     font-size: 25px;
@@ -127,10 +161,117 @@ table {
     background-position:top;
 }*/
 
+.carousel .item {
+    width: 100%; /*slider width*/
+    max-height: 600px; /*slider height*/
+}
+
+    .carousel .item img {
+        width: 100%; /*img width*/
+    }
+/*full width container*/
+@media (max-width: 767px) {
+    .block {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+}
 /* Make .svg files in the carousel display properly in older browsers */
 .carousel-inner .item img[src$=".svg"] {
     width: 100%;
+    height: 100%;
 }
+/*About Page*/
+#About {
+    background: url(../images/brown1.jpg) no-repeat fixed center;
+   
+    background-size: cover;
+}
+.Welcome, .Plan, .Help, .Supplys, .Contractors {
+    display: inline-flex;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin: 50px;
+    height: 300px;
+    font-size: 18px;
+}
+
+    .Welcome p, .Supplys p, .Contractors p {
+        color: white;
+        display: inline-block;
+        background: rgba(0,0,0, 0.5);
+        color: white;
+        height: 300px;
+    }
+
+
+    .Plan p, .Help p {
+        order: 1;
+        display: inline-block;
+        background: rgba(0,0,0, 0.5);
+        color: white;
+        height: 300px;
+    }
+
+    .Plan img, .Help img {
+        order: 2;
+        height: 300px;
+        padding: 0px;
+        vertical-align: middle;
+    }
+/*Resource Page*/
+.Resource {
+    background: url('../images/background.jpg') no-repeat fixed bottom;
+}
+
+   
+.row{
+    padding-left:400px;
+}
+
+
+.col-md-3 img {
+    
+    width: 100%;
+    height:25%;
+    
+}
+/*editing link text and background color*/
+.col-md-3 {
+    color: white;
+    background: rgba(0,0,0, 0.5);
+    padding: 10px;
+    margin: 30px;
+    height: 427.38px;
+}
+
+/*ProjectList Page*/
+#ProjectIndex {
+    background: url(../images/wood.jpg) no-repeat fixed center;
+    background-size: cover;
+
+}
+    #ProjectIndex h2, p {
+        color:white;
+        border-color: white;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+    #ProjectIndex .table {
+        background: rgba(255, 0, 0, 0.5);
+        border-style: ridge;
+        border-color: white;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        color: white;
+    }
+    
+#project-id {
+    display: none;
+}    
+
+
+
+
+
+
 
 /* QR code generator */
 #qrCode {
