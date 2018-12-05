@@ -12,7 +12,7 @@ namespace HitApp.Models
         public int ExpenseId { get; set; }
 
         [Required]
-        [Display(Name = "Name")]
+        [Display(Name = "Product/Labor Expense Name (Required)")]
         public string ExpenseName { get; set; }
 
         [Required]
