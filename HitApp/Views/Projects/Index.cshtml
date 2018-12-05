@@ -3,7 +3,9 @@
 @{
     ViewData["Title"] = "Index";
 }
-
+@section Styling{
+    <link href="~/css/Indexes.css" rel="stylesheet" />
+}
 <h2>All Projects</h2>
 <a asp-controller="Contractors" asp-action="Index">View All Contractors</a>
 
@@ -17,7 +19,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.ProjectName)
             </th>
-            <th>
+            <th >
                 @Html.DisplayNameFor(model => model.ProjectDescription)
             </th>
             <th>
@@ -40,9 +42,13 @@
             <td>
                 @Html.DisplayFor(modelItem => item.ProjectName)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProjectDescription)
+            
+            <td class="desc">
+                <div>
+                    @Html.DisplayFor(modelItem => item.ProjectDescription)
+                </div>
             </td>
+            
             <td>
                 @Html.DisplayFor(modelItem => item.ProjectStartDate)
             </td>

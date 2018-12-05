@@ -10,20 +10,30 @@
     }
     tr {
         height: 40px;
+        padding: 5px;
     }
     th {
-        color:white;
-        padding: 20px;
-        text-shadow: 2px 2px 5px black;
+        color: white;
+        text-shadow: 1px 1px 9px grey;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
     td, td a{
         color:#221f1f;
         font-weight:500;
+        padding:5px;
     }
+
     i{
         font-size:large;
     }
     .back {
         margin:20px 0px;
+    }
+    .desc {
+        display:flex;
+        max-width: 200px;
+        height: 100px;
+        overflow-wrap:break-word;
+        word-wrap:break-word;
     }
 }
