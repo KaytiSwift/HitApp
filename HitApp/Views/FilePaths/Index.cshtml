@@ -9,6 +9,12 @@
 }
 <h2>Images for @ViewBag.ProjectName Project</h2>
 
+<div class="back">
+    <a asp-controller="Projects" asp-action="Details" asp-route-id="@ViewBag.ProjectId">
+        <input type="button" value="Back to @ViewBag.ProjectName" class="btn btn-default" />
+    </a>
+</div>
+
 @*<p>
         <a asp-action="Create">Create New</a>
     </p>*@
