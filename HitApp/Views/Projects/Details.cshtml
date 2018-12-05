@@ -7,244 +7,225 @@
 <body id="ProjectDetails">
 
 
-    <h2>@Model.ProjectName Project Details</h2>
+        <h2>@Model.ProjectName Project Details</h2>
 
-    <div>
+        <div id="ProjectInfo">
 
-        @if (Model.ProjectIsOnDashboard == true)
-        {
-            <h5> Displayed on Dashboard: <i class="far fa-check-circle"></i> </h5>
-        }
-        else
-        {
-            <h5> Displayed on Dashboard: <i class="fas fa-ban"></i> </h5>
-        }
+            @if (Model.ProjectIsOnDashboard == true)
+            {
+                <h5> Displayed on Dashboard: <i class="far fa-check-circle"></i> </h5>
+            }
+            else
+            {
+                <h5> Displayed on Dashboard: <i class="fas fa-ban"></i> </h5>
+            }
 
 
 
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.ProjectName)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.ProjectName)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.ProjectStartDate)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.ProjectStartDate)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.ProjectEndDate)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.ProjectEndDate)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.ProjectDescription)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.ProjectDescription)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.ProjectTotalBudget)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.ProjectTotalBudget)
-            </dd>
-        </dl>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProjectName)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProjectName)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProjectStartDate)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProjectStartDate)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProjectEndDate)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProjectEndDate)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProjectDescription)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProjectDescription)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProjectTotalBudget)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProjectTotalBudget)
+                </dd>
+            </dl>
 
-    </div>
+            <div class="image-upload">
+                <form method="post" action="/Projects/ImageUpload" enctype="multipart/form-data">
+                    <input type="file" name="image" /><br />
+                    <input type="submit" value="Upload" />
+                </form>
+            </div>
 
-    <div>
-        <form method="post" action="/FilePaths/ImageUpload/@Model.ProjectId" enctype="multipart/form-data">
-            <input type="file" name="upload" /><br />
-            <input type="submit" value="Upload" />
-        </form>
-    </div>
+        </div>
 
-    <div>
-        <a asp-action="Edit" asp-route-id="@Model.ProjectId" title="Edit"><i class="far fa-edit"></i></a> |
-        <a asp-action="Delete" asp-route-id="@Model.ProjectId" title="Delete"><i class="fas fa-times"></i></a> |
-        <a asp-action="Index">Back to Projects</a>
+        
 
-    </div>
+        <div id="ProjectCrud">
+            <a asp-action="Edit" asp-route-id="@Model.ProjectId"><i class="far fa-edit"></i></a>
+            <a asp-action="Delete" asp-route-id="@Model.ProjectId"><i class="fas fa-times"></i></a>
+            <a asp-action="Index">Back to Projects</a>
 
-    <div id="ImageUpload">
-        <form method="post" action="/Projects/ImageUpload" enctype="multipart/form-data">
-            <input type="file" name="image" /><br />
-            <input type="submit" value="Upload" />
-        </form>
-    </div>
-
-    <div id="ProjectCrud">
-        <a asp-action="Edit" asp-route-id="@Model.ProjectId"><i class="far fa-edit"></i></a>
-        <a asp-action="Delete" asp-route-id="@Model.ProjectId"><i class="fas fa-times"></i></a>
-        <a asp-action="Index">Back to Projects</a>
-
-    </div>
+        </div>
 
 
 
 
 
+        <div id="Contractors">
+            <h4>Contractors</h4>
+            <a asp-controller="Contractors" asp-action="Create" asp-route-id="@Model.ProjectId"><i class="far fa-plus-square"></i> Add Contractor</a>
+            <p></p>
+            <a asp-controller="Contractors" asp-action="Index">View All Contractors</a>
 
-    <div id="Contractors">
-        <h4>Contractors</h4>
-        <a asp-controller="Contractors" asp-action="Create" asp-route-id="@Model.ProjectId"><i class="far fa-plus-square"></i> Add Contractor</a>
-        <p></p>
-        <a asp-controller="Contractors" asp-action="Index">View All Contractors</a>
+            @*<button onclick="showContractors()">Show Contractors</button>*@
 
-        @*<button onclick="showContractors()">Show Contractors</button>*@
+            <div id="contractor-table-header">
+                <table class="table">
+                    <thead>
+                        <tr class="contractor-table-header">
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Company
+                            </th>
+                            <th>
+                                Service
+                            </th>
+                            <th>
+                                Phone
+                            </th>
+                            <th>
+                                Email
+                            </th>
+                            <th>
+                                Notes
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody class="contractor-list">
+                        @foreach (var item in Model.ProjectContractors)
+                        {
 
-        <div id="contractor-table">
+                            <tr data-project-contractor-id="@item.ProjectContractorId">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Contractors.ContractorName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Contractors.ContractorCompany)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Contractors.ContractorService)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Contractors.ContractorPhone)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Contractors.ContractorEmail)
+                                </td>
+                                <td title="@Html.DisplayFor(modelItem => item.Contractors.ContractorAdditionalNotes)" class="truncate">
+                                    @Html.DisplayFor(modelItem => item.Contractors.ContractorAdditionalNotes)
+                                </td>
+
+                                <td>
+
+                                    <a asp-controller="Contractors" asp-action="Edit" asp-route-id="@item.Contractors.ContractorId"><i class="far fa-edit"></i></a>
+                                    <a class="remove-contractor" data-project-contractor-id="@item.ProjectContractorId"><i class="fas fa-times"></i></a>
+                                    <a asp-controller="Contractors" asp-action="Details" asp-route-id="@item.Contractors.ContractorId"><i class="far fa-list-alt"></i></a>
+
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <div id="ExpenseTable">
+            <h4>Expenses   Total = @Html.DisplayFor(model => model.ProjectTotalExpenses)</h4>
+
+            <div class="add-expense">
+
+                <a asp-controller="Expenses" asp-action="Create" asp-route-id="@Model.ProjectId"><i class="far fa-plus-square"></i> Add Expense</a>
+
+            </div>
+
             <table class="table">
                 <thead>
-                    <tr class="contractor-table-header">
+                    <tr class="expense-table-header">
                         <th>
                             Name
                         </th>
                         <th>
-                            Company
+                            Total Cost
                         </th>
                         <th>
-                            Service
+                            Date Purchased
                         </th>
                         <th>
-                            Phone
-                        </th>
-                        <th>
-                            Email
+                            Product Link
                         </th>
                         <th>
                             Notes
                         </th>
+
+
                         <th></th>
                     </tr>
                 </thead>
-                <tbody class="contractor-list">
-                    @foreach (var item in Model.ProjectContractors)
+                <tbody>
+                    @foreach (var item in Model.Expenses)
                     {
-
-                        <tr data-project-contractor-id="@item.ProjectContractorId">
+                        <tr>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Contractors.ContractorName)
+                                @Html.DisplayFor(modelItem => item.ExpenseName)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Contractors.ContractorCompany)
+                                @Html.DisplayFor(modelItem => item.ExpenseCost)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Contractors.ContractorService)
+                                @Html.DisplayFor(modelItem => item.ExpenseDatePurchased)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Contractors.ContractorPhone)
+                                <a href="@Html.DisplayFor(modelItem => item.ProductUrl)">@Html.DisplayFor(modelItem => item.ExpenseName)</a>
                             </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Contractors.ContractorEmail)
-                            </td>
-                            <td title="@Html.DisplayFor(modelItem => item.Contractors.ContractorAdditionalNotes)" class="truncate">
-                                @Html.DisplayFor(modelItem => item.Contractors.ContractorAdditionalNotes)
+                            <td title="@Html.DisplayFor(modelItem => item.ExpenseNotes)" class="truncate">
+                                @Html.DisplayFor(modelItem => item.ExpenseNotes)
                             </td>
 
                             <td>
 
-                                <a asp-controller="Contractors" asp-action="Edit" asp-route-id="@item.Contractors.ContractorId"><i class="far fa-edit"></i></a>
-                                <a class="remove-contractor" data-project-contractor-id="@item.ProjectContractorId"><i class="fas fa-times"></i></a>
-                                <a asp-controller="Contractors" asp-action="Details" asp-route-id="@item.Contractors.ContractorId"><i class="far fa-list-alt"></i></a>
-
+                                <a asp-controller="Expenses" asp-action="Edit" asp-route-id="@item.ExpenseId" title="Edit"><i class="far fa-edit"></i></a> |
+                                <a asp-controller="Expenses" asp-action="Delete" asp-route-id="@item.ExpenseId" title="Delete"><i class="fas fa-times"></i></a>
                             </td>
                         </tr>
                     }
                 </tbody>
             </table>
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-    <div id="ExpenseTable">
-        <h4>Expenses   Total = @Html.DisplayFor(model => model.ProjectTotalExpenses)</h4>
-
-        <div class="add-expense">
-
-            <a asp-controller="Expenses" asp-action="Create" asp-route-id="@Model.ProjectId"><i class="far fa-plus-square"></i> Add Expense</a>
 
         </div>
-    </div>
+        
 
-    <div>
-
-
-        <table class="table">
-            <thead>
-                <tr class="expense-table-header">
-                    <th>
-                        Name
-                    </th>
-                    <th>
-                        Total Cost
-                    </th>
-                    <th>
-                        Date Purchased
-                    </th>
-                    <th>
-                        Product Link
-                    </th>
-                    <th>
-                        Notes
-                    </th>
-
-
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.Expenses)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ExpenseName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ExpenseCost)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ExpenseDatePurchased)
-                        </td>
-                        <td>
-                            <a href="@Html.DisplayFor(modelItem => item.ProductUrl)">@Html.DisplayFor(modelItem => item.ExpenseName)</a>
-                        </td>
-                        <td title="@Html.DisplayFor(modelItem => item.ExpenseNotes)" class="truncate">
-                            @Html.DisplayFor(modelItem => item.ExpenseNotes)
-                        </td>
-
-                        <td>
-
-                            <a asp-controller="Expenses" asp-action="Edit" asp-route-id="@item.ExpenseId" title="Edit"><i class="far fa-edit"></i></a> |
-                            <a asp-controller="Expenses" asp-action="Delete" asp-route-id="@item.ExpenseId" title="Delete"><i class="fas fa-times"></i></a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-
-    </div>
-    <div>
-
-    </div>
-
-    <div>
-        <h4><a href="/FilePaths/Index/@Model.ProjectId">View Images</a></h4>
-    </div>
-</body>
+        <div>
+            <h4><a href="/FilePaths/Index/@Model.ProjectId">View Images</a></h4>
+        </div>
+      </body>
 
         @section Scripts{
             <script src="~/js/Contractors.js"></script>

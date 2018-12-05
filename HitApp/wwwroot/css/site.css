@@ -153,9 +153,18 @@ table {
     font-size: large;
 }
 
-#ImageUpload {
+.dl-horizontal{
+    display: flex;
+}
+
+.image-upload {
     padding-left: 5.5em;
     color: black;
+    display: flex;
+}
+
+#ProjectInfo{
+
 }
 
 #ProjectCrud {
