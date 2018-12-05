@@ -67,7 +67,7 @@
 
     </div>
 
-    <div>
+    <div id="Contractors">
         <h4>Contractors</h4>
         <a asp-controller="Contractors" asp-action="Create" asp-route-id="@Model.ProjectId"><i class="far fa-plus-square"></i> Add Contractor</a>
         <p></p>
@@ -75,10 +75,10 @@
 
         @*<button onclick="showContractors()">Show Contractors</button>*@
 
-        <div id="contractor">
+        <div id="contractor-table">
             <table class="table">
                 <thead>
-                    <tr id="contractor-header">
+                    <tr class="contractor-header">
                         <th>
                             Name
                         </th>
@@ -100,7 +100,7 @@
                         <th></th>
                     </tr>
                 </thead>
-                <tbody id="contractor-list">
+                <tbody class="contractor-list">
                     @foreach (var item in Model.ProjectContractors)
                     {
 
@@ -158,7 +158,7 @@
                 </ul>
             }*@
 
-        <table class="table">
+        <table class="expense-table">
             <thead>
                 <tr>
                     <th>

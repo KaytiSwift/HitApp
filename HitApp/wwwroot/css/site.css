@@ -147,10 +147,10 @@ table {
 
 /*Project Details*/
 #ProjectDetails {
-    background: url(../images/goodwood.jpg) no-repeat, fixed, center;
+    background: url(../images/lightwood.jpg) no-repeat, fixed, center;
     background-size: cover;
     /*background: url(../images/varywood.jpg) no-repeat, fixed, center;*/
-    color: white;
+    font-size: large;
 }
 
 .imageUpload {
@@ -160,10 +160,21 @@ table {
 
 #projCrud {
     padding-top: 2em;
+    padding-bottom: 4em;
     display: flex;
     flex-direction: row;
-    width: 150px;
+    margin-left: 54em;
+    width: 10em;
     justify-content: space-between;
-    
+    font-size: large;
 }
 
+#Contractors {
+    border-radius: 5px;
+    margin: 0px;
+    padding: 0.3em;
+    padding-left: 0.7em;
+    padding-right: 0.7em;
+    background-color: rgba(57, 120, 141, 0.56);
+    font-size: large;
+}
