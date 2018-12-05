@@ -30,10 +30,9 @@
         margin:20px 0px;
     }
     .desc {
-        display:flex;
         max-width: 200px;
         height: 100px;
-        overflow-wrap:break-word;
         word-wrap:break-word;
+        text-wrap
     }
 }
