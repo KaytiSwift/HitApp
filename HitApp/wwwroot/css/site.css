@@ -169,14 +169,29 @@ table {
     font-size: large;
 }
 
+#ProjectCrud a{
+    color: rgb(234, 234, 225);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#ProjectCrud a:hover {
+    color: rgb(26, 26, 255);
+    text-shadow: -1px -1px 0 #ffe6e6, 1px -1px 0 #ffe6e6, -1px 1px 0 #ffe6e6, 1px 1px 0 #ffe6e6;
+}
+
 #Contractors {
     border-radius: 5px;
     margin: 0px;
     padding: 0.3em;
     padding-left: 0.7em;
     padding-right: 0.7em;
-    background-color: rgb(57, 120, 141);
+    background-color: rgb(128, 159, 255);
     font-size: large;
+}
+
+.contractor-table-header {
+    color: rgb(234, 234, 225);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 #ExpenseTable { /*Expenses table. Don't change id name, it messes up formatting.*/
@@ -185,11 +200,11 @@ table {
     padding: 0.3em;
     padding-left: 0.7em;
     padding-right: 0.7em;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(255, 102, 102);
     font-size: large;
 }
 
-.table-header {
-    color: white;
+.expense-table-header {
+    color: rgb(234, 234, 225);
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
