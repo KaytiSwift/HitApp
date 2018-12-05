@@ -4,14 +4,16 @@ using HitApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HitApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181204005247_AddedSeedUsersAsProjectOwnerIdInContext")]
+    partial class AddedSeedUsersAsProjectOwnerIdInContext
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,14 +48,14 @@ namespace HitApp.Data.Migrations
 
                     b.Property<string>("ContractorWebsiteUrl");
 
-                    b.Property<int?>("ContractorZip");
+                    b.Property<int>("ContractorZip");
 
                     b.HasKey("ContractorId");
 
                     b.ToTable("Contractors");
 
                     b.HasData(
-                        new { ContractorId = 1, ContractorAdditionalNotes = "Jimmy the tile guy", ContractorCity = "Madison", ContractorCompany = "Self", ContractorEmail = "tectile@live.com", ContractorName = "Jimmy McDermitt", ContractorState = "Ohio" }
+                        new { ContractorId = 1, ContractorAdditionalNotes = "Jimmy the tile guy", ContractorCity = "Madison", ContractorCompany = "Self", ContractorEmail = "tectile@live.com", ContractorName = "Jimmy McDermitt", ContractorState = "Ohio", ContractorZip = 0 }
                     );
                 });
 
@@ -87,37 +89,17 @@ namespace HitApp.Data.Migrations
                     );
                 });
 
-            modelBuilder.Entity("HitApp.Models.FilePath", b =>
-                {
-                    b.Property<int>("FilePathId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("FileName")
-                        .HasMaxLength(255);
-
-                    b.Property<int>("FileType");
-
-                    b.Property<int>("ProjectId");
-
-                    b.HasKey("FilePathId");
-
-                    b.HasIndex("ProjectId");
-
-                    b.ToTable("FilePaths");
-                });
-
             modelBuilder.Entity("HitApp.Models.Project", b =>
                 {
                     b.Property<int>("ProjectId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("ProjectContractorInfo");
+
                     b.Property<string>("ProjectDescription");
 
                     b.Property<DateTime?>("ProjectEndDate");
-
-                    b.Property<bool>("ProjectIsOnDashboard");
 
                     b.Property<string>("ProjectName");
 
@@ -134,8 +116,8 @@ namespace HitApp.Data.Migrations
                     b.ToTable("Projects");
 
                     b.HasData(
-                        new { ProjectId = 1, ProjectDescription = "Paint and re-tile bathroom walls and floors", ProjectEndDate = new DateTime(2018, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectIsOnDashboard = false, ProjectName = "Bathroom", ProjectOwnerId = "7fdacf8b-3c46-4b86-b088-cc7a70a97c80", ProjectStartDate = new DateTime(2017, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 10000.0, ProjectTotalExpenses = 0.0 },
-                        new { ProjectId = 2, ProjectDescription = "Paint and re-tile kitchen walls and floors", ProjectEndDate = new DateTime(2018, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectIsOnDashboard = false, ProjectName = "Kitchen", ProjectOwnerId = "7fdacf8b-3c46-4b86-b088-cc7a70a97c80", ProjectStartDate = new DateTime(2017, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 12000.0, ProjectTotalExpenses = 0.0 }
+                        new { ProjectId = 1, ProjectContractorInfo = "Jimmy the Tile Guy", ProjectDescription = "Paint and re-tile bathroom walls and floors", ProjectEndDate = new DateTime(2018, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectName = "Bathroom", ProjectOwnerId = "7fdacf8b - 3c46 - 4b86 - b088 - cc7a70a97c80", ProjectStartDate = new DateTime(2017, 9, 19, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 10000.0, ProjectTotalExpenses = 0.0 },
+                        new { ProjectId = 2, ProjectContractorInfo = "Jimmy the Tile Guy", ProjectDescription = "Paint and re-tile kitchen walls and floors", ProjectEndDate = new DateTime(2018, 1, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectName = "Kitchen", ProjectOwnerId = "7fdacf8b-3c46-4b86-b088-cc7a70a97c80", ProjectStartDate = new DateTime(2017, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 12000.0, ProjectTotalExpenses = 0.0 }
                     );
                 });
 
@@ -332,14 +314,6 @@ namespace HitApp.Data.Migrations
                 {
                     b.HasOne("HitApp.Models.Project", "Project")
                         .WithMany("Expenses")
-                        .HasForeignKey("ProjectId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("HitApp.Models.FilePath", b =>
-                {
-                    b.HasOne("HitApp.Models.Project", "Project")
-                        .WithMany("FilePaths")
                         .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

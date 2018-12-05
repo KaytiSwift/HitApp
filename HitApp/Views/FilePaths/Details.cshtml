@@ -1,0 +1,15 @@
+﻿@model HitApp.Models.FilePath
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Image @Model.FilePathId for @Model.Project.ProjectName Project</h2>
+
+<div>   
+    <img src="/UserImages/@Model.FileName" />
+</div>
+<div>
+    @*<a asp-action="Edit" asp-route-id="@Model.ProjectId">Edit</a> |*@
+    <a asp-action="Index/@Model.ProjectId">Back to List</a>
+</div>

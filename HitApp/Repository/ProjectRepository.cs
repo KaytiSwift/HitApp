@@ -14,5 +14,11 @@ namespace HitApp.Repository
         {
 
         }
+
+        public Project SetTodaysDate()
+        {
+            var project = new Project() { ProjectStartDate = DateTime.Today };
+            return project;
+        }
     }
 }

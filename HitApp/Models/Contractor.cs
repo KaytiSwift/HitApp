@@ -11,15 +11,15 @@ namespace HitApp.Models
     {
         public int ContractorId { get; set; }
 
-        [Display(Name = "Company Name")]
+        [Display(Name = "Company")]
         public string ContractorCompany { get; set; }
 
         [Required]
-        [Display(Name = "Contractor Name")]
+        [Display(Name = "Contractor Name (Required)")]
         public string ContractorName { get; set; }        
-        [Display(Name = "Contractor Email Address")]
+        [Display(Name = "Email Address")]
         public string ContractorEmail { get; set; }
-        [Display(Name = "Contractor Phone Number")]
+        [Display(Name = "Phone Number")]
         public string ContractorPhone { get; set; }
         [Display(Name = "Service")]
         public string ContractorService { get; set; }
@@ -27,14 +27,14 @@ namespace HitApp.Models
         public string ContractorWebsiteUrl { get; set; }
 
 
-        [Display(Name = "Contractor Address")]
+        [Display(Name = "Address")]
         public string ContractorAddress { get; set; }        
-        [Display(Name = "Contractor City")]
+        [Display(Name = "City")]
         public string ContractorCity { get; set; }
-        [Display(Name = "Contractor State")]
+        [Display(Name = "State")]
         public string ContractorState { get; set; }
-        [Display(Name = "Contractor Zip Code")]
-        public int ContractorZip { get; set; }
+        [Display(Name = "Zip Code")]
+        public int? ContractorZip { get; set; }
 
         [Display(Name = "Additional Notes")]
         public string ContractorAdditionalNotes { get; set; }

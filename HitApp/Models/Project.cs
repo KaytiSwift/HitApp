@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,6 +12,10 @@ namespace HitApp.Models
         public int ProjectId { get; set; }        
 
         public string ProjectOwnerId { get; set; }
+
+        [Display(Name = "Display On Dashboard")]
+        [DefaultValue(false)]
+        public bool ProjectIsOnDashboard { get; set; }
 
         [Display(Name="Project Name")]
         public string ProjectName { get; set; }
@@ -30,9 +35,6 @@ namespace HitApp.Models
         [Display(Name="Project Description")]
         public string ProjectDescription { get; set; }
 
-        [Display(Name="Contractor Info")]
-        public string ProjectContractorInfo { get; set; }
-
         [Display(Name="Total Budget")]
         [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = false)]
         public double ProjectTotalBudget { get; set; }
@@ -45,6 +47,8 @@ namespace HitApp.Models
         public double ProjectTotalExpenses { get; set; }
  
         public virtual List<ProjectContractor> ProjectContractors { get; set; }
+
+        public virtual ICollection<FilePath> FilePaths { get; set; }
 
     }
 }

@@ -3,20 +3,38 @@
 @{
     ViewData["Title"] = "Create";
 }
+@section Styling{
+    <link href="~/css/Creates.css" rel="stylesheet" />
+}
+<h2>Create A New Project</h2>
 
-<h2>Create</h2>
-
-<h4>Project</h4>
+<div class="back">
+    <a asp-controller="Projects" asp-action="Index">
+        <input type="button" value="Back to All Projects" class="btn btn-default" />
+    </a>
+</div>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form class="page-form" asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
                 <label asp-for="ProjectName" class="control-label"></label>
                 <input asp-for="ProjectName" class="form-control" />
                 <span asp-validation-for="ProjectName" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="ProjectTotalBudget" class="control-label"></label>
+                <input asp-for="ProjectTotalBudget" class="form-control" />
+                <span asp-validation-for="ProjectTotalBudget" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectIsOnDashboard" class="control-label"></label>
+                <input type="checkbox" asp-for="ProjectIsOnDashboard" />
+                <span asp-validation-for="ProjectIsOnDashboard" class="text-danger"></span>
+            </div>
+
             <div class="form-group">
                 <label asp-for="ProjectStartDate" class="control-label"></label>
                 <input asp-for="ProjectStartDate" class="form-control" />
@@ -27,23 +45,17 @@
                 <input asp-for="ProjectEndDate" class="form-control" />
                 <span asp-validation-for="ProjectEndDate" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="ProjectDescription" class="control-label"></label>
-                <input asp-for="ProjectDescription" class="form-control" />
+                <input id="add-info" asp-for="ProjectDescription" class="form-control" />
                 <span asp-validation-for="ProjectDescription" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="ProjectContractorInfo" class="control-label"></label>
-                <input asp-for="ProjectContractorInfo" class="form-control" />
-                <span asp-validation-for="ProjectContractorInfo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProjectTotalBudget" class="control-label"></label>
-                <input asp-for="ProjectTotalBudget" class="form-control" />
-                <span asp-validation-for="ProjectTotalBudget" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+            <div></div>
+
+            <div id="create-proj" class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
+
             </div>
         </form>
     </div>

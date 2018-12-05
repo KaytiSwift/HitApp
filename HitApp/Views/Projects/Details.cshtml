@@ -6,10 +6,22 @@
 
 <body id="ProjectDetails">
 
-    <h2>@Model.ProjectName Details</h2>
+
+    <h2>@Model.ProjectName Project Details</h2>
 
     <div>
-        <h4>Project Info</h4>
+
+        @if (Model.ProjectIsOnDashboard == true)
+        {
+            <h5> Displayed on Dashboard: <i class="far fa-check-circle"></i> </h5>
+        }
+        else
+        {
+            <h5> Displayed on Dashboard: <i class="fas fa-ban"></i> </h5>
+        }
+
+
+
         <hr />
         <dl class="dl-horizontal">
             <dt>
@@ -37,12 +49,6 @@
                 @Html.DisplayFor(model => model.ProjectDescription)
             </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.ProjectContractorInfo)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.ProjectContractorInfo)
-            </dd>
-            <dt>
                 @Html.DisplayNameFor(model => model.ProjectTotalBudget)
             </dt>
             <dd>
@@ -52,6 +58,19 @@
 
     </div>
 
+    <div>
+        <form method="post" action="/FilePaths/ImageUpload/@Model.ProjectId" enctype="multipart/form-data">
+            <input type="file" name="upload" /><br />
+            <input type="submit" value="Upload" />
+        </form>
+    </div>
+
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.ProjectId" title="Edit"><i class="far fa-edit"></i></a> |
+        <a asp-action="Delete" asp-route-id="@Model.ProjectId" title="Delete"><i class="fas fa-times"></i></a> |
+        <a asp-action="Index">Back to Projects</a>
+
+    </div>
 
     <div id="ImageUpload">
         <form method="post" action="/Projects/ImageUpload" enctype="multipart/form-data">
@@ -66,6 +85,11 @@
         <a asp-action="Index">Back to Projects</a>
 
     </div>
+
+
+
+
+
 
     <div id="Contractors">
         <h4>Contractors</h4>
@@ -138,6 +162,14 @@
         </div>
     </div>
 
+
+
+
+
+
+
+
+
     <div id="ExpenseTable">
         <h4>Expenses   Total = @Html.DisplayFor(model => model.ProjectTotalExpenses)</h4>
 
@@ -146,6 +178,9 @@
             <a asp-controller="Expenses" asp-action="Create" asp-route-id="@Model.ProjectId"><i class="far fa-plus-square"></i> Add Expense</a>
 
         </div>
+    </div>
+
+    <div>
 
 
         <table class="table">
@@ -193,8 +228,8 @@
 
                         <td>
 
-                            <a asp-controller="Expenses" asp-action="Edit" asp-route-id="@item.ExpenseId"><i class="far fa-edit"></i></a>
-                            <a asp-controller="Expenses" asp-action="Delete" asp-route-id="@item.ExpenseId"><i class="fas fa-times"></i></a>
+                            <a asp-controller="Expenses" asp-action="Edit" asp-route-id="@item.ExpenseId" title="Edit"><i class="far fa-edit"></i></a> |
+                            <a asp-controller="Expenses" asp-action="Delete" asp-route-id="@item.ExpenseId" title="Delete"><i class="fas fa-times"></i></a>
                         </td>
                     </tr>
                 }
@@ -202,11 +237,16 @@
         </table>
 
     </div>
+    <div>
 
+    </div>
 
-
-
-    @section Scripts{
-        <script src="~/js/Contractors.js"></script>
-    }
+    <div>
+        <h4><a href="/FilePaths/Index/@Model.ProjectId">View Images</a></h4>
+    </div>
 </body>
+
+        @section Scripts{
+            <script src="~/js/Contractors.js"></script>
+        }
+  

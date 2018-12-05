@@ -1,0 +1,30 @@
+﻿@model IEnumerable<HitApp.Models.FilePath>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@section Styling{
+
+    <link href="~/css/Images.css" rel="stylesheet" />
+}
+<h2>Images for @ViewBag.ProjectName Project</h2>
+
+<div class="back">
+    <a asp-controller="Projects" asp-action="Details" asp-route-id="@ViewBag.ProjectId">
+        <input type="button" value="Back to @ViewBag.ProjectName" class="btn btn-default" />
+    </a>
+</div>
+
+@*<p>
+        <a asp-action="Create">Create New</a>
+    </p>*@
+
+<div class="images">
+    @foreach (var item in Model)
+    {
+        <div>
+            <a href="/FilePaths/Details/@item.FilePathId"><img src="/UserImages/@Html.DisplayFor(modelItem => item.FileName)" /></a>
+        </div>
+    }
+</div>
+

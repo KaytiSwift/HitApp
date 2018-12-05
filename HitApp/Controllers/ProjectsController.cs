@@ -1,25 +1,23 @@
 ﻿using HitApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Hosting;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Http;
 using System.IO;
+using System;
 
 namespace HitApp.Controllers
 {
     public class ProjectsController : Controller
     {
         private IProjectRepository projectRepo;
-        private readonly IHostingEnvironment he;
 
-        public ProjectsController(IProjectRepository projectRepo, IHostingEnvironment e)
+        public ProjectsController(IProjectRepository projectRepo)
         {
             this.projectRepo = projectRepo;
-            he = e;
         }
 
         public IActionResult Index()
@@ -40,7 +38,9 @@ namespace HitApp.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            var project = projectRepo.SetTodaysDate();
+
+            return View(project);
         }
 
         [HttpPost]
@@ -69,6 +69,7 @@ namespace HitApp.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
+
             var project = projectRepo.GetById(id);
             return View(project);
         }
@@ -76,20 +77,12 @@ namespace HitApp.Controllers
         [HttpPost]
         public IActionResult Edit(Project project)
         {
+            project.ProjectOwnerId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
             projectRepo.Update(project);
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", new { id = project.ProjectId});
         }
 
-        public IActionResult ImageUpload(IFormFile image)
-        {
-            if(image != null && image.Length > 0)
-            {
-                var fileName = Path.Combine(he.WebRootPath, Path.GetFileName(image.FileName));
-                image.CopyTo(new FileStream(fileName, FileMode.Create));
-                ViewData["fileLocation"] = "/" + Path.GetFileName(image.FileName);
-            }
 
-            return View();
-        }
     }
 }
