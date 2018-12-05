@@ -1,0 +1,11 @@
+﻿.images{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-row-gap: 3rem;
+    margin-top: 1rem;
+}
+
+img {
+    max-height: 150px;
+}
