@@ -5,71 +5,74 @@
 }
 @section Styling{
     <link href="~/css/Indexes.css" rel="stylesheet" />
+    <link href="~/css/Contractors.css" rel="stylesheet" />
 }
-<h2>All Contractors</h2>
-<div class="back">
-    <a asp-controller="Projects" asp-action="Index">
-        <input type="button" value="Back to All Projects" class="btn btn-default" />
-    </a>
-</div>
-@*<p>
-        <a asp-action="Create"><i class="far fa-plus-square"></i> Add New Contractor</a>
-    </p>*@
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Name
-            </th>
-            <th>
-                Company
-            </th>
-            <th>
-                Service
-            </th>
-            <th>
-                Email
-            </th>
-            <th>
-                Phone
-            </th>
-            <th>
-                Additional Notes
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.ContractorId" title="Details">
-                        @Html.DisplayFor(modelItem => item.ContractorName)
-                    </a>
-</td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ContractorCompany)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ContractorService)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ContractorEmail)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ContractorPhone)
-                </td>
+    <div class="cards">
+        <h2>All Contractors</h2>
+        <div class="back">
+            <a asp-controller="Projects" asp-action="Index">
+                <input type="button" value="ALL PROJECTS" style="font-weight:bold" class="btn btn-default" />
+            </a>
+        </div>
+        @*<p>
+            <a asp-action="Create"><i class="far fa-plus-square"></i> Add New Contractor</a>
+        </p>*@
+        <table class="table" id="contractors">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Company
+                    </th>
+                    <th>
+                        Service
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Phone
+                    </th>
+                    <th>
+                        Additional Notes
+                    </th>
+                    <th>Edit | Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.ContractorId" title="Details">
+                                @Html.DisplayFor(modelItem => item.ContractorName)
+                            </a>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ContractorCompany)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ContractorService)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ContractorEmail)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ContractorPhone)
+                        </td>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.ContractorAdditionalNotes)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.ContractorId" title="Edit"><i class="far fa-edit"></i></a> |
-                    
-                    <a href="/Contractors/Delete/@item.ContractorId" title="Delete"><i class="fas fa-times"></i></a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ContractorAdditionalNotes)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.ContractorId" title="Edit"><i class="far fa-edit"></i></a> |
+
+                            <a href="/Contractors/Delete/@item.ContractorId" title="Delete"><i class="fas fa-times"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table
+    </div>
