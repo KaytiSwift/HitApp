@@ -348,8 +348,10 @@ table {
     margin-top: 5rem;
 }
 
-.resource-grid > div {
-    background-color: #777;
+.cards {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: black 5px 6px 13px 2px;
 }
 
 .resource-grid img {
@@ -359,4 +361,8 @@ table {
 .resource-grid ul {
     margin: 0;
     padding: 0;
+}
+
+.footer-line {
+    margin-top: 75px;
 }
