@@ -61,8 +61,8 @@
 
         <div class="image-upload">
             <h2>Upload Image</h2>
-            <form method="post" action="/Projects/ImageUpload" enctype="multipart/form-data">
-                <input type="file" name="image" /><br />
+            <form method="post" action="/FilePaths/ImageUpload/@Model.ProjectId" enctype="multipart/form-data">
+                <input type="file" name="upload" /><br />
                 <input type="submit" value="Upload" />
             </form>
             <h4><a href="/FilePaths/Index/@Model.ProjectId">View Images</a></h4>
