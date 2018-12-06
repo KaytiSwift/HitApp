@@ -344,11 +344,6 @@ table {
 
 }
 
-.expense-table-header {
-    color: rgb(234, 234, 225);
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-
 .Resource ul li {
     list-style-type: none;
 }
