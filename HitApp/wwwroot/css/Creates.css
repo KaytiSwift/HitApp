@@ -1,6 +1,6 @@
 ﻿h2 {
     font-weight: 600;
-    color: white;
+    color: black;
    
     
 }
@@ -39,8 +39,13 @@ form {
     }
     #create-proj, #create-cont {
         width: auto;
+        margin-bottom: 0px;
+        
     }
 
+        #create-cont input {
+            box-shadow: 1px 1px 1px #000;
+        }
     #back-button, #create-exp  {
         margin-left: 30px;
     }

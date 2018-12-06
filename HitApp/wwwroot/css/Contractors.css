@@ -5,24 +5,22 @@
 h2 {
     color: black;
 }
+
 #contractors {
-    background-color: rgba(83, 83, 83, .92);
+    background-color: white;
     font-size: 1em;
-    text-shadow: 1px 1px 1px #000;
-    color: white;
+    color: black;
 }
 #contractor {
-    background-color: rgba(83, 83, 83, .92);
     font-size: 1em;
-    text-shadow: 1px 1px 1px #000;
-    color: white;
+    color: black;
     width:400px;
     border-radius:5px;
 }
 
-td a, td, #proj-cont a, dd, dt, #assigned-project {
-    color: white;
-    text-shadow: 1px 1px 1px #000;
+td a, td, #proj-cont a, dd, dt, #assigned-project, th{
+    color: black;
+   
 }
 td a:hover, i:hover, #proj-cont a:hover {
     color: lightblue;
@@ -58,18 +56,9 @@ td a:hover, i:hover, #proj-cont a:hover {
     height: 35px;
 }
 
-#assigned-project {
-    background-color: rgba(83, 83, 83, .92);
-    font-size: 1em;
-    text-shadow: 1px 1px 1px #000;
-    color: white;
-    width: 400px;
-    border-radius: 5px;
-    height:100px;
-    padding:5px 10px;
-}
-#assigned-project h3{
-    margin:0px;
+
+#contractor ul{
+    font-size:medium;
 }
 
 .d-contractor{
@@ -77,9 +66,8 @@ td a:hover, i:hover, #proj-cont a:hover {
     justify-content:space-around;
 }
 i {
-    color: white;
+    color:rgb(83,83,83);
     font-size: large;
-    text-shadow: 1px 1px 1px #000;
 }
 #proj-cont{
     margin-left:20px;
@@ -89,10 +77,12 @@ i {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: black 5px 6px 13px 2px;
-    text-align:center;
-    width:1000px;
-    margin:20px auto;
     
+    width:1020px;
+    margin:20px auto;    
+}
+.col-md-4{
+    padding:0px;
 }
 .back-btn{
     margin:20px;

@@ -4,7 +4,6 @@
     ViewData["Title"] = "Index";
 }
 @section Styling{
-    <link href="~/css/Indexes.css" rel="stylesheet" />
     <link href="~/css/Contractors.css" rel="stylesheet" />
 }
     <div class="cards">
@@ -67,12 +66,12 @@
                             @Html.DisplayFor(modelItem => item.ContractorAdditionalNotes)
                         </td>
                         <td>
-                            <a asp-action="Edit" asp-route-id="@item.ContractorId" title="Edit"><i class="far fa-edit"></i></a> |
+                            <a asp-action="Edit" asp-route-id="@item.ContractorId" title="Edit"><i class="far fa-edit"></i></a>  | 
 
                             <a href="/Contractors/Delete/@item.ContractorId" title="Delete"><i class="fas fa-times"></i></a>
                         </td>
                     </tr>
                 }
             </tbody>
-        </table
+        </table>
     </div>
