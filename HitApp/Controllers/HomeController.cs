@@ -50,7 +50,9 @@ namespace HitApp.Controllers
             ViewData["Message"] = "Your contact page.";
 
             return View();
-        } 
+        }
+
+        [AllowAnonymous]
         public IActionResult Resource()
         {
             return View();

@@ -210,7 +210,7 @@ table {
         color: white;
         height: 300px;
     }
-
+    
 
     .Plan p, .Help p {
         order: 1;
@@ -403,13 +403,15 @@ table {
     padding: 2em;
 }
 
-.about-grid > div > p {
+.about-grid > div {
     color: black;
+    padding:20px;
+    text-align:left;
 }
 
-.resource-grid img {
-    max-width: 100px;
-}
+    .resource-grid img {
+        max-width: 100px;
+    }
 
 .resource-grid ul {
     margin: 0;
@@ -424,4 +426,8 @@ table {
 }
 .navbar-brand i{
     color:white !important;
+}
+
+.text-padding{
+    padding:0px 20px;
 }
