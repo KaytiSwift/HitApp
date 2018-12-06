@@ -14,8 +14,8 @@
         }
         else if (progress >= 100) {
             progress = 100;
-            c.querySelector(".balance").setAttribute("style", 'color: red');
-            c.querySelector(".progressBar").setAttribute("style", `width: ${progress}%; background-color: #e11f1f;`);
+            c.querySelector(".balance").setAttribute("style", 'color: #cb5252');
+            c.querySelector(".progressBar").setAttribute("style", `width: ${progress}%; background-color: #cb5252;`);
 
         }
         else {
