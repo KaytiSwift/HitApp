@@ -237,31 +237,43 @@ table {
 }
 
 /*ProjectList Page*/
-#ProjectIndex {
-    background: url(../images/wood.jpg) no-repeat fixed center;
+ #ProjectIndex {
+    background: url(../images/lightwood.jpg) no-repeat fixed center;
     background-size: cover;
 
 }
+ #tableId th{
+     color:black;
+     text-shadow: none;
+ }
+
     #ProjectIndex h2, p {
-<<<<<<< HEAD
         color:black;
-=======
-        color:white;
-        border-color: white;
+       
+
+        /*text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;*/
+
+
         
->>>>>>> master
+
     }
     #ProjectIndex .table {
-        background: rgba(255, 0, 0, 0.5);
+        background: white;
         border-style: ridge;
-        border-color: white;
-        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-        color: white;
+        border-color: grey;
+        /*text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        color: black;*/
     }
-    
-#project-id {
-    display: none;
-}    
+.container body-content {
+
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: black 5px 6px 13px 2px;
+            }
+
+        #project-id {
+            display: none;
+        }    
 
 /* QR code generator */
 #qrCode {

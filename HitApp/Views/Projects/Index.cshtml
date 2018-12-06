@@ -4,10 +4,13 @@
     ViewData["Title"] = "Index";
 }
 
+
+   
+   
 @section Styling{
     <link href="~/css/Indexes.css" rel="stylesheet" />
 }
-    <div id="ProjectIndex">
+    <body id="ProjectIndex">
         <h2>All Projects</h2>
         <a asp-controller="Contractors" asp-action="Index">View All Contractors</a>
 
@@ -15,7 +18,7 @@
         <p>
             <a asp-action="Create"><i class="far fa-plus-square"></i> New Project</a>
         </p> 
-                    <table class="table">
+                    <table id="tableId" class="table">
                         <thead>
                             <tr>
                                 <th>
@@ -72,5 +75,7 @@
 
                         </tbody>
 
+
+
                     </table>
-    </div>
+    </body>
