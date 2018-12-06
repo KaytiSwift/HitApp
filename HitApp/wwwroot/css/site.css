@@ -251,9 +251,7 @@ table {
 
 }
     #ProjectIndex h2, p {
-        color:white;
-        border-color: white;
-        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        color:black;
     }
     #ProjectIndex .table {
         background: rgba(255, 0, 0, 0.5);
@@ -286,6 +284,9 @@ table {
     }
 }
 
+
+
+
 /*Project Details*/
 #ProjectDetails {
     background: url(../images/lightwood.jpg) no-repeat, fixed, center;
@@ -294,63 +295,58 @@ table {
     font-size: large;
 }
 
+#Project {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: black 5px 6px 13px 2px;
+    padding: 0.3em;
+    padding-left: 0.7em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
 .image-upload {
     padding-left: 5.5em;
     color: black;
-    display: flex;
+    display: grid;
 }
 
-#ProjectInfo{
-
+.project-info{
 }
 
-#ProjectCrud {
-    padding-top: 2em;
-    padding-bottom: 4em;
+.project-crud {
     display: flex;
-    flex-direction: row;
-    margin-left: 54em;
-    width: 10em;
+    align-items: flex-end;
     justify-content: space-between;
-    font-size: large;
+    width: 10em;
 }
 
-#ProjectCrud a{
-    color: rgb(234, 234, 225);
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-
-#ProjectCrud a:hover {
-    color: rgb(26, 26, 255);
-    text-shadow: -1px -1px 0 #ffe6e6, 1px -1px 0 #ffe6e6, -1px 1px 0 #ffe6e6, 1px 1px 0 #ffe6e6;
+.view-images{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
 }
 
 #Contractors {
-    border-radius: 5px;
     margin: 0px;
     padding: 0.3em;
     padding-left: 0.7em;
     padding-right: 0.7em;
-    background-color: rgb(128, 159, 255);
     font-size: large;
-}
-
-.contractor-table-header {
-    color: rgb(234, 234, 225);
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: black 5px 6px 13px 2px;
 }
 
 #ExpenseTable { /*Expenses table. Don't change id name, it messes up formatting.*/
-    border-radius: 5px;
     margin-top: 2em;
     padding: 0.3em;
     padding-left: 0.7em;
     padding-right: 0.7em;
-    background-color: rgb(255, 102, 102);
     font-size: large;
-}
-
-.expense-table-header {
-    color: rgb(234, 234, 225);
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: black 5px 6px 13px 2px;
 }
