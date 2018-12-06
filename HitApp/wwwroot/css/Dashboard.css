@@ -18,6 +18,9 @@
     font-size: 1.1em;
     background-color: #fff;
 }
+.{
+    color:white;
+}
 
 .left-card {
     width: 15%;
@@ -87,4 +90,7 @@
 
 .w3-light-grey {
     box-shadow: 5px 5px 7px black;
+}
+.right-card p {
+    color:white;
 }
