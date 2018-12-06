@@ -2,3 +2,87 @@
     background-image: url("/images/contractor-pages.jpg");
     background-size: cover;
 }
+h2 {
+    font-weight: 600;
+    color: white;
+    text-shadow: -1px -1px 7px black, 1px -1px 7px black, -1px 1px 7px black, 1px 1px 7px black;
+}
+#contractors {
+    background-color: rgba(83, 83, 83, .92);
+    font-size: 1em;
+    text-shadow: 1px 1px 1px #000;
+    color: white;
+}
+#contractor {
+    background-color: rgba(83, 83, 83, .92);
+    font-size: 1em;
+    text-shadow: 1px 1px 1px #000;
+    color: white;
+    width:400px;
+    border-radius:5px;
+}
+
+td a, td, #proj-cont a, dd, dt, #assigned-project {
+    color: white;
+    text-shadow: 1px 1px 1px #000;
+}
+td a:hover, i:hover, #proj-cont a:hover {
+    color: lightblue;
+}
+.back .btn {
+    box-shadow: 1px 1px 1px #000;
+}
+#button-form {
+    display:block;
+    margin:0px; 
+    padding:20px 0px;
+}
+    #button-form input {
+        box-shadow: 1px 1px 1px #000;
+    }
+
+.back {
+    margin-bottom:20px;
+}
+.buttons{
+    text-align:center;
+
+}
+
+
+
+.d-row {
+    padding-left: 10px;
+    margin-left: 0px !important;
+    height: 26px;
+    border-top: 1px solid #ddd;
+    padding: 8px;
+    height: 35px;
+}
+
+#assigned-project {
+    background-color: rgba(83, 83, 83, .92);
+    font-size: 1em;
+    text-shadow: 1px 1px 1px #000;
+    color: white;
+    width: 400px;
+    border-radius: 5px;
+    height:100px;
+    padding:5px 10px;
+}
+#assigned-project h3{
+    margin:0px;
+}
+
+.d-contractor{
+    display:flex;
+    justify-content:space-around;
+}
+i {
+    color: white;
+    font-size: large;
+    text-shadow: 1px 1px 1px #000;
+}
+#proj-cont{
+    margin-left:20px;
+}

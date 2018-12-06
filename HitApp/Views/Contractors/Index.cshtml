@@ -5,6 +5,7 @@
 }
 @section Styling{
     <link href="~/css/Indexes.css" rel="stylesheet" />
+    <link href="~/css/Contractors.css" rel="stylesheet" />
 }
 <h2>All Contractors</h2>
 <div class="back">
@@ -15,7 +16,7 @@
 @*<p>
         <a asp-action="Create"><i class="far fa-plus-square"></i> Add New Contractor</a>
     </p>*@
-<table class="table">
+<table class="table" id="contractors">
     <thead>
         <tr>
             <th>
@@ -36,7 +37,7 @@
             <th>
                 Additional Notes
             </th>
-            <th></th>
+            <th>Edit | Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -47,7 +48,7 @@
                     <a asp-action="Details" asp-route-id="@item.ContractorId" title="Details">
                         @Html.DisplayFor(modelItem => item.ContractorName)
                     </a>
-</td>
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.ContractorCompany)
                 </td>
@@ -66,7 +67,7 @@
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.ContractorId" title="Edit"><i class="far fa-edit"></i></a> |
-                    
+
                     <a href="/Contractors/Delete/@item.ContractorId" title="Delete"><i class="fas fa-times"></i></a>
                 </td>
             </tr>

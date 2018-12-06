@@ -1,5 +1,4 @@
-﻿
-h2 {
+﻿h2 {
     font-weight: 600;
     color: white;
     text-shadow: -1px -1px 7px black, 1px -1px 7px black, -1px 1px 7px black, 1px 1px 7px black;
@@ -33,12 +32,7 @@ form {
         grid-gap: 35px;
         margin: 0px;
     }
-    #contractors {
-        background-color: rgba(83, 83, 83, .9);
-        font-size: 1em;
-        text-shadow: 1px 1px 1px #000;
-        color: white;
-    }
+
  
     #add-info{
         height:100px;

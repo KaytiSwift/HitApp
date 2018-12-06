@@ -3,99 +3,121 @@
 @{
     ViewData["Title"] = "Delete";
 }
+@section Styling{
+    <link href="~/css/Creates.css" rel="stylesheet" />
+    <link href="~/css/Contractors.css" rel="stylesheet" />
+}
 
-<h2>Delete</h2>
+<h2>Are you sure you want to delete @Model.ContractorName?</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<div class="back">
+    <a asp-controller="Contractors" asp-action="Index">
+        <input type="button" value="Back to All Contractors" class="btn btn-default" />
+    </a>
+</div>
 <div>
-    <h4>Contractor</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            Company
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ContractorCompany)
-        </dd>
-        <dt>
-            Name
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ContractorName)
-        </dd>
-        <dt>
-            Service
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ContractorService)
-        </dd>
-        <dt>
-            Email
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ContractorEmail)
-        </dd>
-        <dt>
-            Phone
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ContractorPhone)
-        </dd>
-        <dt>
-            Website
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ContractorWebsiteUrl)
-        </dd>
-        <dt>
-            Address
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ContractorAddress)
-        </dd>
-        <dt>
-            City
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ContractorCity)
-        </dd>
-        <dt>
-            State
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ContractorState)
-        </dd>
-        <dt>
-            Zip Code
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ContractorZip)
-        </dd>
-        <dt>
-            Additional Notes
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ContractorAdditionalNotes)
-        </dd>
-    </dl>
-    <div>
-        <h3>Assigned Projects</h3>
-        <ul>
-            @if(Model.ProjectContractors.Count == 0)
-            {
-                <li>Not assigned to any projects</li>
-            }
-            else {foreach (var project in Model.ProjectContractors)
-                {
-                    <li><a asp-controller="Projects" asp-action="Details" asp-route-id="@project.Projects.ProjectId">@project.Projects.ProjectName</a></li>
-                }
-            }
-        </ul>
-        
+
+    <div class="d-contractor">
+        <dl id="contractor" class="dl-horizontal">
+
+            <dt class="d-row">
+                Company:
+            </dt>
+            <dd class="d-row">
+                @Html.DisplayFor(model => model.ContractorCompany)
+            </dd>
+
+            <dt class="d-row">
+                Name:
+            </dt>
+            <dd class="d-row">
+                @Html.DisplayFor(model => model.ContractorName)
+            </dd>
+            <dt class="d-row">
+                Service:
+            </dt>
+            <dd class="d-row">
+                @Html.DisplayFor(model => model.ContractorService)
+            </dd>
+            <dt class="d-row">
+                Email:
+            </dt>
+            <dd class="d-row">
+                @Html.DisplayFor(model => model.ContractorEmail)
+            </dd>
+            <dt class="d-row">
+                Phone:
+            </dt>
+            <dd class="d-row">
+                @Html.DisplayFor(model => model.ContractorPhone)
+            </dd>
+            <dt class="d-row">
+                Website:
+            </dt>
+            <dd class="d-row">
+                @Html.DisplayFor(model => model.ContractorWebsiteUrl)
+            </dd>
+            <dt class="d-row">
+                Address:
+            </dt>
+            <dd class="d-row">
+                @Html.DisplayFor(model => model.ContractorAddress)
+            </dd>
+            <dt class="d-row">
+                City:
+            </dt>
+            <dd class="d-row">
+                @Html.DisplayFor(model => model.ContractorCity)
+            </dd>
+            <dt class="d-row">
+                State:
+            </dt>
+            <dd class="d-row">
+                @Html.DisplayFor(model => model.ContractorState)
+            </dd>
+            <dt class="d-row">
+                Zip Code:
+            </dt>
+            <dd class="d-row">
+                @Html.DisplayFor(model => model.ContractorZip)
+            </dd>
+            <dt class="d-row">
+                Additional Notes:
+            </dt>
+            <dd class="d-row">
+                @Html.DisplayFor(model => model.ContractorAdditionalNotes)
+            </dd>
+        </dl>
+        <div>
+            <div id="assigned-project">
+                <h3>Assigned Projects</h3>
+                <ul class="d-row">
+                    @if (Model.ProjectContractors.Count == 0)
+                    {
+                        <li>Not assigned to any projects</li>
+                    }
+                    else
+                    {
+                        foreach (var project in Model.ProjectContractors)
+                        {
+                            <li id="proj-cont"><a asp-controller="Projects" asp-action="Details" asp-route-id="@project.Projects.ProjectId">@project.Projects.ProjectName</a></li>
+                        }
+                    }
+                </ul>
+
+
+            </div>
+
+            <div class="buttons">
+                <form id="button-form" class="page-form" asp-action="/Delete" asp-route-id="@Model.ContractorId">
+
+                    <input type="submit" value="Delete" class="btn btn-default" />
+                </form>
+
+
+
+            </div>
+        </div>
     </div>
-    <form method="post" action="/Contractors/Delete/@Model.ContractorId">
-        <input type="hidden" asp-for="ContractorId" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+
 </div>
