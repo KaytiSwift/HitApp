@@ -10,10 +10,16 @@
 <h2>Edit: @Model.ContractorName</h2>
 
 <div class="back">
-    <a asp-controller="Contractors" asp-action="Details" asp-route-id="@Model.ContractorId">
-        <input type="button" value="Details: @Model.ContractorName" class="btn btn-default" />
+    <a asp-controller="Contractors" asp-action="Index">
+        <input type="button" value="ALL CONTRACTORS" style="font-weight:bold" class="btn btn-default" />
     </a>
 </div>
+<div class="back">
+    <a asp-controller="Contractors" asp-action="Details" asp-route-id="@Model.ContractorId">
+        <input type="button" value="Details: @Model.ContractorName" style="font-weight:bold" class="btn btn-default" />
+    </a>
+</div>
+
 
 <div class="row">
     <div class="col-md-4">
@@ -77,7 +83,7 @@
                 <span asp-validation-for="ContractorZip" class="text-danger"></span>
             </div>
             <div id="create-cont" class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" style="font-weight:bold" class="btn btn-default" />
             </div>
         </form>
     </div>
