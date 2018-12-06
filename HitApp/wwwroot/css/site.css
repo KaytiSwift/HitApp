@@ -153,10 +153,6 @@ table {
     font-size: large;
 }
 
-.dl-horizontal{
-    display: flex;
-}
-
 .image-upload {
     padding-left: 5.5em;
     color: black;
