@@ -6,86 +6,80 @@
 
 <body id="ProjectDetails">
 
+    <div id="Project">
 
-    <h2>@Model.ProjectName Project Details</h2>
-
-    <div>
-
-        @if (Model.ProjectIsOnDashboard == true)
-        {
-            <h5> Displayed on Dashboard: <i class="far fa-check-circle"></i> </h5>
-        }
-        else
-        {
-            <h5> Displayed on Dashboard: <i class="fas fa-ban"></i> </h5>
-        }
+        <div class="project-info">
+            <h2>@Model.ProjectName Project Details</h2>
 
 
 
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.ProjectName)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.ProjectName)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.ProjectStartDate)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.ProjectStartDate)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.ProjectEndDate)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.ProjectEndDate)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.ProjectDescription)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.ProjectDescription)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.ProjectTotalBudget)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.ProjectTotalBudget)
-            </dd>
-        </dl>
+            @if (Model.ProjectIsOnDashboard == true)
+            {
+                <h5> Displayed on Dashboard: <i class="far fa-check-circle"></i> </h5>
+            }
+            else
+            {
+                <h5> Displayed on Dashboard: <i class="fas fa-ban"></i> </h5>
+            }
 
-    </div>
 
-    <div>
-        <form method="post" action="/FilePaths/ImageUpload/@Model.ProjectId" enctype="multipart/form-data">
-            <input type="file" name="upload" /><br />
-            <input type="submit" value="Upload" />
-        </form>
-    </div>
 
-    <div>
-        <a asp-action="Edit" asp-route-id="@Model.ProjectId" title="Edit"><i class="far fa-edit"></i></a> |
-        <a asp-action="Delete" asp-route-id="@Model.ProjectId" title="Delete"><i class="fas fa-times"></i></a> |
-        <a asp-action="Index">Back to Projects</a>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProjectName)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProjectName)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProjectStartDate)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProjectStartDate)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProjectEndDate)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProjectEndDate)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProjectDescription)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProjectDescription)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProjectTotalBudget)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProjectTotalBudget)
+                </dd>
+            </dl>
+        </div>
 
-    </div>
+        <div class="image-upload">
+            <h2>Upload Image</h2>
+            <form method="post" action="/Projects/ImageUpload" enctype="multipart/form-data">
+                <input type="file" name="image" /><br />
+                <input type="submit" value="Upload" />
+            </form>
+            <h4><a href="/FilePaths/Index/@Model.ProjectId">View Images</a></h4>
+        </div>
 
-    <div id="ImageUpload">
-        <form method="post" action="/Projects/ImageUpload" enctype="multipart/form-data">
-            <input type="file" name="image" /><br />
-            <input type="submit" value="Upload" />
-        </form>
-    </div>
+        <div class="project-crud">
+            <a asp-action="Edit" asp-route-id="@Model.ProjectId"><i class="far fa-edit"></i></a>
+            <a asp-action="Delete" asp-route-id="@Model.ProjectId"><i class="fas fa-times"></i></a>
+            <a asp-action="Index">Back to Projects</a>
 
-    <div id="ProjectCrud">
-        <a asp-action="Edit" asp-route-id="@Model.ProjectId"><i class="far fa-edit"></i></a>
-        <a asp-action="Delete" asp-route-id="@Model.ProjectId"><i class="fas fa-times"></i></a>
-        <a asp-action="Index">Back to Projects</a>
+        </div>
 
     </div>
 
+
+
+    
 
 
 
@@ -99,7 +93,7 @@
 
         @*<button onclick="showContractors()">Show Contractors</button>*@
 
-        <div id="contractor-table">
+        <div id="contractor-table-header">
             <table class="table">
                 <thead>
                     <tr class="contractor-table-header">
@@ -178,10 +172,6 @@
             <a asp-controller="Expenses" asp-action="Create" asp-route-id="@Model.ProjectId"><i class="far fa-plus-square"></i> Add Expense</a>
 
         </div>
-    </div>
-
-    <div>
-
 
         <table class="table">
             <thead>
@@ -237,13 +227,7 @@
         </table>
 
     </div>
-    <div>
 
-    </div>
-
-    <div>
-        <h4><a href="/FilePaths/Index/@Model.ProjectId">View Images</a></h4>
-    </div>
 </body>
 
         @section Scripts{
