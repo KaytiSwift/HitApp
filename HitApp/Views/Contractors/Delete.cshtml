@@ -8,121 +8,27 @@
     <link href="~/css/Contractors.css" rel="stylesheet" />
 }
 
-<h2>Are you sure you want to delete @Model.ContractorName?</h2>
-
-<div class="back">
+<div class="back-btn">
     <a asp-controller="Contractors" asp-action="Index">
         <input type="button" value="ALL CONTRACTORS" style="font-weight:bold" class="btn btn-default" />
     </a>
 </div>
-<div class="back">
-    <a asp-controller="Contractors" asp-action="Details" asp-route-id="@Model.ContractorId">
-        <input type="button" value="Details: @Model.ContractorName" style="font-weight:bold" class="btn btn-default" />
-    </a>
-</div>
-
-<div>
-    <div class="d-contractor">
-        <dl id="contractor" class="dl-horizontal">
-
-            <dt class="d-row">
-                Company:
-            </dt>
-            <dd class="d-row">
-                @Html.DisplayFor(model => model.ContractorCompany)
-            </dd>
-
-            <dt class="d-row">
-                Name:
-            </dt>
-            <dd class="d-row">
-                @Html.DisplayFor(model => model.ContractorName)
-            </dd>
-            <dt class="d-row">
-                Service:
-            </dt>
-            <dd class="d-row">
-                @Html.DisplayFor(model => model.ContractorService)
-            </dd>
-            <dt class="d-row">
-                Email:
-            </dt>
-            <dd class="d-row">
-                @Html.DisplayFor(model => model.ContractorEmail)
-            </dd>
-            <dt class="d-row">
-                Phone:
-            </dt>
-            <dd class="d-row">
-                @Html.DisplayFor(model => model.ContractorPhone)
-            </dd>
-            <dt class="d-row">
-                Website:
-            </dt>
-            <dd class="d-row">
-                @Html.DisplayFor(model => model.ContractorWebsiteUrl)
-            </dd>
-            <dt class="d-row">
-                Address:
-            </dt>
-            <dd class="d-row">
-                @Html.DisplayFor(model => model.ContractorAddress)
-            </dd>
-            <dt class="d-row">
-                City:
-            </dt>
-            <dd class="d-row">
-                @Html.DisplayFor(model => model.ContractorCity)
-            </dd>
-            <dt class="d-row">
-                State:
-            </dt>
-            <dd class="d-row">
-                @Html.DisplayFor(model => model.ContractorState)
-            </dd>
-            <dt class="d-row">
-                Zip Code:
-            </dt>
-            <dd class="d-row">
-                @Html.DisplayFor(model => model.ContractorZip)
-            </dd>
-            <dt class="d-row">
-                Additional Notes:
-            </dt>
-            <dd class="d-row">
-                @Html.DisplayFor(model => model.ContractorAdditionalNotes)
-            </dd>
-        </dl>
-        <div>
-            <div id="assigned-project">
-                <h3>Assigned Projects</h3>
-                <ul class="d-row">
-                    @if (Model.ProjectContractors.Count == 0)
-                    {
-                        <li>Not assigned to any projects</li>
-                    }
-                    else
-                    {
-                        foreach (var project in Model.ProjectContractors)
-                        {
-                            <li id="proj-cont"><a asp-controller="Projects" asp-action="Details" asp-route-id="@project.Projects.ProjectId">@project.Projects.ProjectName</a></li>
-                        }
-                    }
-                </ul>
 
 
-            </div>
+<div class="cards">
+    <h2>Are you sure you want to delete @Model.ContractorName?</h2>
 
-            <div class="buttons">
-                <form id="button-form" class="page-form" asp-action="/Delete" asp-route-id="@Model.ContractorId">
+    <div class="buttons-del" >
+       
+            <form id="del-form" asp-controller="Contractors" asp-action="/Delete" asp-route-id="@Model.ContractorId">
 
-                    <input type="submit" value="Delete" style="font-weight:bold" class="btn btn-default" />
-                </form>
+                <input id="delete" type="submit" value="Delete" style="font-weight:bold" class="btn btn-default" />
+            </form>
+            <a  asp-controller="Contractors" asp-action="Details" asp-route-id="@Model.ContractorId">
+                <input type="button" value="No" style="font-weight:bold" class="btn btn-default" />
+            </a>      
 
-
-
-            </div>
-        </div>
     </div>
-
 </div>
+
+

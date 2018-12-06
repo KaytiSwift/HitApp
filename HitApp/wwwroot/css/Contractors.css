@@ -46,10 +46,10 @@ td a:hover, i:hover, #proj-cont a:hover {
 }
 .buttons{
     text-align:center;
-
 }
-
-
+.buttons-btn{
+    display:flex;
+}
 
 .d-row {
     padding-left: 10px;
@@ -85,4 +85,36 @@ i {
 }
 #proj-cont{
     margin-left:20px;
+}
+.cards {
+    padding:20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: black 5px 6px 13px 2px;
+    text-align:center;
+    width:1000px;
+    margin:auto;
+    
+}
+.back-btn{
+    margin:20px;
+}
+.buttons-del{
+    display:flex;
+    justify-content:center;
+    margin-right:40px;
+    padding:20px;    
+}
+.buttons-del a{
+    padding:10px;
+    
+}
+    .buttons-del input {
+        box-shadow: 1px 1px 1px #000;
+    }
+#delete:hover {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+#del-form{
+    padding:10px;
 }
