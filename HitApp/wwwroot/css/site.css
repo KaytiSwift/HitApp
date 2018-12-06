@@ -141,6 +141,9 @@ table {
     color: white;
     text-shadow: 1px 1px 1px #000;
     /*background: rgba(0,0,0, 0.1);*/
+    background: rgba(83,83,83,.6);
+    border-radius: 5px;
+    padding:5px;
 }
 #myCarousel{
     border-color:darkred;
