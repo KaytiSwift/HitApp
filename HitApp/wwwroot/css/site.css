@@ -242,9 +242,14 @@ table {
     background-size: cover;
 
 }
+ #tableId th{
+     color:black;
+     text-shadow: none;
+ }
+
     #ProjectIndex h2, p {
         color:black;
-        border-color: white;
+       
 
         /*text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;*/
 
@@ -265,7 +270,7 @@ table {
     border-radius: 5px;
     box-shadow: black 5px 6px 13px 2px;
             }
-}
+
         #project-id {
             display: none;
         }    
