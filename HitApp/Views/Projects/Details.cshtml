@@ -15,7 +15,7 @@
 
             @if (Model.ProjectIsOnDashboard == true)
             {
-                <h5> Displayed on Dashboard: <i class="far fa-check-circle"></i> </h5>
+                <h5> Displayed on Dashboard: <i class="fas fa-check"></i> </h5>
             }
             else
             {
@@ -45,7 +45,7 @@
                     @Html.DisplayFor(model => model.ProjectEndDate)
                 </dd>
                 <dt>
-                    @Html.DisplayNameFor(model => model.ProjectDescription)
+                    Description
                 </dt>
                 <dd>
                     @Html.DisplayFor(model => model.ProjectDescription)
@@ -69,7 +69,7 @@
         </div>
 
         <div class="project-crud">
-            <a asp-action="Edit" asp-route-id="@Model.ProjectId"><i class="far fa-edit"></i></a>
+            <a asp-action="Edit" asp-route-id="@Model.ProjectId"><i class="fas fa-pencil-alt"></i></a>
             <a asp-action="Delete" asp-route-id="@Model.ProjectId"><i class="fas fa-times"></i></a>
             <a asp-action="Index">Back to Projects</a>
 
@@ -124,7 +124,8 @@
 
                         <tr data-project-contractor-id="@item.ProjectContractorId">
                             <td>
-                                @Html.DisplayFor(modelItem => item.Contractors.ContractorName)
+                                <a asp-controller="Contractors" asp-action="Details" asp-route-id="@item.Contractors.ContractorId">@Html.DisplayFor(modelItem => item.Contractors.ContractorName)</a>
+                                
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Contractors.ContractorCompany)
@@ -144,9 +145,8 @@
 
                             <td>
 
-                                <a asp-controller="Contractors" asp-action="Edit" asp-route-id="@item.Contractors.ContractorId"><i class="far fa-edit"></i></a>
+                                <a asp-controller="Contractors" asp-action="Edit" asp-route-id="@item.Contractors.ContractorId"><i class="fas fa-pencil-alt"></i></a>
                                 <a class="remove-contractor" data-project-contractor-id="@item.ProjectContractorId"><i class="fas fa-times"></i></a>
-                                <a asp-controller="Contractors" asp-action="Details" asp-route-id="@item.Contractors.ContractorId"><i class="far fa-list-alt"></i></a>
 
                             </td>
                         </tr>
@@ -218,7 +218,7 @@
 
                         <td>
 
-                            <a asp-controller="Expenses" asp-action="Edit" asp-route-id="@item.ExpenseId" title="Edit"><i class="far fa-edit"></i></a> |
+                            <a asp-controller="Expenses" asp-action="Edit" asp-route-id="@item.ExpenseId" title="Edit"><i class="fas fa-pencil-alt"></i></a> |
                             <a asp-controller="Expenses" asp-action="Delete" asp-route-id="@item.ExpenseId" title="Delete"><i class="fas fa-times"></i></a>
                         </td>
                     </tr>

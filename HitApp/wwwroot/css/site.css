@@ -422,3 +422,6 @@ table {
 .navbar-fixed-top .navbar-collapse{
     padding:0px 15px;
 }
+.navbar-brand i{
+    color:white !important;
+}

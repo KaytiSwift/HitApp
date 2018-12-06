@@ -4,12 +4,15 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Image @Model.FilePathId for @Model.Project.ProjectName Project</h2>
+<h2>Image for @Model.Project.ProjectName Project</h2>
 
+<div style="margin-bottom:20px" class="back">
+    <a  asp-action="Index/@Model.ProjectId">
+        <input type="button" value="Back to All Images" class="btn btn-default" />
+    </a>
+</div>
 <div>   
-    <img src="/UserImages/@Model.FileName" />
+    <img style="height:50vh" src="/UserImages/@Model.FileName" />
 </div>
-<div>
-    @*<a asp-action="Edit" asp-route-id="@Model.ProjectId">Edit</a> |*@
-    <a asp-action="Index/@Model.ProjectId">Back to List</a>
-</div>
+
+
