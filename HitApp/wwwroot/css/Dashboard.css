@@ -42,7 +42,7 @@
     text-shadow: 2px 1px black;
 }
 
-# tabs {
+#tabs {
     display: flex;
     justify-content: space-between;
 }
