@@ -1,7 +1,11 @@
-﻿
-.col-md-4{
-    width:100%;
+﻿h2 {
+    font-weight: 600;
+    color: white;
+   
     
+}
+.col-md-4{
+    width:100%;    
 }
 .form-group {
     width: 300px;
@@ -16,20 +20,19 @@ form {
     grid-template-columns: 1fr;
 }
 @media screen and (min-width: 600px){
-    .body-content{
-    }
+  
     .row {
         display: flex;
     }
     .page-form {
-        padding:20px;
-        border-radius:5px;
+        padding: 20px;
+        border-radius: 5px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-gap:35px;
-        margin:0px;
-        background-color:rgba(57, 120, 141, 0.56);
+        grid-gap: 35px;
+        margin: 0px;
     }
+
  
     #add-info{
         height:100px;
@@ -42,10 +45,11 @@ form {
         margin-left: 30px;
     }
     .back{
-        margin-top:20px;
+        margin-bottom:10px;
     }
     .form-group {
         width: 300px;
         margin: auto;
+        
     }
 }

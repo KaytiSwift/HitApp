@@ -1,0 +1,118 @@
+﻿body {
+    background-image: url("/images/contractor-pages.jpg");
+    background-size: cover;
+}
+h2 {
+    color: black;
+}
+#contractors {
+    background-color: rgba(83, 83, 83, .92);
+    font-size: 1em;
+    text-shadow: 1px 1px 1px #000;
+    color: white;
+}
+#contractor {
+    background-color: rgba(83, 83, 83, .92);
+    font-size: 1em;
+    text-shadow: 1px 1px 1px #000;
+    color: white;
+    width:400px;
+    border-radius:5px;
+}
+
+td a, td, #proj-cont a, dd, dt, #assigned-project {
+    color: white;
+    text-shadow: 1px 1px 1px #000;
+}
+td a:hover, i:hover, #proj-cont a:hover {
+    color: lightblue;
+}
+.back .btn {
+    box-shadow: 1px 1px 1px #000;
+}
+#button-form {
+    display:block;
+    margin:0px; 
+    padding:20px 0px;
+}
+    #button-form input {
+        box-shadow: 1px 1px 1px #000;
+    }
+
+.back {
+    margin-bottom:20px;
+}
+.buttons{
+    text-align:center;
+}
+.buttons-btn{
+    display:flex;
+}
+
+.d-row {
+    padding-left: 10px;
+    margin-left: 0px !important;
+    height: 26px;
+    border-top: 1px solid #ddd;
+    padding: 8px;
+    height: 35px;
+}
+
+#assigned-project {
+    background-color: rgba(83, 83, 83, .92);
+    font-size: 1em;
+    text-shadow: 1px 1px 1px #000;
+    color: white;
+    width: 400px;
+    border-radius: 5px;
+    height:100px;
+    padding:5px 10px;
+}
+#assigned-project h3{
+    margin:0px;
+}
+
+.d-contractor{
+    display:flex;
+    justify-content:space-around;
+}
+i {
+    color: white;
+    font-size: large;
+    text-shadow: 1px 1px 1px #000;
+}
+#proj-cont{
+    margin-left:20px;
+}
+.cards {
+    padding:20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: black 5px 6px 13px 2px;
+    text-align:center;
+    width:1000px;
+    margin:20px auto;
+    
+}
+.back-btn{
+    margin:20px;
+}
+.buttons-del{
+    display:flex;
+    justify-content:center;
+    margin-right:40px;
+    padding:20px;    
+}
+.buttons-del a{
+    padding:10px;
+    
+}
+    .buttons-del input {
+        box-shadow: 1px 1px 1px #000;
+    }
+#delete:hover {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+#del-form{
+    padding:10px;
+}
