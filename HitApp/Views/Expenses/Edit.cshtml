@@ -10,13 +10,15 @@
 
 }
 
-<div class="cards">
-    <h2> Edit Expense For @Model.Project.ProjectName</h2>
-    <div class="back">
+    <div class="back" id="go-to">
         <a asp-controller="Projects" asp-action="Details" asp-route-id="@Model.ProjectId">
             <input type="button" value="Back To @Model.Project.ProjectName" style="font-weight:bold" class="btn btn-default" />
         </a>
     </div>
+
+<div class="cards">
+    <h2> Edit Expense For @Model.Project.ProjectName</h2>
+    
 
     <div class="row">
         <div class="col-md-4">
@@ -52,7 +54,7 @@
                 </div>
 
                 <div id="create-exp" class="form-group">
-                    <input type="submit" value="Save" style="font-weight:bold" class="btn btn-default" />
+                    <input type="submit" value="SAVE" style="font-weight:bold" class="btn btn-default" />
                 </div>
 
             </form>

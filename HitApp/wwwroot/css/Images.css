@@ -12,6 +12,7 @@ img {
 
 .image-pages {
     background: url(../images/background3.jpg) no-repeat fixed center;
+    background-size:cover;
 }
 
 .cards {

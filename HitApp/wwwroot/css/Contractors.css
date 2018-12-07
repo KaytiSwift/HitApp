@@ -112,3 +112,12 @@ i {
 #proj-cont a, td a{
     font-weight:bold;
 }
+#go-to, .go-to {
+    margin-top:20px;
+    margin-left: 70px;
+    
+}
+#go-to-spread{
+    display:flex;
+    justify-content:space-between;
+}
