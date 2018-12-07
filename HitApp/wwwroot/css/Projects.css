@@ -44,9 +44,10 @@ input[type="file"] {
     display:flex;
     justify-content:space-between
 }
-#exp-top{
-    margin-right:110px;
+#cont-btns input, #exp-top input, #back input{
+    margin:20px;
 }
+
 .edit-del{
     padding-left:24px !important;
 }

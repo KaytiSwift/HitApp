@@ -87,18 +87,15 @@
         </div>
 
         <div id="Contractors">
-            <h3 style="font-weight:bold;">Contractors</h3>
             <div id="cont-btns">
+                <h3 style="font-weight:bold;">Contractors</h3>
+
                 <div class="back">
                     <a asp-controller="Contractors" asp-action="Create" asp-route-id="@Model.ProjectId">
                         <input type="button" value="CREATE CONTRACTOR" class="btn btn-default" />
                     </a>
                 </div>
-                <div class="back">
-                    <a asp-controller="Contractors" asp-action="Index" asp-route-id="@Model.ProjectId">
-                        <input type="button" value="ALL CONTRACTORS" class="btn btn-default" />
-                    </a>
-                </div>
+
             </div>
 
             <div id="contractor-table-header">
@@ -152,7 +149,7 @@
                                 </td>
 
 
-                                <td  class="edit-del">
+                                <td class="edit-del">
 
                                     <a asp-controller="Contractors" asp-action="Edit" asp-route-id="@item.Contractors.ContractorId"><i class="fas fa-pencil-alt"></i></a> |
                                     <a class="remove-contractor" data-project-contractor-id="@item.ProjectContractorId"><i class="fas fa-times"></i></a>
@@ -162,14 +159,19 @@
                         }
                     </tbody>
                 </table>
+                <div class="back" id="back">
+                    <a asp-controller="Contractors" asp-action="Index" asp-route-id="@Model.ProjectId">
+                        <input type="button" value="ALL CONTRACTORS" class="btn btn-default" />
+                    </a>
+                </div>
             </div>
         </div>
 
 
         <div id="ExpenseTable">
-
-            <h3 style="font-weight:bold;">Expenses</h3>
             <div id="exp-top">
+                <h3 style="font-weight:bold;">Expenses</h3>
+
                 <div class="back">
                     <a asp-controller="Expenses" asp-action="Create" asp-route-id="@Model.ProjectId">
                         <input type="button" value="CREATE EXPENSE" class="btn btn-default" />
@@ -215,7 +217,7 @@
                                 else
                                 {
                                     <a href="@Html.DisplayFor(modelItem => item.ProductUrl)">
-                                    @Html.DisplayFor(modelItem => item.ExpenseName)
+                                        @Html.DisplayFor(modelItem => item.ExpenseName)
                                     </a>
 
                                 }
