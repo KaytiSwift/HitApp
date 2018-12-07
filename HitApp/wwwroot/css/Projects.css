@@ -57,9 +57,7 @@ i {
     i:hover {
         color: lightblue;
     }
-#cant-change:hover {
-    color: rgb(83,83,83);
-}
+
 .icons{
     padding-left:140px;
 }
@@ -68,4 +66,13 @@ i {
     text-align: right;
     padding-right: 50px;
     font-weight: bold;
+}
+td a{
+    font-weight:bold;
+}
+#cant-change{
+    margin-left:35px;
+}
+.icon-center{
+    margin-left:15px;
 }
