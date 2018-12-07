@@ -12,12 +12,17 @@
 <h2>Dashboard</h2>
 
 <div id="tabs">
-    <p>
-    <a asp-controller="Projects" asp-action="Create">Create Project</a>
-    </p>
-    <p>
-        <a asp-controller="Projects" asp-action="Index"> View All</a>
-    </p>
+    <div class="back">
+        <a asp-controller="Projects" asp-action="Create">
+            <input type="button" value="CREATE PROJECT" class="btn btn-default" />
+        </a>
+    </div>
+    <div class="back">
+        <a asp-controller="Projects" asp-action="Index">
+            <input type="button" value="MY PROJECTS" class="btn btn-default" />
+        </a>
+    </div>
+
 </div>
 @foreach (var project in Model)
 {
@@ -25,10 +30,15 @@
     {
 
         <div class="cards">
-        <div class="left-card">
-            <h3>@project.ProjectName</h3>
-            <a href="/projects/details/@project.ProjectId"> See Details</a>
-        </div>
+            <div class="left-card">
+                <h3>@project.ProjectName</h3>
+                <div class="back">
+                    <a asp-controller="Projects" asp-action="Details" asp-route-id="@project.ProjectId">
+                        <input type="button" value="See Details" class="btn btn-default" />
+                    </a>
+                </div>
+              
+            </div>
 
         <div>
             <h3 class="center-card">Budget spent</h3>

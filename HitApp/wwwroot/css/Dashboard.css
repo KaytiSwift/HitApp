@@ -18,22 +18,13 @@
     font-size: 1.1em;
     background-color: #fff;
 }
-.{
-    color:white;
-}
+
 
 .left-card {
     width: 15%;
 }
 
-.cards a, #tabs a {
-    color: black;
-    padding: 5px;
-    text-decoration: none;
-    border-style: groove;
-    border-radius: 3px;
-    border-color: white;
-}
+
 
     #tabs a, h2{
         color:white;
@@ -93,4 +84,9 @@
 }
 .right-card p {
     color:white;
+}
+.back .btn {
+    box-shadow: 1px 1px 1px #000;
+    margin-top: 50px;
+    font-weight:bold;
 }
