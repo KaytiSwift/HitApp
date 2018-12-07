@@ -208,7 +208,17 @@
                                 @Html.DisplayFor(modelItem => item.ExpenseName)
                             </td>
                             <td>
-                                <a href="@Html.DisplayFor(modelItem => item.ProductUrl)">@Html.DisplayFor(modelItem => item.ExpenseName)</a>
+                                @if (item.ProductUrl == null || item.ProductUrl == "https://")
+                                {
+                                    //nothing will be displayed
+                                }
+                                else
+                                {
+                                    <a href="@Html.DisplayFor(modelItem => item.ProductUrl)">
+                                    @Html.DisplayFor(modelItem => item.ExpenseName)
+                                    </a>
+
+                                }
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.ExpenseDatePurchased)
