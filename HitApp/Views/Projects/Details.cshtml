@@ -22,11 +22,11 @@
                     <dt> On Dashboard  </dt>
                     @if (Model.ProjectIsOnDashboard == true)
                     {
-                        <dd><i class="fas fa-check"></i> </dd>
+                        <dd><i id="green" class="fas fa-check"></i> </dd>
                     }
                     else
                     {
-                        <dd><i class="fas fa-ban"></i> </dd>
+                        <dd><i id="red" class="fas fa-ban"></i> </dd>
                     }
                     <dt>
                         @Html.DisplayNameFor(model => model.ProjectName)
@@ -150,6 +150,7 @@
                                 <td title="@Html.DisplayFor(modelItem => item.Contractors.ContractorAdditionalNotes)" class="truncate">
                                     @Html.DisplayFor(modelItem => item.Contractors.ContractorAdditionalNotes)
                                 </td>
+
 
                                 <td  class="edit-del">
 
