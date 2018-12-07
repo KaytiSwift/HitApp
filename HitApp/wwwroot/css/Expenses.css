@@ -1,7 +1,8 @@
 ﻿body{
-    background:url('/images/expense.jpg');
+    background-image:url('/images/expense.jpg');
     background-repeat:no-repeat;
     background-size:cover;
+    height:100vh;
 }
 
 .cards {
@@ -12,7 +13,7 @@
     width: 1020px;
     margin: 50px auto;
 }
-.back input, #create-exp {
+.back input, #create-exp input{
     box-shadow: 1px 1px 1px #000;
     border-radius: 5px;
     font-weight: bold;
@@ -21,4 +22,28 @@
     padding: 20px 10px;
     width: 1020px;
     margin: 40px auto;
+}
+#add-info{
+    height:100px;
+}
+.buttons-del {
+    display: flex;
+    justify-content: center;
+    margin-right: 40px;
+    padding: 20px;
+}
+
+    .buttons-del a {
+        padding: 10px;
+    }
+
+    .buttons-del input {
+        box-shadow: 1px 1px 1px #000;
+    }
+#delete:hover {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+#del-form {
+    padding: 10px;
 }
