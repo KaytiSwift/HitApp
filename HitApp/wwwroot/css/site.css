@@ -215,7 +215,15 @@ table {
         background: rgba(0,0,0, 0.5);
         color: white;
         height: 300px;
+        
     }
+    #About h2{
+        padding-left:20px;
+    }
+#About p {
+    padding:20px;
+    font-size: large;
+}
     
 
     .Plan p, .Help p {
