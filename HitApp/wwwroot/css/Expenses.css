@@ -1,0 +1,24 @@
+﻿body{
+    background:url('/images/expense.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+.cards {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: black 5px 6px 13px 2px;
+    width: 1020px;
+    margin: 50px auto;
+}
+.back input, #create-exp {
+    box-shadow: 1px 1px 1px #000;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.cards {
+    padding: 20px 10px;
+    width: 1020px;
+    margin: 40px auto;
+}

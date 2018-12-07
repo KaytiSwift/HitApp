@@ -5,56 +5,57 @@
 }
 @section Styling{
     <link href="~/css/Creates.css" rel="stylesheet" />
+    <link href="~/css/Expenses.css" rel="stylesheet" />
 }
+    <div class="cards">
+        <h2>Add New Expense For @Model.Project.ProjectName</h2>
 
-<h2>Add New Expense For @Model.Project.ProjectName</h2>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form class="page-form" asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group" id="project-id">
+                        <label asp-for="ProjectId" class="control-label"></label>
+                        <input asp-for="ProjectId" class="form-control" />
+                        <span asp-validation-for="ProjectId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ExpenseName" class="control-label"></label>
+                        <input asp-for="ExpenseName" class="form-control" />
+                        <span asp-validation-for="ExpenseName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ExpenseCost" class="control-label"></label>
 
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form class="page-form" asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group" id="project-id">
-                <label asp-for="ProjectId" class="control-label"></label>
-                <input asp-for="ProjectId" class="form-control" />
-                <span asp-validation-for="ProjectId" class="text-danger"></span>
+                        <input asp-for="ExpenseCost" class="form-control" />
+                        <span asp-validation-for="ExpenseCost" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ExpenseDatePurchased" class="control-label"></label>
+                        <input asp-for="ExpenseDatePurchased" class="form-control" />
+                        <span asp-validation-for="ExpenseDatePurchased" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductUrl" class="control-label"></label>
+                        <input asp-for="ProductUrl" value="https://" class="form-control" />
+                        <span asp-validation-for="ProductUrl" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ExpenseNotes" class="control-label"></label>
+                        <input id="add-info" asp-for="ExpenseNotes" class="form-control" />
+                        <span asp-validation-for="ExpenseNotes" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input id="create-exp" type="submit" value="Create" class="btn btn-default" />
+                        <a class="back" asp-controller="Projects" asp-action="Details" asp-route-id="@Model.ProjectId">
+                            <input id="back-button" type="button" value="Back to @Model.Project.ProjectName" class="btn btn-default" />
+                        </a>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="ExpenseName" class="control-label"></label>
-                <input asp-for="ExpenseName" class="form-control" />
-                <span asp-validation-for="ExpenseName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ExpenseCost" class="control-label"></label>
-                
-                <input asp-for="ExpenseCost" class="form-control" />
-                <span asp-validation-for="ExpenseCost" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ExpenseDatePurchased" class="control-label"></label>               
-                <input asp-for="ExpenseDatePurchased" class="form-control" />
-                <span asp-validation-for="ExpenseDatePurchased" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProductUrl" class="control-label"></label>
-                <input  asp-for="ProductUrl" value="https://" class="form-control" />
-                <span asp-validation-for="ProductUrl" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ExpenseNotes" class="control-label"></label>
-                <input id="add-info" asp-for="ExpenseNotes" class="form-control" />
-                <span asp-validation-for="ExpenseNotes" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input id="create-exp" type="submit" value="Create" class="btn btn-default" />
-                <a asp-controller="Projects" asp-action="Details" asp-route-id="@Model.ProjectId">
-                    <input id="back-button"type="button" value="Back to @Model.Project.ProjectName" class="btn btn-default" />
-                </a>
-            </div>
-        </form>
+        </div>
     </div>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
