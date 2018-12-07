@@ -250,33 +250,14 @@ table {
 }
 
 /*ProjectList Page*/
- #ProjectIndex {
-    background: url(../images/lightwood.jpg) no-repeat fixed center;
-    background-size: cover;
 
-}
  #tableId th{
      color:black;
      text-shadow: none;
  }
 
-    #ProjectIndex h2, p {
-        color:black;
-       
-
-        /*text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;*/
 
 
-        
-
-    }
-    #ProjectIndex .table {
-        background: white;
-        border-style: ridge;
-        border-color: grey;
-        /*text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-        color: black;*/
-    }
 .container body-content {
 
     background-color: #fff;

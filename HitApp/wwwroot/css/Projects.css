@@ -1,0 +1,62 @@
+﻿#ProjectIndex {
+    background: url(../images/lightwood.jpg) no-repeat fixed center;
+    background-size: cover;
+}
+i {
+    font-size: large;
+}
+.cards {
+    padding: 20px 10px;
+    width: 1020px;
+    margin: 40px auto;
+}
+.cards h2{
+    text-align:center;
+}
+.back input, #create-proj, .image-upload input[type="submit"] {
+    box-shadow: 1px 1px 1px #000;
+    border-radius: 5px;
+    font-weight: bold;
+}
+input[type="file"] {
+    display: block;
+}
+#delete:hover {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+    .proj-btns {
+        display: flex;
+        justify-content: space-between;
+    }
+.buttons-del {
+    display: flex;
+    justify-content: center;
+    
+}
+    .buttons-del input {
+        box-shadow: 1px 1px 1px #000;
+        margin-right: 40px;
+    }
+#cont-btns, #exp-top{
+    display:flex;
+    justify-content:space-between
+}
+#exp-top{
+    margin-right:110px;
+}
+.edit-del{
+    padding-left:24px !important;
+}
+i {
+    color: rgb(83,83,83);
+    font-size: large;
+}
+    i:hover {
+        color: lightblue;
+    }
+#cant-change:hover {
+    color: rgb(83,83,83);
+}
+.icons{
+    padding-left:140px;
+}

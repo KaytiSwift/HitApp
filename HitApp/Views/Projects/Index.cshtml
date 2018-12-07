@@ -5,77 +5,86 @@
 }
 
 
-   
-   
+
+
 @section Styling{
-    <link href="~/css/Indexes.css" rel="stylesheet" />
+    <link href="~/css/Projects.css" rel="stylesheet" />
 }
-    <body id="ProjectIndex">
+<body id="ProjectIndex">
+    <div class="cards">
         <h2>All Projects</h2>
-        <a asp-controller="Contractors" asp-action="Index">View All Contractors</a>
+        <div class="proj-btns">
+            <div class="back">
+                <a asp-controller="Projects" asp-action="Create">
+                    <input type="button" value="CREATE NEW PROJECT" class="btn btn-default" />
+                </a>
+            </div>
+            <div class="back">
+                <a asp-controller="Contractors" asp-action="Index">
+                    <input type="button" value="ALL CONTRACTORS" class="btn btn-default" />
+                </a>
+            </div>
+
+        </div>
+        <table id="tableId" class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProjectName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProjectDescription)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProjectStartDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProjectEndDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProjectIsOnDashboard)
+                    </th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProjectName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProjectDescription)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProjectStartDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProjectEndDate)
+                        </td>
+                        @if (item.ProjectIsOnDashboard == true)
+                        {
+                            <td><i id="cant-change" class="fas fa-check"></i></td>
+                        }
+                        else
+                        {
+                            <td><i id="cant-change" class="fas fa-ban"></i></td>
+                        }
+
+                        <td>
+
+                            <a asp-action="Details" asp-route-id="@item.ProjectId" title="Details"><i class="far fa-list-alt"></i></a> |
+                            <a asp-action="Delete" asp-route-id="@item.ProjectId" title="Delete"><i class="fas fa-times"></i></a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
 
 
-        <p>
-            <a asp-action="Create"><i class="far fa-plus-square"></i> New Project</a>
-        </p> 
-                    <table id="tableId" class="table">
-                        <thead>
-                            <tr>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.ProjectName)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.ProjectDescription)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.ProjectStartDate)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.ProjectEndDate)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.ProjectIsOnDashboard)
-                                </th>
 
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model)
-                            {
-                                <tr>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.ProjectName)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.ProjectDescription)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.ProjectStartDate)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.ProjectEndDate)
-                                    </td>
-                                    @if (item.ProjectIsOnDashboard == true)
-                                    {
-                                        <td><i class="fas fa-check"></i></td>
-                                    }
-                                    else
-                                    {
-                                        <td><i class="fas fa-ban"></i></td>
-                                    }
-
-                                    <td>
-
-                                        <a asp-action="Details" asp-route-id="@item.ProjectId" title="Details"><i class="far fa-list-alt"></i></a> |
-                                        <a asp-action="Delete" asp-route-id="@item.ProjectId" title="Delete"><i class="fas fa-times"></i></a>
-                                    </td>
-                                </tr>
-                            }
-
-                        </tbody>
-
-
-
-                    </table>
-    </body>
+        </table>
+    </div>
+</body>

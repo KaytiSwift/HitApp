@@ -3,58 +3,25 @@
 @{
     ViewData["Title"] = "Delete";
 }
+@section Styling{
+    <link href="~/css/Projects.css" rel="stylesheet" />
+}
+    <body id="ProjectIndex">
+        <div class="cards">
+            <h2>Are you sure you want to delete your @Model.ProjectName project?</h2>
 
-<h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Project</h4>
 
-    @if (Model.ProjectIsOnDashboard == true)
-    {
-        <h5> Displayed on Dashboard: <i class="fas fa-check"></i> </h5>
-    }
-    else
-    {
-        <h5> Displayed on Dashboard: <i class="far fa-check-circle"></i> </h5>
-    }
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ProjectName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ProjectName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ProjectStartDate)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ProjectStartDate)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ProjectEndDate)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ProjectEndDate)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ProjectDescription)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ProjectDescription)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ProjectTotalBudget)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ProjectTotalBudget)
-        </dd>
-    </dl>
+            <div class="buttons-del">
 
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="ProjectId" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
-</div>
+                <form id="del-form" asp-action="Delete" asp-route-id="@Model.ProjectId">
+
+                    <input id="delete" type="submit" value="Delete" style="font-weight:bold" class="btn btn-default" />
+                </form>
+                <a asp-action="Details" asp-route-id="@Model.ProjectId" >
+                    <input type="button" value="No" style="font-weight:bold" class="btn btn-default" />
+                </a>
+
+            </div>
+        </div>
+</body>
