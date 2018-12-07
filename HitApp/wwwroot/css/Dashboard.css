@@ -1,6 +1,7 @@
 ﻿body {
     background-image: url(https://c1.staticflickr.com/9/8228/8538058050_6ce976ee74_b.jpg) !important;
     background-attachment: fixed;
+    background-size:cover;
 }
 
 .cards {
