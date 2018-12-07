@@ -17,6 +17,11 @@
     box-shadow: 1px 1px 1px #000;
     border-radius: 5px;
     font-weight: bold;
+    
+}
+#create-exp{
+    margin:auto;
+    width:unset;
 }
 .cards {
     padding: 20px 10px;
