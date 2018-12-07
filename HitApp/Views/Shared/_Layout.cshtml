@@ -18,45 +18,15 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
     @RenderSection("Styling", required: false)
-    
+
 </head>
+
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand"><i class="fas fa-house-damage"></i></a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Dashboard">Dashboard</a></li>
-                    <li><a asp-area="" asp-controller="Projects" asp-action="Index">My Projects</a></li>
-
-                    <li><a asp-area="" asp-controller="Home" asp-action="Resource">Resources</a></li>
-
-
-                </ul>
-                <partial name="_LoginPartial" />
-            </div>
-        </div>
-    </nav>
-
     <partial name="_CookieConsentPartial" />
 
     <div class="container body-content">
         @RenderBody()
-        <!--<hr class="footer-line" />-->
     </div>
-    <footer class="foot">
-        <p>&copy; 2018 - HitApp</p>
-    </footer>
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
@@ -82,3 +52,30 @@
     @RenderSection("Scripts", required: false)
 </body>
 </html>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand"><i class="fas fa-house-damage"></i></a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+
+                <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Dashboard">Dashboard</a></li>
+                <li><a asp-area="" asp-controller="Projects" asp-action="Index">My Projects</a></li>
+
+                <li><a asp-area="" asp-controller="Home" asp-action="Resource">Resources</a></li>
+
+
+            </ul>
+            <partial name="_LoginPartial" />
+        </div>
+    </div>
+</nav>
