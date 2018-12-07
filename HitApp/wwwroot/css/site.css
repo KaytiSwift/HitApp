@@ -537,3 +537,7 @@ h2 {
 .col-mod-4 {
     width: 1000px
 }
+section form#account {
+    padding: 20px;
+    border-radius: 5px;
+}
