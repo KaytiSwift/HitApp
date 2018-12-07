@@ -30,7 +30,12 @@ body {
     color: white;
 }
 .navbar-inverse {
-    background: linear-gradient( rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.5) ), url(../images/wood.jpg);
+    background: linear-gradient( rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.5) ), url(../images/nav-wood.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+#Index > nav {
+    padding: 0px 58px;
 }
 
     .navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-brand {

@@ -29,7 +29,7 @@ form {
         border-radius: 5px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 35px;
+        grid-gap: 10px;
         margin: 0px;
     }
 

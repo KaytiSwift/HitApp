@@ -10,9 +10,12 @@ i {
     width: 1020px;
     margin: 40px auto;
 }
-.cards h2{
-    text-align:center;
+
+.cards h2 {
+    text-align: left;
+    font-weight: bold;
 }
+
 .back input, #create-proj, .image-upload input[type="submit"] {
     box-shadow: 1px 1px 1px #000;
     border-radius: 5px;
@@ -59,4 +62,10 @@ i {
 }
 .icons{
     padding-left:140px;
+}
+
+#tot-exp {
+    text-align: right;
+    padding-right: 50px;
+    font-weight: bold;
 }
