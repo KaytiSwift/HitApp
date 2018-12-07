@@ -8,7 +8,7 @@ i {
 .cards {
     padding: 20px 10px;
     width: 1020px;
-    margin: 40px auto;
+    margin: 30px auto;
 }
 
 .cards h2 {
@@ -60,9 +60,13 @@ i {
     }
 
 .icons{
-    padding-left:140px;
+    width:330px;
+    display:flex;
+    justify-content:center;
 }
-
+.icons .back{
+    margin-left:20px;
+}
 #tot-exp {
     text-align: right;
     padding-right: 50px;
@@ -76,4 +80,11 @@ td a{
 }
 .icon-center{
     margin-left:15px;
+}
+#go-to {
+    margin-top: 20px;
+    margin-left: 70px;
+}
+#ExpenseTable{
+    margin-bottom:30px;
 }

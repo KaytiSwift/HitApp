@@ -6,13 +6,14 @@
 @section Styling{
     <link href="~/css/Contractors.css" rel="stylesheet" />
 }
+    <div class="back" id="go-to">
+        <a asp-controller="Projects" asp-action="Index">
+            <input type="button" value="GO TO MY PROJECTS" style="font-weight:bold" class="btn btn-default" />
+        </a>
+    </div>
     <div class="cards">
         <h2>All Contractors</h2>
-        <div class="back">
-            <a asp-controller="Projects" asp-action="Index">
-                <input type="button" value="MY PROJECTS" style="font-weight:bold" class="btn btn-default" />
-            </a>
-        </div>
+        
         @*<p>
             <a asp-action="Create"><i class="far fa-plus-square"></i> Add New Contractor</a>
         </p>*@

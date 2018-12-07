@@ -6,14 +6,15 @@
 @section Styling{
     <link href="~/css/Contractors.css" rel="stylesheet" />
 }
+    <div class="back" id="go-to">
+        <a asp-controller="Contractors" asp-action="Index">
+            <input type="button" value="GO TO CONTRACTORS" style="font-weight:bold" class="btn btn-default" />
+        </a>
+    </div>
     <div class="cards">
         <h2>@Model.ContractorName</h2>
 
-        <div class="back">
-            <a asp-controller="Contractors" asp-action="Index">
-                <input type="button" value="ALL CONTRACTORS" style="font-weight:bold" class="btn btn-default" />
-            </a>
-        </div>
+        
 
         <div>
             <div class="d-contractor">

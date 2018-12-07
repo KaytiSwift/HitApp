@@ -10,7 +10,7 @@
     <body id="ProjectDetails">
         <div style="margin-top:20px" class="back">
             <a asp-action="Index">
-                <input type="button" value="ALL PROJECTS" class="btn btn-default" />
+                <input type="button" value="GO TO MY PROJECTS" class="btn btn-default" />
             </a>
         </div>
         <div id="Project">
@@ -60,8 +60,16 @@
                     </dd>
                 </dl>
                 <div class="icons">
-                    <a asp-action="Edit" asp-route-id="@Model.ProjectId"><i class="fas fa-pencil-alt"></i></a> |
-                    <a asp-action="Delete" asp-route-id="@Model.ProjectId"><i class="fas fa-times"></i></a>
+                    <div class="back">
+                        <a asp-action="Edit" asp-route-id="@Model.ProjectId">
+                            <input type="button" value="EDIT" class="btn btn-default" />
+                        </a>
+                    </div>
+                    <div class="back">
+                        <a asp-action="Delete" asp-route-id="@Model.ProjectId">
+                            <input type="button" value="DELETE" class="btn btn-default" />
+                        </a>
+                    </div>
                 </div>
             </div>
             
@@ -71,12 +79,12 @@
                 <div>
                     <form method="post" action="/FilePaths/ImageUpload/@Model.ProjectId" enctype="multipart/form-data">
                         <input type="file" name="upload" /><br />
-                        <input type="submit" value="Upload" class="btn btn-default" />
+                        <input type="submit" value="UPLOAD" class="btn btn-default" />
                     </form>
                 </div>
                 <div class="back">
                     <a asp-controller="FilePaths" asp-action="Index" asp-route-id="@Model.ProjectId">
-                        <input type="button" value="View Images" class="btn btn-default" />
+                        <input type="button" value="VIEW IMAGES" class="btn btn-default" />
                     </a>
                 </div>
             </div>

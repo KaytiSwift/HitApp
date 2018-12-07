@@ -12,14 +12,15 @@
 
     
     <div class="create-bg">
+        <div class="back" id="go-to">
+            <a asp-controller="Projects" asp-action="Details" asp-route-id="@ViewBag.ProjectId">
+                <input type="button" value="Back to @ViewBag.ProjectName" class="btn btn-default" />
+            </a>
+        </div>
         <div class="cards">
             <h2>Create New Contractor for @ViewBag.ProjectName</h2>
 
-            <div class="back">
-                <a asp-controller="Projects" asp-action="Details" asp-route-id="@ViewBag.ProjectId">
-                    <input type="button" value="Back to @ViewBag.ProjectName" class="btn btn-default" />
-                </a>
-            </div>
+
 
 
             <div class="row">
@@ -83,7 +84,7 @@
                             <span asp-validation-for="ContractorZip" class="text-danger"></span>
                         </div>
                         <div id="create-cont" class="form-group">
-                            <input type="submit" value="Create" id="sub-btn" class="btn btn-default" />
+                            <input type="submit" value="CREATE" id="sub-btn" class="btn btn-default" />
                         </div>
 
                     </form>
