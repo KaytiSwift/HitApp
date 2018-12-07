@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2016
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HitApp", "HitApp\HitApp.csproj", "{EEA2D0DB-59B3-4AFF-941C-7394B3AA39E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HitApp.Tests", "HitApp.Tests\HitApp.Tests.csproj", "{66D545C5-5D43-4443-906E-ADA0FBDF262E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EEA2D0DB-59B3-4AFF-941C-7394B3AA39E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEA2D0DB-59B3-4AFF-941C-7394B3AA39E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEA2D0DB-59B3-4AFF-941C-7394B3AA39E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEA2D0DB-59B3-4AFF-941C-7394B3AA39E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66D545C5-5D43-4443-906E-ADA0FBDF262E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66D545C5-5D43-4443-906E-ADA0FBDF262E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66D545C5-5D43-4443-906E-ADA0FBDF262E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66D545C5-5D43-4443-906E-ADA0FBDF262E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {90AFEBF4-4594-46B3-A999-EFFB425AD120}
+	EndGlobalSection
+EndGlobal

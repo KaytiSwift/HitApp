@@ -3,15 +3,18 @@
     ViewData["Title"] = "ImageUpload";
 }
 
+<link href="~/css/Images.css" rel="stylesheet" />
 
 <body class="image-pages">
-    <div>
-        <h2>ImageUpload</h2>
-
-        <a href="/projects/details/@ViewBag.ProjectId">Return to Project</a> <br />
-
+    <div class="cards">
+        <h2>Your image has been saved!</h2>
+        <div style="margin-bottom:20px" class="back">
+            <a asp-controller="Projects" asp-action="Details/@ViewBag.ProjectId">
+                <input type="button" value="Return to Project" class="btn btn-default" />
+            </a>
+        </div>
         <div>
-            <img src="@ViewBag.Image" id="uploadedImage" />
+            <img style="max-height: 300px" src="@ViewBag.Image" id="uploadedImage" />
         </div>
     </div>
 </body>

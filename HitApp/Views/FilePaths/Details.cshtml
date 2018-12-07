@@ -3,9 +3,9 @@
 @{
     ViewData["Title"] = "Details";
 }
-
+<link href="~/css/Images.css" rel="stylesheet" />
 <body class="image-pages">
-    <div>
+    <div class="cards">
         <h2>Image for @Model.Project.ProjectName Project</h2>
 
         <div style="margin-bottom:20px" class="back">
@@ -14,18 +14,8 @@
             </a>
         </div>
         <div>
-            <img style="height:70vh" src="/UserImages/@Model.FileName" />
+            <img style="max-height:300px" src="/UserImages/@Model.FileName" />
         </div>
-    </div>
-    <h2>Image for @Model.Project.ProjectName Project</h2>
-
-    <div style="margin-bottom:20px" class="back">
-        <a asp-action="Index/@Model.ProjectId">
-            <input type="button" value="Back to All Images" class="btn btn-default" />
-        </a>
-    </div>
-    <div>
-        <img style="height:70vh" src="/UserImages/@Model.FileName" />
     </div>
 </body>
 

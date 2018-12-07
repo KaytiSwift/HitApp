@@ -9,3 +9,15 @@
 img {
     max-height: 150px;
 }
+
+.image-pages {
+    background: url(../images/background3.jpg) no-repeat fixed center;
+}
+
+.cards {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: black 5px 6px 13px 2px;
+    padding: 2rem 4rem 4rem 4rem;
+    margin-top: 3rem;
+}
