@@ -30,7 +30,8 @@
             <thead>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.ProjectName)
+                        @Html.DisplayNameFor(model => model.ProjectName)                      
+
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.ProjectDescription)
@@ -45,7 +46,7 @@
                         On Dashboard
                     </th>
 
-                    <th>Edit | Delete</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -53,7 +54,10 @@
                 {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.ProjectName)
+                            
+                            <a asp-action="Details" asp-route-id="@item.ProjectId" title="Details">@Html.DisplayFor(modelItem => item.ProjectName)</a>
+                            
+                            
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.ProjectDescription)
@@ -66,17 +70,16 @@
                         </td>
                         @if (item.ProjectIsOnDashboard == true)
                         {
-                            <td><i id="cant-change" class="fas fa-check"></i></td>
+                            <td ><i id="cant-change" class="fas fa-check"></i></td>
                         }
                         else
                         {
-                            <td><i id="cant-change" class="fas fa-ban"></i></td>
+                            <td ><i id="cant-change" class="fas fa-ban"></i></td>
                         }
 
                         <td>
 
-                            <a asp-action="Details" asp-route-id="@item.ProjectId" title="Details"><i class="far fa-list-alt"></i></a> |
-                            <a asp-action="Delete" asp-route-id="@item.ProjectId" title="Delete"><i class="fas fa-times"></i></a>
+                            <a asp-action="Delete" asp-route-id="@item.ProjectId" title="Delete"><i class="fas fa-times icon-center"></i></a>
                         </td>
                     </tr>
                 }

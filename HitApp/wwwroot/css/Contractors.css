@@ -18,7 +18,7 @@ h2 {
     border-radius:5px;
 }
 
-td a, td, #proj-cont a, dd, dt, #assigned-project, th{
+ td, dd, dt, #assigned-project, th{
     color: black;
    
 }
@@ -105,4 +105,10 @@ i {
 }
 #del-form{
     padding:10px;
+}
+#edit-del{
+    padding-left:0px;
+}
+#proj-cont a, td a{
+    font-weight:bold;
 }
