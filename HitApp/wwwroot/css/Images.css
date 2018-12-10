@@ -5,9 +5,8 @@
     grid-row-gap: 3rem;
     margin-top: 1rem;
 }
-
-img {
-    max-height: 150px;
+img{
+    max-height:150px;
 }
 
 .image-pages {

@@ -21,27 +21,30 @@ for details on configuring this project to bundle and minify static web assets. 
     /*-webkit-filter: blur(5px);*/
 }
 
-   
+
 
 .body-content {
     padding-left: 5px;
     padding-right: 5px;
 }
+
 .foot {
     color: white;
 }
+
 .navbar-inverse {
     background: linear-gradient( rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.5) ), url(../images/nav-wood.jpg);
-    background-repeat:no-repeat;
-    background-size:cover;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 #Index > nav {
     padding: 0px 58px;
 }
 
-    .navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-brand {
-        color: white;
-    }
+.navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-brand {
+    color: white;
+}
 /*.container.body-content {
     background: url('../images/Drawing.jpg')no-repeat center;
     padding-left:0px;
@@ -53,31 +56,29 @@ for details on configuring this project to bundle and minify static web assets. 
     background-position:top;
 }*/
 /*Home Page*/
-#Index .container{
-    
+#Index .container {
     padding-bottom: 10px;
-    margin-left:0px;
-    margin-right:0px;
-    width:100%;
-    height:100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+    height: 100%;
 }
 
 .col-md-3 img {
-    
     width: 100%;
-    height:25%;
-    
+    height: 25%;
 }
 /*editing link text and background color*/
 .col-md-3 {
     color: white;
-    padding:10px;
-    margin:30px;
-    height:427.38px;
+    padding: 10px;
+    margin: 30px;
+    height: 427.38px;
 }
+
 #project-id {
     display: none;
-} 
+}
 
 #expense-links {
     list-style: none;
@@ -95,45 +96,48 @@ table {
 
 /* Wrapping element
  Set some basic padding to keep content from hitting the edges */
-    .body-content {
+.body-content {
     padding-left: 5px;
     padding-right: 5px;
 }
 
 
-.Welcome , .Plan , .Help , .Supplys , .Contractors{
-    display:inline-flex;
-    margin:20px;
-    height:300px;
+.Welcome, .Plan, .Help, .Supplys, .Contractors {
+    display: inline-flex;
+    margin: 20px;
+    height: 300px;
 }
-    .Welcome p , .Supplys p , .Contractors p{
+
+    .Welcome p, .Supplys p, .Contractors p {
         font-size: 1em;
         text-shadow: 1px 1px 1px #000;
         color: white;
         display: inline-block;
         background: rgba(0,0,0, 0.5);
         color: white;
-        height:300px;
+        height: 300px;
     }
 
 
-    .Plan p , .Help p{
+    .Plan p, .Help p {
         order: 1;
         font-size: 1em;
         text-shadow: 1px 1px 1px #000;
         display: inline-block;
         background: rgba(0,0,0, 0.5);
         color: white;
-        height:300px;
+        height: 300px;
     }
-.Plan img , .Help img {
-        order:2;
+
+    .Plan img, .Help img {
+        order: 2;
         height: 300px;
         padding: 0px;
         vertical-align: middle;
     }
-#Index{
-    background:url(../images/wood.jpg);
+
+#Index {
+    background: url(../images/wood.jpg);
 }
 
 
@@ -148,12 +152,11 @@ table {
     color: white;
     /*background: rgba(0,0,0, 0.1);*/
     border-radius: 5px;
-    padding:8px;
-
-    
+    padding: 8px;
 }
+
 .carousel-caption {
-    text-shadow:none;
+    text-shadow: none;
 }
 
 #myCarousel {
@@ -179,8 +182,7 @@ table {
 
     .carousel .item img {
         width: 100%; /*img width*/
-        filter:brightness(0.6);
-
+        filter: brightness(0.6);
     }
 /*full width container*/
 @media (max-width: 767px) {
@@ -193,14 +195,14 @@ table {
 .carousel-inner .item img[src$=".svg"] {
     width: 100%;
     height: 100%;
-
 }
 /*About Page*/
 #About {
     background: url(../images/wood.jpg) no-repeat fixed center;
-   
+    margin-bottom: 30px;
     background-size: cover;
 }
+
 .Welcome, .Plan, .Help, .Supplys, .Contractors {
     display: inline-flex;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
@@ -215,44 +217,43 @@ table {
         background: rgba(0,0,0, 0.5);
         color: white;
         height: 300px;
-        
     }
-    #About h2{
-        padding-left:20px;
-    }
+
+#About h2 {
+    padding-left: 20px;
+}
+
 #About p {
-    padding:20px;
+    padding: 20px;
     font-size: large;
 }
-    
 
-    .Plan p, .Help p {
-        order: 1;
-        display: inline-block;
-        background: rgba(0,0,0, 0.5);
-        color: white;
-        height: 300px;
-    }
 
-    .Plan img, .Help img {
-        order: 2;
-        height: 300px;
-        padding: 0px;
-        vertical-align: middle;
-    }
+.Plan p, .Help p {
+    order: 1;
+    display: inline-block;
+    background: rgba(0,0,0, 0.5);
+    color: white;
+    height: 300px;
+}
+
+.Plan img, .Help img {
+    order: 2;
+    height: 300px;
+    padding: 0px;
+    vertical-align: middle;
+}
 /*Resource Page*/
 .Resource {
     background: url('../images/background.jpg') no-repeat fixed bottom;
 }
 
-   
+
 
 
 .col-md-3 img {
-    
     width: 100%;
-    height:25%;
-    
+    height: 25%;
 }
 /*editing link text and background color*/
 .col-md-3 {
@@ -265,23 +266,22 @@ table {
 
 /*ProjectList Page*/
 
- #tableId th{
-     color:black;
-     text-shadow: none;
- }
+#tableId th {
+    color: black;
+    text-shadow: none;
+}
 
 
 
 .container body-content {
-
     background-color: #fff;
     border-radius: 5px;
     box-shadow: black 5px 6px 13px 2px;
-            }
+}
 
-        #project-id {
-            display: none;
-        }    
+#project-id {
+    display: none;
+}
 
 /* QR code generator */
 #qrCode {
@@ -325,7 +325,7 @@ table {
     display: grid;
 }
 
-.project-info{
+.project-info {
 }
 
 .project-crud {
@@ -335,7 +335,7 @@ table {
     width: 10em;
 }
 
-.view-images{
+.view-images {
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
@@ -385,18 +385,18 @@ table {
     height: 400px;
 }
 
-.resource-grid .cards h5 {
-    font-size: 20px;
-    font-weight: bold;
-}
+    .resource-grid .cards h5 {
+        font-size: 20px;
+        font-weight: bold;
+    }
 
-.resource-grid .cards li img:hover {
-    border: 3px solid rgb(83, 83, 83);
-}
+    .resource-grid .cards li img:hover {
+        border: 3px solid rgb(83, 83, 83);
+    }
 
-.resource-grid .cards li img {
-    margin: 15px;
-}
+    .resource-grid .cards li img {
+        margin: 15px;
+    }
 
 .about-grid {
     grid-row-gap: 5em;
@@ -406,27 +406,27 @@ table {
     margin-top: 5rem;
 }
 
-.about-grid > div {
-    display: flex;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: black 5px 6px 13px 2px;
-    padding: 2em;
-}
-
-.about-grid > div {
-    color: black;
-    padding:20px;
-    text-align:left;
-}
-
-.about-grid > div > img {
-    box-shadow: black 2px 5px 10px;
-}
-
-    .resource-grid img {
-        max-width: 100px;
+    .about-grid > div {
+        display: flex;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: black 5px 6px 13px 2px;
+        padding: 2em;
     }
+
+    .about-grid > div {
+        color: black;
+        padding: 20px;
+        text-align: left;
+    }
+
+        .about-grid > div > img {
+            box-shadow: 1px 1px 5px black;
+        }
+
+.resource-grid img {
+    max-width: 100px;
+}
 
 .resource-grid ul {
     margin: 0;
@@ -434,15 +434,16 @@ table {
 }
 
 
-.navbar-fixed-top .navbar-collapse{
-    padding:0px 15px;
-}
-.navbar-brand i{
-    color:white !important;
+.navbar-fixed-top .navbar-collapse {
+    padding: 0px 15px;
 }
 
-.text-padding{
-    padding:0px 20px;
+.navbar-brand i {
+    color: white !important;
+}
+
+.text-padding {
+    padding: 0px 20px;
 }
 
 i#cant-change.fas.fa-ban {
@@ -462,13 +463,12 @@ i#red {
 }
 
 .footer {
-    text-align:center;
-    font-weight:bold;
-    color:white;
-    margin-top:1em;
-    bottom:0;
-    width:100%;
-
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    margin-top: 1em;
+    bottom: 0;
+    width: 100%;
 }
 
 nav.navbar.navbar-inverse.navbar-fixed-top a:hover {
@@ -477,9 +477,9 @@ nav.navbar.navbar-inverse.navbar-fixed-top a:hover {
     color: red;
 }
 
-nav.navbar.navbar-inverse.navbar-fixed-top a:hover i {
-    color: red !important;
-}
+    nav.navbar.navbar-inverse.navbar-fixed-top a:hover i {
+        color: red !important;
+    }
 
 nav.navbar.navbar-inverse.navbar-fixed-top li:hover {
     background-color: white;
@@ -487,21 +487,23 @@ nav.navbar.navbar-inverse.navbar-fixed-top li:hover {
     color: red !important;
 }
 
-nav.navbar.navbar-inverse.navbar-fixed-top li:hover button {
-    background-color: white;
-    font-weight: bold;
-    color: red !important;
-}
-nav.navbar.navbar-inverse.navbar-fixed-top button:hover{
+    nav.navbar.navbar-inverse.navbar-fixed-top li:hover button {
+        background-color: white;
+        font-weight: bold;
+        color: red !important;
+    }
+
+nav.navbar.navbar-inverse.navbar-fixed-top button:hover {
     color: red;
 }
 
 nav.navbar.navbar-inverse.navbar-fixed-top {
     font-weight: bold;
 }
-nav.navbar.navbar-inverse.navbar-fixed-top button:visited {
-    text-decoration: none;
-}
+
+    nav.navbar.navbar-inverse.navbar-fixed-top button:visited {
+        text-decoration: none;
+    }
 
 .navbar-inverse .btn-link {
     color: white;
@@ -545,7 +547,21 @@ h2 {
 .col-mod-4 {
     width: 1000px
 }
-section form#account {
+
+
+section form#account, [action="/Identity/Account/Register?returnUrl=%2F"] {
+    background: white;
     padding: 20px;
     border-radius: 5px;
+    box-shadow: black 5px 6px 13px 2px;
+    margin: 30px;
+}
+
+.body-content > h2 {
+    display: none;
+}
+
+.btn-default {
+    box-shadow: 1px 1px 5px black;
+    font-weight: bold;
 }

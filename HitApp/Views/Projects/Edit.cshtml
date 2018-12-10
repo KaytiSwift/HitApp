@@ -5,18 +5,19 @@
 }
 
 @section Styling{
-<link href="~/css/Creates.css" rel="stylesheet" />
-<link href="~/css/Projects.css" rel="stylesheet" />
+    <link href="~/css/Creates.css" rel="stylesheet" />
+    <link href="~/css/Projects.css" rel="stylesheet" />
 }
 <body id="ProjectIndex">
+    <div class="back" id="go-to">
+        <a asp-controller="Projects" asp-action="Details" asp-route-id="@Model.ProjectId">
+            <input type="button" value="Back to @Model.ProjectName" class="btn btn-default" />
+        </a>
+    </div>
     <div class="cards">
 
-        <h2>Edit: @Model.ProjectName</h2>
-        <div class="back">
-            <a asp-controller="Projects" asp-action="Details" asp-route-id="@Model.ProjectId">
-                <input type="button" value="Back to @Model.ProjectName" class="btn btn-default" />
-            </a>
-        </div>
+        <h2>Edit @Model.ProjectName Project</h2>
+
 
         <div class="row">
             <div class="col-md-4">
@@ -55,9 +56,8 @@
                         <input id="add-info" asp-for="ProjectDescription" class="form-control" />
                         <span asp-validation-for="ProjectDescription" class="text-danger"></span>
                     </div>
-                    <div></div>
                     <div id="create-proj" class="form-group">
-                        <input type="submit" value="Save" class="btn btn-default" />
+                        <input type="submit" value="SAVE" class="btn btn-default" />
                     </div>
                 </form>
             </div>

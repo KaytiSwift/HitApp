@@ -1,44 +1,44 @@
 ﻿@model IEnumerable<HitApp.Models.Project>
 
-@{
+    @{
     ViewData["Title"] = "Dashboard";
-}
+    }
 
-@section Styling
+    @section Styling
     {
     <link href="~/css/Dashboard.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-}
-<h2>Dashboard</h2>
+    }
+    <h2>Dashboard</h2>
 
-<div id="tabs">
-    <div class="back">
-        <a asp-controller="Projects" asp-action="Create">
-            <input type="button" value="CREATE PROJECT" class="btn btn-default" />
-        </a>
-    </div>
-    <div class="back">
-        <a asp-controller="Projects" asp-action="Index">
-            <input type="button" value="MY PROJECTS" class="btn btn-default" />
-        </a>
-    </div>
+    <div id="tabs">
+        <div class="back">
+            <a asp-controller="Projects" asp-action="Create">
+                <input type="button" value="CREATE PROJECT" class="btn btn-default" />
+            </a>
+        </div>
+        <div class="back">
+            <a asp-controller="Projects" asp-action="Index">
+                <input type="button" value="MY PROJECTS" class="btn btn-default" />
+            </a>
+        </div>
 
-</div>
-@foreach (var project in Model)
-{
+    </div>
+    @foreach (var project in Model)
+    {
     @if (project.ProjectIsOnDashboard == true)
     {
 
-        <div class="cards">
-            <div class="left-card">
-                <h3>@project.ProjectName</h3>
-                <div class="back">
-                    <a asp-controller="Projects" asp-action="Details" asp-route-id="@project.ProjectId">
-                        <input type="button" value="See Details" class="btn btn-default" />
-                    </a>
-                </div>
-              
+    <div class="cards">
+        <div class="left-card">
+            <h3>@project.ProjectName</h3>
+            <div class="back">
+                <a asp-controller="Projects" asp-action="Details" asp-route-id="@project.ProjectId">
+                    <input type="button" value="See Details" class="btn btn-default" />
+                </a>
             </div>
+
+        </div>
 
         <div>
             <h3 class="center-card">Budget spent</h3>
@@ -55,11 +55,11 @@
             </p>
 
         </div>
-        </div>
+    </div>
     }
-}
+    }
 
-@section Scripts
+    @section Scripts
     {
     <script src="~/js/ProgressBar.js"></script>
-}
+    }

@@ -1,7 +1,7 @@
 ﻿body {
     background-image: url(https://c1.staticflickr.com/9/8228/8538058050_6ce976ee74_b.jpg) !important;
     background-attachment: fixed;
-    background-size:cover;
+    background-size: cover;
 }
 
 .cards {
@@ -27,9 +27,9 @@
 
 
 
-    #tabs a, h2{
-        color:white;
-    }
+#tabs a, h2 {
+    color: white;
+}
 
     .cards a:hover, #tabs a:hover {
         color: #637ea4;
@@ -73,21 +73,23 @@
 .right-card {
     background-color: rgb(119, 129, 139);
     border: 1px solid black;
-    border-radius:10px;
+    border-radius: 10px;
     padding: 1em;
     font-weight: bold;
     width: 25%;
-    color:white;
+    color: white;
 }
 
 .w3-light-grey {
     box-shadow: 5px 5px 7px black;
 }
+
 .right-card p {
-    color:white;
+    color: white;
 }
+
 .back .btn {
     box-shadow: 1px 1px 1px #000;
     margin-top: 50px;
-    font-weight:bold;
+    font-weight: bold;
 }
