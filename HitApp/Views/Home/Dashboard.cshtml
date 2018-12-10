@@ -9,21 +9,21 @@
     <link href="~/css/Dashboard.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 }
-<h2>Dashboard</h2>
 
-<div id="tabs">
-    <div class="back">
-        <a asp-controller="Projects" asp-action="Create">
-            <input type="button" value="CREATE PROJECT" class="btn btn-default" />
-        </a>
-    </div>
-    <div class="back">
-        <a asp-controller="Projects" asp-action="Index">
-            <input type="button" value="MY PROJECTS" class="btn btn-default" />
-        </a>
-    </div>
+    <div id="tabs">
 
-</div>
+        <div class="back">
+            <a asp-controller="Projects" asp-action="Index">
+                <input type="button" value="GO TO MY PROJECTS" class="btn btn-default" />
+            </a>
+        </div>
+        <div class="back">
+            <a asp-controller="Projects" asp-action="Create">
+                <input type="button" value="CREATE PROJECT" class="btn btn-default" />
+            </a>
+        </div>
+
+    </div>
 @foreach (var project in Model)
 {
     @if (project.ProjectIsOnDashboard == true)
@@ -47,11 +47,11 @@
             </div>
         </div>
         <div class="right-card">
-            <p>$<span class="projectTotalBudget">@project.ProjectTotalBudget</span> : Budget</p>
-            <p>$<span class="projectTotalExpenses">@project.ProjectTotalExpenses</span> : Total Expenses:</p>
+            <p><span class="projectTotalBudget">@project.ProjectTotalBudget</span> : Budget</p>
+            <p><span class="projectTotalExpenses">@project.ProjectTotalExpenses</span> : Total Expenses</p>
             -------------------------
             <p>
-                <span class="balance">$@(project.ProjectTotalBudget - project.ProjectTotalExpenses) : Balance</span>
+                <span class="balance">@(project.ProjectTotalBudget - project.ProjectTotalExpenses) : Balance</span>
             </p>
 
         </div>

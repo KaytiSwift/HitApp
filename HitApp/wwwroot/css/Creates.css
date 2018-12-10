@@ -58,3 +58,7 @@ form {
         
     }
 }
+
+input#sub-btn {
+    font-weight: bold;
+}

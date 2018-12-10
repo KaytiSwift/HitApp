@@ -22,3 +22,7 @@ img {
     padding: 2rem 4rem 4rem 4rem;
     margin-top: 3rem;
 }
+
+input.btn.btn-default {
+    box-shadow: 1px 1px 1px #000;
+}

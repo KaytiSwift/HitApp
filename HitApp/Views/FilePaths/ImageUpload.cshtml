@@ -5,12 +5,13 @@
 
 <link href="~/css/Images.css" rel="stylesheet" />
 
+
 <body class="image-pages">
     <div class="cards">
         <h2>Your image has been saved!</h2>
         <div style="margin-bottom:20px" class="back">
             <a asp-controller="Projects" asp-action="Details/@ViewBag.ProjectId">
-                <input type="button" value="Return to Project" class="btn btn-default" />
+                <input type="button" value="Return to @ViewBag.ProjectName Project" class="btn btn-default" />
             </a>
         </div>
         <div>

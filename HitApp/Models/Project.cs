@@ -36,14 +36,14 @@ namespace HitApp.Models
         public string ProjectDescription { get; set; }
 
         [Display(Name="Total Budget")]
-        [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = false)]
+        [DisplayFormat(DataFormatString = "${0:#,0}", ApplyFormatInEditMode = false)]
         public double ProjectTotalBudget { get; set; }
 
 
         public virtual List<Expense> Expenses { get; set; }
 
         [Display(Name = "Total Expenses")]
-        [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = false)]
+        [DisplayFormat(DataFormatString = "${0:#,0}", ApplyFormatInEditMode = false)]
         public double ProjectTotalExpenses { get; set; }
  
         public virtual List<ProjectContractor> ProjectContractors { get; set; }
