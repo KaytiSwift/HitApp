@@ -15,12 +15,13 @@ namespace HitApp.Tests
         IProjectRepository projectRepo;
         ProjectsController underTest;
         private IHostingEnvironment e;
+        IExpenseRepository expenseRepo;
 
         public ProjectControllerTests()
         {
             project = new Project();
             projectRepo = Substitute.For<IProjectRepository>();
-            underTest = new ProjectsController(projectRepo);
+            underTest = new ProjectsController(projectRepo, expenseRepo);
         }
 
         [Fact]

@@ -13,12 +13,13 @@ namespace HitApp.Tests
     {
         IProjectRepository projectRepo;
         HomeController underTest;
+        IExpenseRepository expenseRepo;
 
 
         public HomeControllerTests()
         {
             projectRepo = Substitute.For<IProjectRepository>();
-            underTest = new HomeController(projectRepo);
+            underTest = new HomeController(projectRepo, expenseRepo);
         }
 
         [Fact]

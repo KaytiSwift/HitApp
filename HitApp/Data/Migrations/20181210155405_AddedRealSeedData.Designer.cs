@@ -4,14 +4,16 @@ using HitApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HitApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181210155405_AddedRealSeedData")]
+    partial class AddedRealSeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,7 +56,7 @@ namespace HitApp.Data.Migrations
 
                     b.HasData(
                         new { ContractorId = 1, ContractorAdditionalNotes = "Start 10/2, projected end date 11/2. $8,200 labor", ContractorAddress = "1234 Mian Steet", ContractorCity = "Madison", ContractorCompany = "TecTile", ContractorEmail = "tectile@live.com", ContractorName = "Jimmy McDermitt", ContractorPhone = "216-453-0983", ContractorService = "mainly Tile", ContractorState = "Ohio", ContractorZip = 44075 },
-                        new { ContractorId = 2, ContractorAdditionalNotes = "Electric box,electric baseboard heaters and outlets in Kitchen island. $3,376 total", ContractorAddress = "990 Erie Road, Unit P", ContractorCity = "Eastlake", ContractorCompany = "Streb Electric", ContractorEmail = "", ContractorName = "Kevin and Lance", ContractorPhone = "440-953-5819", ContractorService = "Electric", ContractorState = "Ohio", ContractorZip = 44095 },
+                        new { ContractorId = 2, ContractorAdditionalNotes = "Install new electric box for house,electric baseboard heaters in basement, and outlets in Kitchen island. $3,376 total", ContractorAddress = "990 Erie Road, Unit P", ContractorCity = "Eastlake", ContractorCompany = "Streb Electric", ContractorEmail = "", ContractorName = "Kevin and Lance", ContractorPhone = "440-953-5819", ContractorService = "Electric", ContractorState = "Ohio", ContractorZip = 44095 },
                         new { ContractorId = 3, ContractorAdditionalNotes = "Works at TecTile with Jimmy", ContractorAddress = "1234 Mian Steet", ContractorCity = "Madison", ContractorCompany = "TecTile", ContractorEmail = "tectile@live.com", ContractorName = "Jamie Smith", ContractorPhone = "216-453-0983", ContractorService = "Painting", ContractorState = "Ohio", ContractorZip = 44075 }
                     );
                 });
