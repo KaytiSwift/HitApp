@@ -24,9 +24,9 @@ namespace HitApp.Data
         {
             modelBuilder.Entity<Project>().HasData(
 
-               new Project() { ProjectId = 1, ProjectName = "Upstairs Bathroom", ProjectStartDate = new DateTime(2018, 10, 2), ProjectEndDate = new DateTime(2018, 11, 2), ProjectDescription = "Paint and re-tile bathroom walls and floors", ProjectTotalBudget = 5000.00, ProjectTotalExpenses = 0, ProjectOwnerId = "7fdacf8b-3c46-4b86-b088-cc7a70a97c80" },
-               new Project() { ProjectId = 2, ProjectName = "Kitchen", ProjectStartDate = new DateTime(2018, 10, 5), ProjectEndDate = new DateTime(2018, 11, 2), ProjectDescription = "Paint and re-finish wood floors. Electricty in island and other new appliances", ProjectTotalBudget = 9000.00, ProjectTotalExpenses = 0, ProjectOwnerId = "7fdacf8b-3c46-4b86-b088-cc7a70a97c80" },
-               new Project() { ProjectId = 3, ProjectName = "Basement", ProjectStartDate = new DateTime(2018, 10, 11), ProjectEndDate = new DateTime(2018, 11, 2), ProjectDescription = "Take out part of basement wall, add baseboard heaters", ProjectTotalBudget = 10000.00, ProjectTotalExpenses = 0, ProjectOwnerId = "7fdacf8b-3c46-4b86-b088-cc7a70a97c80" }
+               new Project() { ProjectId = 1, ProjectName = "Upstairs Bathroom", ProjectStartDate = new DateTime(2018, 10, 2), ProjectEndDate = new DateTime(2018, 11, 2), ProjectDescription = "Paint and re-tile bathroom walls and floors", ProjectTotalBudget = 5000.00, ProjectTotalExpenses = 0, ProjectOwnerId = "8c3d65a8-8252-420c-aeaf-3ae2f758ce2a" },
+               new Project() { ProjectId = 2, ProjectName = "Kitchen", ProjectStartDate = new DateTime(2018, 10, 5), ProjectEndDate = new DateTime(2018, 11, 2), ProjectDescription = "Paint and re-finish wood floors. Electricty in island and other new appliances", ProjectTotalBudget = 9000.00, ProjectTotalExpenses = 0, ProjectOwnerId = "8c3d65a8-8252-420c-aeaf-3ae2f758ce2a" },
+               new Project() { ProjectId = 3, ProjectName = "Basement", ProjectStartDate = new DateTime(2018, 10, 11), ProjectEndDate = new DateTime(2018, 11, 2), ProjectDescription = "Take out part of basement wall, add baseboard heaters", ProjectTotalBudget = 10000.00, ProjectTotalExpenses = 0, ProjectOwnerId = "8c3d65a8-8252-420c-aeaf-3ae2f758ce2a" }
 
 
                 );
