@@ -139,3 +139,10 @@ i {
     display: flex;
     justify-content: space-between;
 }
+
+.icons {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0px 20px 0px;
+}

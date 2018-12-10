@@ -48,7 +48,7 @@ namespace HitApp.Controllers
                 var path = "/UserImages/" + photo.FileName;
                 ViewBag.Image = path;
             }
-
+            ViewBag.ProjectName = project.ProjectName;
             ViewBag.ProjectId = id;
             return View();
         }

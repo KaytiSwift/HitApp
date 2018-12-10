@@ -17,7 +17,7 @@ namespace HitApp.Models
 
         [Required]
         [Display(Name = "Cost")]
-        [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = false)]
+        [DisplayFormat(DataFormatString = "${0:#,0}", ApplyFormatInEditMode = false)]
         public double ExpenseCost { get; set; }
 
         [Display(Name = "Date Purchased")]

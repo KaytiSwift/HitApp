@@ -20,14 +20,12 @@
         <div class="d-contractor">
             <div>
                 <dl id="contractor" class="dl-horizontal">
-
                     <dt class="d-row">
                         Company:
                     </dt>
                     <dd class="d-row">
                         @Html.DisplayFor(model => model.ContractorCompany)
                     </dd>
-
                     <dt class="d-row">
                         Name:
                     </dt>
@@ -89,33 +87,41 @@
                         @Html.DisplayFor(model => model.ContractorAdditionalNotes)
                     </dd>
                 </dl>
-                <div class="buttons">
-                    <a asp-action="Edit" asp-route-id="@Model.ContractorId" title="Edit"><i class="fas fa-pencil-alt"></i></a> |
-                    <a asp-action="/Delete" asp-route-id="@Model.ContractorId" title="Delete"><i class="fas fa-times"></i></a>
+                <div class="icons">
+
+                    <div class="back">
+                        <a asp-action="Edit" asp-route-id="@Model.ContractorId">
+                            <input type="button" value="EDIT" class="btn btn-default" />
+                        </a>
+                    </div>
+                    <div class="back">
+                        <a asp-action="Delete" asp-route-id="@Model.ContractorId">
+                            <input type="button" value="DELETE" class="btn btn-default" />
+                        </a>
+                    </div>
+                </div>
+                </div>
+                <div>
+                    <div id="contractor">
+                        <h3>Assigned Projects</h3>
+                        <ul class="d-row">
+                            @if (Model.ProjectContractors.Count == 0)
+                            {
+                                <li>Not assigned to any projects</li>
+                            }
+                            else
+                            {
+                                foreach (var project in Model.ProjectContractors)
+                                {
+                                    <li id="proj-cont"><a asp-controller="Projects" asp-action="Details" asp-route-id="@project.Projects.ProjectId">@project.Projects.ProjectName</a></li>
+                                }
+                            }
+                        </ul>
+
+                    </div>
+
                 </div>
             </div>
-
-            <div>
-                <div id="contractor">
-                    <h3>Assigned Projects</h3>
-                    <ul class="d-row">
-                        @if (Model.ProjectContractors.Count == 0)
-                        {
-                        <li>Not assigned to any projects</li>
-                        }
-                        else
-                        {
-                        foreach (var project in Model.ProjectContractors)
-                        {
-                        <li id="proj-cont"><a asp-controller="Projects" asp-action="Details" asp-route-id="@project.Projects.ProjectId">@project.Projects.ProjectName</a></li>
-                        }
-                        }
-                    </ul>
-
-                </div>
-
-            </div>
-        </div>
 
     </div>
 

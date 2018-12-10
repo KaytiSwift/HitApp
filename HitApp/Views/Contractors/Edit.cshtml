@@ -10,19 +10,15 @@
 
 
 <div id="go-to-spread">
-    <div class="back go-to">
+
+        <div class="back go-to">
         <a asp-controller="Contractors" asp-action="Index">
             <input type="button" value="ALL CONTRACTORS" style="font-weight:bold" class="btn btn-default" />
         </a>
     </div>
-    <div class="back go-to">
-        <a style="margin-right:75px;" asp-controller="Contractors" asp-action="Details" asp-route-id="@Model.ContractorId">
-            <input type="button" value="Details: @Model.ContractorName" style="font-weight:bold" class="btn btn-default" />
-        </a>
-    </div>
 </div>
 <div class="cards">
-    <h2>Edit: @Model.ContractorName</h2>
+    <h2>Edit @Model.ContractorName</h2>
 
 
 

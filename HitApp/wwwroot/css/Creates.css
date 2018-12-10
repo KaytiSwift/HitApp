@@ -63,3 +63,7 @@ form {
         margin: auto;
     }
 }
+
+input#sub-btn {
+    font-weight: bold;
+}
