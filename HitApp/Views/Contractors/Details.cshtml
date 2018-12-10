@@ -12,7 +12,7 @@
     </a>
 </div>
 <div class="cards">
-    <h2>@Model.ContractorName</h2>
+    <h2 id="title">@Model.ContractorName</h2>
 
 
 
@@ -83,7 +83,7 @@
                     <dt class="d-row">
                         Additional Notes:
                     </dt>
-                    <dd class="d-row">
+                    <dd class="d-row" >
                         @Html.DisplayFor(model => model.ContractorAdditionalNotes)
                     </dd>
                 </dl>
@@ -95,7 +95,7 @@
                         </a>
                     </div>
                     <div class="back">
-                        <a asp-action="Delete" asp-route-id="@Model.ContractorId">
+                        <a href="/Contractors/Delete/@Model.ContractorId">
                             <input type="button" value="DELETE" class="btn btn-default" />
                         </a>
                     </div>

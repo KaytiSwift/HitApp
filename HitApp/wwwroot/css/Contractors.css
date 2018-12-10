@@ -62,6 +62,9 @@ td, dd, dt, #assigned-project, th {
     padding: 8px;
     height: 35px;
 }
+dt.d-row {
+    text-align: left;
+}
 
 
 #contractor ul {
@@ -145,4 +148,7 @@ i {
     display: flex;
     justify-content: space-around;
     padding: 10px 0px 20px 0px;
+}
+#title{
+    padding-left:50px;
 }

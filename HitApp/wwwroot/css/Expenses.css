@@ -21,7 +21,6 @@
 }
 
 #create-exp {
-    margin: auto;
     width: unset;
 }
 
@@ -61,4 +60,10 @@
 #go-to {
     margin-top: 20px;
     margin-left: 70px;
+}
+.back input{
+    display:flex;
+    flex-direction:column;
+   text-align:left;
+    margin-top:20px;
 }

@@ -71,12 +71,12 @@
 }
 
 .right-card {
-    background-color: rgb(119, 129, 139);
+    background-color: rgb(184, 184, 184);
     border: 1px solid black;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 1em;
     font-weight: bold;
-    width: 25%;
+    width: 27.5%;
     color: white;
 }
 
