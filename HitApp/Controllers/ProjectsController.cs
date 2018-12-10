@@ -14,10 +14,13 @@ namespace HitApp.Controllers
     public class ProjectsController : Controller
     {
         private IProjectRepository projectRepo;
+        private IExpenseRepository expenseRepo;
 
-        public ProjectsController(IProjectRepository projectRepo)
+
+        public ProjectsController(IProjectRepository projectRepo, IExpenseRepository expenseRepo)
         {
             this.projectRepo = projectRepo;
+            this.expenseRepo = expenseRepo;
         }
 
         public IActionResult Index()
@@ -32,7 +35,8 @@ namespace HitApp.Controllers
 
         public IActionResult Details(int id)
         {
-            var model = projectRepo.GetById(id);
+            var model = projectRepo.GetById(id);            
+            model.ProjectTotalExpenses = expenseRepo.ExpenseTotal(model);
             return View(model);
         }
 
