@@ -549,7 +549,7 @@ h2 {
 }
 
 
-section form#account, [action="/Identity/Account/Register?returnUrl=%2F"] {
+section form#account, [action="/Identity/Account/Register?returnUrl=%2F"], [action="/Identity/Account/Register?returnUrl=%2FHome%2FDashboard"] {
     background: white;
     padding: 20px;
     border-radius: 5px;
