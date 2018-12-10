@@ -4,14 +4,16 @@ using HitApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HitApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181210172206_KyleUsernameLinkedToSeedData")]
+    partial class KyleUsernameLinkedToSeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,15 +87,7 @@ namespace HitApp.Data.Migrations
                     b.ToTable("Expenses");
 
                     b.HasData(
-                        new { ExpenseId = 1, ExpenseCost = 1039.35, ExpenseDatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), ExpenseName = "Vanity", ExpenseNotes = "60 in. Vanity, Home Depot", ProductUrl = "https://www.homedepot.com/p/Home-Decorators-Collection-Sonoma-60-in-W-x-22-in-D-Double-Bath-Vanity-in-White-with-Carrara-Marble-Top-with-White-Basins-8105300410/205866623", ProjectId = 1 },
-                        new { ExpenseId = 2, ExpenseCost = 95.96, ExpenseDatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), ExpenseName = "Bath Towel Set", ExpenseNotes = "Bronze towel bar set from Home Depot", ProjectId = 1 },
-                        new { ExpenseId = 3, ExpenseCost = 107.74, ExpenseDatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), ExpenseName = "Mirror", ExpenseNotes = "2 mirrors for vanity", ProjectId = 1 },
-                        new { ExpenseId = 4, ExpenseCost = 372.14, ExpenseDatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), ExpenseName = "Tile", ExpenseNotes = "From Home Depot", ProductUrl = "https://www.homedepot.com/p/TrafficMASTER-Portland-Stone-Beige-18-in-x-18-in-Glazed-Ceramic-Floor-and-Wall-Tile-17-44-sq-ft-case-PT011818HD1PV/205897841", ProjectId = 1 },
-                        new { ExpenseId = 5, ExpenseCost = 90.0, ExpenseDatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), ExpenseName = "Paint", ExpenseNotes = "BEHR MARQUEE 2 gal. #780F-4 Sparrow One-Coat Hide Satin Enamel Interior Paint and Primer in One", ProjectId = 1 },
-                        new { ExpenseId = 6, ExpenseCost = 150.0, ExpenseDatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), ExpenseName = "Jamie Painting labor", ExpenseNotes = "", ProjectId = 1 },
-                        new { ExpenseId = 7, ExpenseCost = 2000.0, ExpenseDatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), ExpenseName = "Jimmy Tile/construction labor", ExpenseNotes = "", ProjectId = 1 },
-                        new { ExpenseId = 8, ExpenseCost = 3450.89, ExpenseDatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), ExpenseName = "Electric labor", ExpenseNotes = "", ProjectId = 2 },
-                        new { ExpenseId = 9, ExpenseCost = 2470.12, ExpenseDatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), ExpenseName = "Electric labor", ExpenseNotes = "", ProjectId = 3 }
+                        new { ExpenseId = 1, ExpenseCost = 420.0, ExpenseDatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), ExpenseName = "TestExpense1", ExpenseNotes = "This is a test", ProductUrl = "https://www.homedepot.com/p/Warehouse-of-Tiffany-Stella-12-in-Bronze-Accent-Desk-Lamp-with-Red-Dragonfly-Shade-305RBTL/206800480", ProjectId = 1 }
                     );
                 });
 
@@ -144,9 +138,9 @@ namespace HitApp.Data.Migrations
                     b.ToTable("Projects");
 
                     b.HasData(
-                        new { ProjectId = 1, ProjectDescription = "Paint and re-tile bathroom walls and floors", ProjectEndDate = new DateTime(2018, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectIsOnDashboard = false, ProjectName = "Upstairs Bathroom", ProjectOwnerId = "8c3d65a8-8252-420c-aeaf-3ae2f758ce2a", ProjectStartDate = new DateTime(2018, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 3500.0, ProjectTotalExpenses = 0.0 },
-                        new { ProjectId = 2, ProjectDescription = "Paint and re-finish wood floors. Electricty in island and other new appliances", ProjectEndDate = new DateTime(2018, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectIsOnDashboard = false, ProjectName = "Kitchen", ProjectOwnerId = "8c3d65a8-8252-420c-aeaf-3ae2f758ce2a", ProjectStartDate = new DateTime(2018, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 3000.0, ProjectTotalExpenses = 0.0 },
-                        new { ProjectId = 3, ProjectDescription = "Take out part of basement wall, add baseboard heaters", ProjectEndDate = new DateTime(2018, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectIsOnDashboard = false, ProjectName = "Basement", ProjectOwnerId = "8c3d65a8-8252-420c-aeaf-3ae2f758ce2a", ProjectStartDate = new DateTime(2018, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 2500.0, ProjectTotalExpenses = 0.0 }
+                        new { ProjectId = 1, ProjectDescription = "Paint and re-tile bathroom walls and floors", ProjectEndDate = new DateTime(2018, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectIsOnDashboard = false, ProjectName = "Upstairs Bathroom", ProjectOwnerId = "8c3d65a8-8252-420c-aeaf-3ae2f758ce2a", ProjectStartDate = new DateTime(2018, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 5000.0, ProjectTotalExpenses = 0.0 },
+                        new { ProjectId = 2, ProjectDescription = "Paint and re-finish wood floors. Electricty in island and other new appliances", ProjectEndDate = new DateTime(2018, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectIsOnDashboard = false, ProjectName = "Kitchen", ProjectOwnerId = "8c3d65a8-8252-420c-aeaf-3ae2f758ce2a", ProjectStartDate = new DateTime(2018, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 9000.0, ProjectTotalExpenses = 0.0 },
+                        new { ProjectId = 3, ProjectDescription = "Take out part of basement wall, add baseboard heaters", ProjectEndDate = new DateTime(2018, 11, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectIsOnDashboard = false, ProjectName = "Basement", ProjectOwnerId = "8c3d65a8-8252-420c-aeaf-3ae2f758ce2a", ProjectStartDate = new DateTime(2018, 10, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), ProjectTotalBudget = 10000.0, ProjectTotalExpenses = 0.0 }
                     );
                 });
 
