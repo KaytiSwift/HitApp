@@ -2,89 +2,113 @@
     background: url(../images/lightwood.jpg) no-repeat fixed center;
     background-size: cover;
 }
+
 i {
     font-size: large;
 }
+
 .cards {
     padding: 20px 10px;
     width: 1020px;
     margin: 30px auto;
 }
 
-.cards h2 {
-    text-align: left;
-    font-weight: bold;
-}
+    .cards h2 {
+        text-align: left;
+        font-weight: bold;
+    }
 
 .back input, #create-proj, .image-upload input[type="submit"] {
     box-shadow: 1px 1px 1px #000;
     border-radius: 5px;
     font-weight: bold;
 }
+
 input[type="file"] {
     display: block;
 }
+
 #delete:hover {
     background-color: rgba(255, 0, 0, 0.5);
 }
-    .proj-btns {
-        display: flex;
-        justify-content: space-between;
-    }
+
+.proj-btns {
+    display: flex;
+    justify-content: space-between;
+}
+
 .buttons-del {
     display: flex;
     justify-content: center;
-    
 }
+
     .buttons-del input {
         box-shadow: 1px 1px 1px #000;
         margin-right: 40px;
     }
-#cont-btns, #exp-top{
-    display:flex;
-    justify-content:space-between
-}
-#cont-btns input, #exp-top input, #back input{
-    margin:20px;
+
+#cont-btns, #exp-top {
+    display: flex;
+    justify-content: space-between
 }
 
-.edit-del{
-    padding-left:24px !important;
+    #cont-btns input, #exp-top input, #back input {
+        margin: 20px;
+    }
+
+.edit-del {
+    padding-left: 24px !important;
 }
+
 i {
     color: rgb(83,83,83);
     font-size: large;
 }
+
     i:hover {
         color: lightblue;
     }
 
-.icons{
-    width:330px;
-    display:flex;
-    justify-content:center;
+.icons {
+    width: 340px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px 20px 0px;
 }
-.icons .back{
-    margin-left:20px;
-}
+
+    .icons .back {
+        margin-left: 20px;
+    }
+
 #tot-exp {
     text-align: right;
-    padding-right: 50px;
+    padding-right: 25px;
     font-weight: bold;
 }
-td a{
-    font-weight:bold;
+
+td a {
+    font-weight: bold;
 }
-#cant-change{
-    margin-left:35px;
+
+#cant-change {
+    margin-left: 35px;
 }
-.icon-center{
-    margin-left:15px;
+
+.icon-center {
+    margin-left: 15px;
 }
+
 #go-to {
     margin-top: 20px;
     margin-left: 70px;
 }
-#ExpenseTable{
-    margin-bottom:30px;
+
+#ExpenseTable {
+    margin-bottom: 30px;
+}
+
+#expense-cost {
+    text-align: right;
+    width: 50px;
+    padding-right: 50px;
 }

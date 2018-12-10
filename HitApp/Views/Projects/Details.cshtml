@@ -7,251 +7,251 @@
 @section Styling{
     <link href="~/css/Projects.css" rel="stylesheet" />
 }
-    <body id="ProjectDetails">
-        <div style="margin-top:20px" class="back">
-            <a asp-action="Index">
-                <input type="button" value="GO TO MY PROJECTS" class="btn btn-default" />
-            </a>
-        </div>
-        <div id="Project">
+<body id="ProjectDetails">
+    <div style="margin-top:20px" class="back">
+        <a asp-action="Index">
+            <input type="button" value="GO TO MY PROJECTS" class="btn btn-default" />
+        </a>
+    </div>
+    <div id="Project">
 
-            <div class="project-info">
-                <h2 style="font-weight:bold">@Model.ProjectName Project Details</h2>
+        <div class="project-info">
+            <h2 style="font-weight:bold">@Model.ProjectName Project Details</h2>
 
-                <dl class="dl-horizontal">
-                    <dt> On Dashboard  </dt>
-                    @if (Model.ProjectIsOnDashboard == true)
-                    {
-                        <dd><i id="green" class="fas fa-check"></i> </dd>
-                    }
-                    else
-                    {
-                        <dd><i id="red" class="fas fa-ban"></i> </dd>
-                    }
-                    <dt>
-                        @Html.DisplayNameFor(model => model.ProjectName)
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(model => model.ProjectName)
-                    </dd>
-                    <dt>
-                        @Html.DisplayNameFor(model => model.ProjectStartDate)
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(model => model.ProjectStartDate)
-                    </dd>
-                    <dt>
-                        @Html.DisplayNameFor(model => model.ProjectEndDate)
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(model => model.ProjectEndDate)
-                    </dd>
-                    <dt>
-                        Description
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(model => model.ProjectDescription)
-                    </dd>
-                    <dt>
-                        @Html.DisplayNameFor(model => model.ProjectTotalBudget)
-                    </dt>
-                    <dd>
-                        @Html.DisplayFor(model => model.ProjectTotalBudget)
-                    </dd>
-                </dl>
-                <div class="icons">
-                    <div class="back">
-                        <a asp-action="Edit" asp-route-id="@Model.ProjectId">
-                            <input type="button" value="EDIT" class="btn btn-default" />
-                        </a>
-                    </div>
-                    <div class="back">
-                        <a asp-action="Delete" asp-route-id="@Model.ProjectId">
-                            <input type="button" value="DELETE" class="btn btn-default" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-
-            <div class="image-upload">
-                <h2>Upload Images</h2>
-                <div>
-                    <form method="post" action="/FilePaths/ImageUpload/@Model.ProjectId" enctype="multipart/form-data">
-                        <input type="file" name="upload" /><br />
-                        <input type="submit" value="UPLOAD" class="btn btn-default" />
-                    </form>
-                </div>
+            <dl class="dl-horizontal">
+                <dt> On Dashboard  </dt>
+                @if (Model.ProjectIsOnDashboard == true)
+                {
+                    <dd><i id="green" class="fas fa-check"></i> </dd>
+                }
+                else
+                {
+                    <dd><i id="red" class="fas fa-ban"></i> </dd>
+                }
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProjectName)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProjectName)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProjectStartDate)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProjectStartDate)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProjectEndDate)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProjectEndDate)
+                </dd>
+                <dt>
+                    Description
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProjectDescription)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ProjectTotalBudget)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ProjectTotalBudget)
+                </dd>
+            </dl>
+            <div class="icons">
                 <div class="back">
-                    <a asp-controller="FilePaths" asp-action="Index" asp-route-id="@Model.ProjectId">
-                        <input type="button" value="VIEW IMAGES" class="btn btn-default" />
+                    <a asp-action="Edit" asp-route-id="@Model.ProjectId">
+                        <input type="button" value="EDIT" class="btn btn-default" />
                     </a>
                 </div>
-            </div>
-
-
-
-
-        </div>
-
-        <div id="Contractors">
-            <div id="cont-btns">
-                <h3 style="font-weight:bold;">Contractors</h3>
-
                 <div class="back">
-                    <a asp-controller="Contractors" asp-action="Create" asp-route-id="@Model.ProjectId">
-                        <input type="button" value="CREATE CONTRACTOR" class="btn btn-default" />
-                    </a>
-                </div>
-
-            </div>
-
-            <div id="contractor-table-header">
-                <table class="table">
-                    <thead>
-                        <tr class="contractor-table-header">
-                            <th>
-                                Name
-                            </th>
-                            <th>
-                                Company
-                            </th>
-                            <th>
-                                Service
-                            </th>
-                            <th>
-                                Phone
-                            </th>
-                            <th>
-                                Email
-                            </th>
-                            <th>
-                                Notes
-                            </th>
-                            <th>Edit | Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody class="contractor-list">
-                        @foreach (var item in Model.ProjectContractors)
-                        {
-
-                            <tr data-project-contractor-id="@item.ProjectContractorId">
-                                <td>
-                                    <a asp-controller="Contractors" asp-action="Details" asp-route-id="@item.Contractors.ContractorId">@Html.DisplayFor(modelItem => item.Contractors.ContractorName)</a>
-
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Contractors.ContractorCompany)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Contractors.ContractorService)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Contractors.ContractorPhone)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Contractors.ContractorEmail)
-                                </td>
-                                <td title="@Html.DisplayFor(modelItem => item.Contractors.ContractorAdditionalNotes)" class="truncate">
-                                    @Html.DisplayFor(modelItem => item.Contractors.ContractorAdditionalNotes)
-                                </td>
-
-
-                                <td class="edit-del">
-
-                                    <a asp-controller="Contractors" asp-action="Edit" asp-route-id="@item.Contractors.ContractorId"><i class="fas fa-pencil-alt"></i></a> |
-                                    <a class="remove-contractor" data-project-contractor-id="@item.ProjectContractorId"><i class="fas fa-times"></i></a>
-
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-                <div class="back" id="back">
-                    <a asp-controller="Contractors" asp-action="Index" asp-route-id="@Model.ProjectId">
-                        <input type="button" value="ALL CONTRACTORS" class="btn btn-default" />
+                    <a asp-action="Delete" asp-route-id="@Model.ProjectId">
+                        <input type="button" value="DELETE" class="btn btn-default" />
                     </a>
                 </div>
             </div>
         </div>
 
 
-        <div id="ExpenseTable">
-            <div id="exp-top">
-                <h3 style="font-weight:bold;">Expenses</h3>
-
-                <div class="back">
-                    <a asp-controller="Expenses" asp-action="Create" asp-route-id="@Model.ProjectId">
-                        <input type="button" value="CREATE EXPENSE" class="btn btn-default" />
-                    </a>
-                </div>
-
-
-
+        <div class="image-upload">
+            <h2>Upload Images</h2>
+            <div>
+                <form method="post" action="/FilePaths/ImageUpload/@Model.ProjectId" enctype="multipart/form-data">
+                    <input type="file" name="upload" /><br />
+                    <input type="submit" value="UPLOAD" class="btn btn-default" />
+                </form>
             </div>
+            <div class="back">
+                <a asp-controller="FilePaths" asp-action="Index" asp-route-id="@Model.ProjectId">
+                    <input type="button" value="VIEW IMAGES" class="btn btn-default" />
+                </a>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    <div id="Contractors">
+        <div id="cont-btns">
+            <h3 style="font-weight:bold;">Contractors</h3>
+
+            <div class="back">
+                <a asp-controller="Contractors" asp-action="Create" asp-route-id="@Model.ProjectId">
+                    <input type="button" value="CREATE CONTRACTOR" class="btn btn-default" />
+                </a>
+            </div>
+
+        </div>
+
+        <div id="contractor-table-header">
             <table class="table">
                 <thead>
-                    <tr class="expense-table-header">
+                    <tr class="contractor-table-header">
                         <th>
                             Name
                         </th>
                         <th>
-                            Product Link
+                            Company
                         </th>
                         <th>
-                            Date Purchased
+                            Service
+                        </th>
+                        <th>
+                            Phone
+                        </th>
+                        <th>
+                            Email
                         </th>
                         <th>
                             Notes
                         </th>
-                        <th>
-                            Total Cost
-                        </th>
                         <th>Edit | Delete</th>
                     </tr>
                 </thead>
-                <tbody>
-                    @foreach (var item in Model.Expenses)
+                <tbody class="contractor-list">
+                    @foreach (var item in Model.ProjectContractors)
                     {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ExpenseName)
-                            </td>
-                            <td>
-                                @if (item.ProductUrl == null || item.ProductUrl == "https://")
-                                {
-                                    //nothing will be displayed
-                                }
-                                else
-                                {
-                                    <a href="@Html.DisplayFor(modelItem => item.ProductUrl)" target="_blank">
-                                        @Html.DisplayFor(modelItem => item.ExpenseName)
-                                    </a>
 
-                                }
+                        <tr data-project-contractor-id="@item.ProjectContractorId">
+                            <td>
+                                <a asp-controller="Contractors" asp-action="Details" asp-route-id="@item.Contractors.ContractorId">@Html.DisplayFor(modelItem => item.Contractors.ContractorName)</a>
+
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.ExpenseDatePurchased)
+                                @Html.DisplayFor(modelItem => item.Contractors.ContractorCompany)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Contractors.ContractorService)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Contractors.ContractorPhone)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Contractors.ContractorEmail)
+                            </td>
+                            <td title="@Html.DisplayFor(modelItem => item.Contractors.ContractorAdditionalNotes)" class="truncate">
+                                @Html.DisplayFor(modelItem => item.Contractors.ContractorAdditionalNotes)
                             </td>
 
-                            <td title="@Html.DisplayFor(modelItem => item.ExpenseNotes)" class="truncate">
-                                @Html.DisplayFor(modelItem => item.ExpenseNotes)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ExpenseCost)
-                            </td>
+
                             <td class="edit-del">
-                                <a asp-controller="Expenses" asp-action="Edit" asp-route-id="@item.ExpenseId" title="Edit"><i class="fas fa-pencil-alt"></i>  </a> |
-                                <a asp-controller="Expenses" asp-action="Delete" asp-route-id="@item.ExpenseId" title="Delete"><i class="fas fa-times"></i></a>
+
+                                <a asp-controller="Contractors" asp-action="Edit" asp-route-id="@item.Contractors.ContractorId"><i class="fas fa-pencil-alt"></i></a> |
+                                <a class="remove-contractor" data-project-contractor-id="@item.ProjectContractorId"><i class="fas fa-times"></i></a>
+
                             </td>
                         </tr>
                     }
                 </tbody>
             </table>
-            <h3 id="tot-exp">@Html.DisplayFor(model => model.ProjectTotalExpenses) = Total Expenses</h3>
+            <div class="back" id="back">
+                <a asp-controller="Contractors" asp-action="Index" asp-route-id="@Model.ProjectId">
+                    <input type="button" value="ALL CONTRACTORS" class="btn btn-default" />
+                </a>
+            </div>
         </div>
+    </div>
 
-    </body>
+
+    <div id="ExpenseTable">
+        <div id="exp-top">
+            <h3 style="font-weight:bold;">Expenses</h3>
+
+            <div class="back">
+                <a asp-controller="Expenses" asp-action="Create" asp-route-id="@Model.ProjectId">
+                    <input type="button" value="CREATE EXPENSE" class="btn btn-default" />
+                </a>
+            </div>
+
+
+
+        </div>
+        <table class="table">
+            <thead>
+                <tr class="expense-table-header">
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Product Link
+                    </th>
+                    <th>
+                        Date Purchased
+                    </th>
+                    <th>
+                        Notes
+                    </th>
+                    <th id="expense-cost">
+                        Total Cost
+                    </th>
+                    <th>Edit | Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Expenses)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExpenseName)
+                        </td>
+                        <td>
+                            @if (item.ProductUrl == null || item.ProductUrl == "https://")
+                            {
+                                //nothing will be displayed
+                            }
+                            else
+                            {
+                                <a href="@Html.DisplayFor(modelItem => item.ProductUrl)" target="_blank">
+                                    @Html.DisplayFor(modelItem => item.ExpenseName)
+                                </a>
+
+                            }
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExpenseDatePurchased)
+                        </td>
+
+                        <td title="@Html.DisplayFor(modelItem => item.ExpenseNotes)" class="truncate">
+                            @Html.DisplayFor(modelItem => item.ExpenseNotes)
+                        </td>
+                        <td id="expense-cost">
+                            @Html.DisplayFor(modelItem => item.ExpenseCost)
+                        </td>
+                        <td class="edit-del">
+                            <a asp-controller="Expenses" asp-action="Edit" asp-route-id="@item.ExpenseId" title="Edit"><i class="fas fa-pencil-alt"></i>  </a> |
+                            <a asp-controller="Expenses" asp-action="Delete" asp-route-id="@item.ExpenseId" title="Delete"><i class="fas fa-times"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <h3 id="tot-exp">@Html.DisplayFor(model => model.ProjectTotalExpenses) = Total Expenses</h3>
+    </div>
+
+</body>
 
 @section Scripts{
     <script src="~/js/Contractors.js"></script>

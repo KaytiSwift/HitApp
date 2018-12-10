@@ -1,8 +1,8 @@
-﻿body{
-    background-image:url('/images/expense.jpg');
-    background-repeat:no-repeat;
-    background-size:cover;
-    height:100vh;
+﻿body {
+    background-image: url('/images/expense.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
 }
 
 .cards {
@@ -13,24 +13,28 @@
     width: 1020px;
     margin: 50px auto;
 }
-.back input, #create-exp input{
+
+.back input, #create-exp input {
     box-shadow: 1px 1px 1px #000;
     border-radius: 5px;
     font-weight: bold;
-    
 }
-#create-exp{
-    margin:auto;
-    width:unset;
+
+#create-exp {
+    margin: auto;
+    width: unset;
 }
+
 .cards {
     padding: 20px 10px;
     width: 1020px;
     margin: 40px auto;
 }
-#add-info{
-    height:100px;
+
+#add-info {
+    height: 100px;
 }
+
 .buttons-del {
     display: flex;
     justify-content: center;
@@ -45,6 +49,7 @@
     .buttons-del input {
         box-shadow: 1px 1px 1px #000;
     }
+
 #delete:hover {
     background-color: rgba(255, 0, 0, 0.5);
 }
@@ -52,6 +57,7 @@
 #del-form {
     padding: 10px;
 }
+
 #go-to {
     margin-top: 20px;
     margin-left: 70px;

@@ -1,12 +1,12 @@
 ﻿h2 {
     font-weight: 600;
     color: black;
-   
-    
 }
-.col-md-4{
-    width:100%;    
+
+.col-md-4 {
+    width: 100%;
 }
+
 .form-group {
     width: 300px;
     margin: auto;
@@ -15,15 +15,18 @@
 .row {
     padding: 0px;
 }
+
 form {
     display: grid;
     grid-template-columns: 1fr;
 }
-@media screen and (min-width: 600px){
-  
+
+@media screen and (min-width: 600px) {
+
     .row {
         display: flex;
     }
+
     .page-form {
         padding: 20px;
         border-radius: 5px;
@@ -33,29 +36,31 @@ form {
         margin: 0px;
     }
 
- 
-    #add-info{
-        height:100px;
+
+    #add-info {
+        height: 100px;
     }
+
     #create-proj, #create-cont {
         width: auto;
         margin-bottom: 0px;
-        
     }
 
         #create-cont input {
             box-shadow: 1px 1px 1px #000;
         }
-    #back-button, #create-exp  {
+
+    #back-button, #create-exp {
         margin-left: 30px;
     }
-    .back{
-        margin-bottom:10px;
+
+    .back {
+        margin-bottom: 10px;
     }
+
     .form-group {
         width: 300px;
         margin: auto;
-        
     }
 }
 

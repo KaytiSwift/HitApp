@@ -10,88 +10,88 @@
 @section Styling{
     <link href="~/css/Projects.css" rel="stylesheet" />
 }
-    <body id="ProjectIndex">
-        <div class="back" id="go-to">
-            <a asp-controller="Contractors" asp-action="Index">
-                <input type="button" value="GO TO CONTRACTORS" class="btn btn-default" />
-            </a>
-        </div>
-        <div class="cards">
-            <div class="proj-btns">
-                <h2>All Projects</h2>
+<body id="ProjectIndex">
+    <div class="back" id="go-to">
+        <a asp-controller="Contractors" asp-action="Index">
+            <input type="button" value="GO TO CONTRACTORS" class="btn btn-default" />
+        </a>
+    </div>
+    <div class="cards">
+        <div class="proj-btns">
+            <h2>My Projects</h2>
 
-                <div class="back">
-                    <a asp-controller="Projects" asp-action="Create">
-                        <input type="button" value="CREATE PROJECT" class="btn btn-default" />
-                    </a>
-                </div>
-
-
+            <div class="back">
+                <a asp-controller="Projects" asp-action="Create">
+                    <input type="button" value="CREATE PROJECT" class="btn btn-default" />
+                </a>
             </div>
-            <table id="tableId" class="table">
-                <thead>
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.ProjectName)
 
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.ProjectDescription)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.ProjectStartDate)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.ProjectEndDate)
-                        </th>
-                        <th>
-                            On Dashboard
-                        </th>
-
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>
-
-                                <a asp-action="Details" asp-route-id="@item.ProjectId" title="Details">@Html.DisplayFor(modelItem => item.ProjectName)</a>
-
-
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ProjectDescription)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ProjectStartDate)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ProjectEndDate)
-                            </td>
-                            @if (item.ProjectIsOnDashboard == true)
-                            {
-                                <td><i id="cant-change" class="fas fa-check"></i></td>
-                            }
-                            else
-                            {
-                                <td><i id="cant-change" class="fas fa-ban"></i></td>
-                            }
-
-                            <td>
-
-                                <a asp-action="Delete" asp-route-id="@item.ProjectId" title="Delete"><i class="fas fa-times icon-center"></i></a>
-                            </td>
-                        </tr>
-                    }
-
-                </tbody>
-
-
-
-            </table>
 
         </div>
+        <table id="tableId" class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProjectName)
 
-    </body>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProjectDescription)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProjectStartDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProjectEndDate)
+                    </th>
+                    <th>
+                        On Dashboard
+                    </th>
+
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+
+                            <a asp-action="Details" asp-route-id="@item.ProjectId" title="Details">@Html.DisplayFor(modelItem => item.ProjectName)</a>
+
+
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProjectDescription)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProjectStartDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProjectEndDate)
+                        </td>
+                        @if (item.ProjectIsOnDashboard == true)
+                        {
+                            <td><i id="cant-change" class="fas fa-check"></i></td>
+                        }
+                        else
+                        {
+                            <td><i id="cant-change" class="fas fa-ban"></i></td>
+                        }
+
+                        <td>
+
+                            <a asp-action="Delete" asp-route-id="@item.ProjectId" title="Delete"><i class="fas fa-times icon-center"></i></a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+
+
+
+        </table>
+
+    </div>
+
+</body>

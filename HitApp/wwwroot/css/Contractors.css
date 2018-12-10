@@ -2,6 +2,7 @@
     background-image: url("/images/contractor-pages.jpg");
     background-size: cover;
 }
+
 h2 {
     color: black;
 }
@@ -11,40 +12,46 @@ h2 {
     font-size: 1em;
     color: black;
 }
+
 #contractor {
     font-size: 1em;
     color: black;
-    width:400px;
-    border-radius:5px;
+    width: 400px;
+    border-radius: 5px;
 }
 
- td, dd, dt, #assigned-project, th{
+td, dd, dt, #assigned-project, th {
     color: black;
-   
 }
-td a:hover, i:hover, #proj-cont a:hover {
-    color: lightblue;
-}
+
+    td a:hover, i:hover, #proj-cont a:hover {
+        color: lightblue;
+    }
+
 .back .btn {
     box-shadow: 1px 1px 1px #000;
 }
+
 #button-form {
-    display:block;
-    margin:0px; 
-    padding:20px 0px;
+    display: block;
+    margin: 0px;
+    padding: 20px 0px;
 }
+
     #button-form input {
         box-shadow: 1px 1px 1px #000;
     }
 
 .back {
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
-.buttons{
-    text-align:center;
+
+.buttons {
+    text-align: center;
 }
-.buttons-btn{
-    display:flex;
+
+.buttons-btn {
+    display: flex;
 }
 
 .d-row {
@@ -57,67 +64,85 @@ td a:hover, i:hover, #proj-cont a:hover {
 }
 
 
-#contractor ul{
-    font-size:medium;
+#contractor ul {
+    font-size: medium;
 }
 
-.d-contractor{
-    display:flex;
-    justify-content:space-around;
+.d-contractor {
+    display: flex;
+    justify-content: space-around;
 }
+
 i {
-    color:rgb(83,83,83);
+    color: rgb(83,83,83);
     font-size: large;
 }
-#proj-cont{
-    margin-left:20px;
+
+#proj-cont {
+    margin-left: 20px;
 }
+
 .cards {
-    padding:20px;
+    padding: 20px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: black 5px 6px 13px 2px;
-    
-    width:1020px;
-    margin:20px auto;    
+    width: 1020px;
+    margin: 20px auto;
 }
-.col-md-4{
-    padding:0px;
+
+.col-md-4 {
+    padding: 0px;
 }
-.back-btn{
-    margin:20px;
+
+.back-btn {
+    margin: 20px;
 }
-.buttons-del{
-    display:flex;
-    justify-content:center;
-    margin-right:40px;
-    padding:20px;    
+
+.buttons-del {
+    display: flex;
+    justify-content: center;
+    margin-right: 40px;
+    padding: 20px;
 }
-.buttons-del a{
-    padding:10px;
-    
-}
+
+    .buttons-del a {
+        padding: 10px;
+    }
+
     .buttons-del input {
         box-shadow: 1px 1px 1px #000;
     }
+
 #delete:hover {
     background-color: rgba(255, 0, 0, 0.5);
 }
-#del-form{
-    padding:10px;
+
+#del-form {
+    padding: 10px;
 }
-#edit-del{
-    padding-left:0px;
+
+#edit-del {
+    padding-left: 0px;
 }
-#proj-cont a, td a{
-    font-weight:bold;
+
+#proj-cont a, td a {
+    font-weight: bold;
 }
+
 #go-to, .go-to {
-    margin-top:20px;
+    margin-top: 20px;
     margin-left: 70px;
-    
 }
-#go-to-spread{
-    display:flex;
-    justify-content:space-between;
+
+#go-to-spread {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icons {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0px 20px 0px;
 }

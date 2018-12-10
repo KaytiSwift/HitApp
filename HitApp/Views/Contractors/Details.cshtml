@@ -4,99 +4,105 @@
     ViewData["Title"] = "Details";
 }
 @section Styling{
-    <link href="~/css/Contractors.css" rel="stylesheet" />
+<link href="~/css/Contractors.css" rel="stylesheet" />
 }
-    <div class="back" id="go-to">
-        <a asp-controller="Contractors" asp-action="Index">
-            <input type="button" value="GO TO CONTRACTORS" style="font-weight:bold" class="btn btn-default" />
-        </a>
-    </div>
-    <div class="cards">
-        <h2>@Model.ContractorName</h2>
+<div class="back" id="go-to">
+    <a asp-controller="Contractors" asp-action="Index">
+        <input type="button" value="GO TO CONTRACTORS" style="font-weight:bold" class="btn btn-default" />
+    </a>
+</div>
+<div class="cards">
+    <h2>@Model.ContractorName</h2>
 
-        
 
-        <div>
-            <div class="d-contractor">
-                <div>
-                    <dl id="contractor" class="dl-horizontal">
 
-                        <dt class="d-row">
-                            Company:
-                        </dt>
-                        <dd class="d-row">
-                            @Html.DisplayFor(model => model.ContractorCompany)
-                        </dd>
+    <div>
+        <div class="d-contractor">
+            <div>
+                <dl id="contractor" class="dl-horizontal">
+                    <dt class="d-row">
+                        Company:
+                    </dt>
+                    <dd class="d-row">
+                        @Html.DisplayFor(model => model.ContractorCompany)
+                    </dd>
+                    <dt class="d-row">
+                        Name:
+                    </dt>
+                    <dd class="d-row">
+                        @Html.DisplayFor(model => model.ContractorName)
+                    </dd>
+                    <dt class="d-row">
+                        Service:
+                    </dt>
+                    <dd class="d-row">
+                        @Html.DisplayFor(model => model.ContractorService)
+                    </dd>
+                    <dt class="d-row">
+                        Email:
+                    </dt>
+                    <dd class="d-row">
+                        @Html.DisplayFor(model => model.ContractorEmail)
+                    </dd>
+                    <dt class="d-row">
+                        Phone:
+                    </dt>
+                    <dd class="d-row">
+                        @Html.DisplayFor(model => model.ContractorPhone)
+                    </dd>
+                    <dt class="d-row">
+                        Website:
+                    </dt>
+                    <dd class="d-row">
+                        @Html.DisplayFor(model => model.ContractorWebsiteUrl)
+                    </dd>
+                    <dt class="d-row">
+                        Address:
+                    </dt>
+                    <dd class="d-row">
+                        @Html.DisplayFor(model => model.ContractorAddress)
+                    </dd>
+                    <dt class="d-row">
+                        City:
+                    </dt>
+                    <dd class="d-row">
+                        @Html.DisplayFor(model => model.ContractorCity)
+                    </dd>
+                    <dt class="d-row">
+                        State:
+                    </dt>
+                    <dd class="d-row">
+                        @Html.DisplayFor(model => model.ContractorState)
+                    </dd>
+                    <dt class="d-row">
+                        Zip Code:
+                    </dt>
+                    <dd class="d-row">
+                        @Html.DisplayFor(model => model.ContractorZip)
+                    </dd>
+                    <dt class="d-row">
+                        Additional Notes:
+                    </dt>
+                    <dd class="d-row">
+                        @Html.DisplayFor(model => model.ContractorAdditionalNotes)
+                    </dd>
+                </dl>
+                <div class="icons">
 
-                        <dt class="d-row">
-                            Name:
-                        </dt>
-                        <dd class="d-row">
-                            @Html.DisplayFor(model => model.ContractorName)
-                        </dd>
-                        <dt class="d-row">
-                            Service:
-                        </dt>
-                        <dd class="d-row">
-                            @Html.DisplayFor(model => model.ContractorService)
-                        </dd>
-                        <dt class="d-row">
-                            Email:
-                        </dt>
-                        <dd class="d-row">
-                            @Html.DisplayFor(model => model.ContractorEmail)
-                        </dd>
-                        <dt class="d-row">
-                            Phone:
-                        </dt>
-                        <dd class="d-row">
-                            @Html.DisplayFor(model => model.ContractorPhone)
-                        </dd>
-                        <dt class="d-row">
-                            Website:
-                        </dt>
-                        <dd class="d-row">
-                            @Html.DisplayFor(model => model.ContractorWebsiteUrl)
-                        </dd>
-                        <dt class="d-row">
-                            Address:
-                        </dt>
-                        <dd class="d-row">
-                            @Html.DisplayFor(model => model.ContractorAddress)
-                        </dd>
-                        <dt class="d-row">
-                            City:
-                        </dt>
-                        <dd class="d-row">
-                            @Html.DisplayFor(model => model.ContractorCity)
-                        </dd>
-                        <dt class="d-row">
-                            State:
-                        </dt>
-                        <dd class="d-row">
-                            @Html.DisplayFor(model => model.ContractorState)
-                        </dd>
-                        <dt class="d-row">
-                            Zip Code:
-                        </dt>
-                        <dd class="d-row">
-                            @Html.DisplayFor(model => model.ContractorZip)
-                        </dd>
-                        <dt class="d-row">
-                            Additional Notes:
-                        </dt>
-                        <dd class="d-row">
-                            @Html.DisplayFor(model => model.ContractorAdditionalNotes)
-                        </dd>
-                    </dl>
-                    <div class="buttons">
-                        <a asp-action="Edit" asp-route-id="@Model.ContractorId" title="Edit">Edit</a> |
-                        <a asp-action="/Delete" asp-route-id="@Model.ContractorId" title="Delete">Delete</a>
+                    <div class="back">
+                        <a asp-action="Edit" asp-route-id="@Model.ContractorId">
+                            <input type="button" value="EDIT" class="btn btn-default" />
+                        </a>
+                    </div>
+                    <div class="back">
+                        <a asp-action="Delete" asp-route-id="@Model.ContractorId">
+                            <input type="button" value="DELETE" class="btn btn-default" />
+                        </a>
                     </div>
                 </div>
-
-                <div  >
-                    <div  id="contractor">
+                </div>
+                <div>
+                    <div id="contractor">
                         <h3>Assigned Projects</h3>
                         <ul class="d-row">
                             @if (Model.ProjectContractors.Count == 0)
@@ -117,6 +123,6 @@
                 </div>
             </div>
 
-        </div>
-
     </div>
+
+</div>
