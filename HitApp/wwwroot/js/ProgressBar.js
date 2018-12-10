@@ -2,12 +2,23 @@
     var cards = document.querySelectorAll(".cards");
 
     cards.forEach(c => {
-        var totalBudget = c.querySelector(".projectTotalBudget").innerHTML;
+        var totalBudget = c.querySelector(".projectTotalBudget").innerHTML;        
+        totalBudget = totalBudget.replace('$', '');
+        totalBudget = totalBudget.replace(',', '');
         console.log(totalBudget);
 
         var totalExpenses = c.querySelector(".projectTotalExpenses").innerHTML;
+        totalExpenses = totalExpenses.replace('$', '');
+        totalExpenses = totalExpenses.replace(',', '');
         console.log(totalExpenses);
-        var progress = Math.round(totalExpenses / totalBudget * 100);
+
+        var balance = totalBudget - totalExpenses;
+        balance = accounting.formatMoney(balance);
+        console.log(balance);
+        c.querySelector(".balance").innerHTML = balance + ' : Balance';
+
+        var progress = Math.round(parseFloat(totalExpenses) / parseFloat(totalBudget) * 100);
+        console.log(progress);
 
         if (progress > 70 && progress < 100) {
             c.querySelector(".progressBar").setAttribute("style", `width: ${progress}%; background-color: #dcd940;`);
