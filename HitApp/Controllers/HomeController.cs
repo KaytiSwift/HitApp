@@ -13,10 +13,13 @@ namespace HitApp.Controllers
     public class HomeController : Controller
     {
         private IProjectRepository projectRepo;
+        private IExpenseRepository expenseRepo;
 
-        public HomeController(IProjectRepository projectRepo)
+
+        public HomeController(IProjectRepository projectRepo, IExpenseRepository expenseRepo)
         {
             this.projectRepo = projectRepo;
+            this.expenseRepo = expenseRepo;
         }
 
         [AllowAnonymous]
@@ -41,6 +44,12 @@ namespace HitApp.Controllers
                     where project.ProjectOwnerId == User.FindFirstValue(ClaimTypes.NameIdentifier) //must be true
                     orderby project.ProjectId // sorts by the date
                     select project;
+
+            foreach(var projectTotal in model)
+            {
+                projectTotal.ProjectTotalExpenses = expenseRepo.ExpenseTotal(projectTotal);
+
+            }
             return View(model);
         }
 
